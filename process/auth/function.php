@@ -1,4 +1,5 @@
 <?php
+    include '../db_connect.php';
 
 function validate($data) {
     $data = trim($data);
@@ -17,14 +18,20 @@ function registerNewUser($user,$email,$pass){
  
     $hashed_password = md5($password);
 
-    $sql = "INSERT INTO users(username,email,password) 
-            VALUES('$username','$email','$hashed_password')";
-    $result = mysqli_query($conn,$sql);
+    #SELECT EMAIL FROM TABLE TO SEE IF IT EXISTS
+    $sql2 = "SELECT * FROM users WHERE email='$email'";
+    $data = mysqli_query($conn,$sql2);
 
-    if($result){
-        return 'data inserted';
+    #CHECK IF THE EMAIL EXISTS 
+    if(mysqli_num_rows($data) > 0) { 
+        header('location:../../signup.php?error=Email already exists!');
+    } 
+    else {
+        $sql = "INSERT INTO users(username,email,password) 
+                VALUES('$username','$email','$hashed_password')";
+        $result = $conn->query($sql);
+        header('location:../../login.php?message=Signup successfull login to continue');
     }
-    return 'error';
 }
 
 function selectAllUser(){
@@ -36,18 +43,3 @@ function selectAllUser(){
     return $result;
 }
 
-function loginExistedUser($email,$pass) {
-    include '../db_connect.php';
-
-    $email  = validate($email);
-    $password = validate($pass);
-    $hashed_password = md5($password);
-
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$hashed_password'";
-    $result = mysqli_query($conn,$sql);
-
-    if(mysqli_num_rows($result) === 1){
-        $logged_user = mysqli_fetch_assoc($result);
-        header('location:../../index.html?user_id='.$logged_user['id']);
-    }
-}

@@ -1,3 +1,7 @@
+<?php
+    include 'process/db_connect.php';
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -67,8 +71,18 @@
                             </div>
                             <form action="process/auth/signup.inc.php" method='post' class="sign-form">
                                 <div class="form-group">
-                                        <input type="email" name="email" placeholder="Enter your email"><br>
-                                        <input type="password" name="password" placeholder="Enter your password"><br>
+                                            <?php if(isset($_GET['message'])): $msg = $_GET['message']; ?>
+                                                    <div>
+                                                        <p class="text-success"><?php echo $msg ?></p>
+                                                    </div>
+                                            <?php endif ?>
+                                            <?php if(isset($_GET['error'])): $error = $_GET['error']; ?>
+                                                    <div>
+                                                        <p class="text-danger"><?php echo $error ?></p>
+                                                    </div>
+                                            <?php endif ?>
+                                        <input type="email" name="email" placeholder="Enter your email" required><br>
+                                        <input type="password" name="password" placeholder="Enter your password" required><br>
                                         <div class="forgot">
                                             <button class="axil-button button-rounded" name='login' type='submit'>Log In</button>
                                             <a href="#">Forget password?</a>

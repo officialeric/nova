@@ -1,5 +1,5 @@
 <?php
-    include 'process/db_connect.php';
+    include '../process/db_connect.php';
 ?>
 
 <!doctype html>
@@ -8,24 +8,24 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Sign up || Blogar - Personal Blog Template</title>
+    <title>Admin login</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon.png">
 
     <!-- CSS
     ============================================ -->
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick.css">
-    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
-    <link rel="stylesheet" href="assets/css/vendor/base.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="../assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="../assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="../assets/css/vendor/base.css">
+    <link rel="stylesheet" href="../assets/css/plugins/plugins.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 
@@ -53,11 +53,11 @@
                         <div class="content">
                             <div class="logo">
                                 <a href="index.html">
-                                    <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
-                                    <img class="light-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
+                                    <img class="dark-logo" src="../assets/images/logo/logo-black.png" alt="Logo Images">
+                                    <img class="light-logo" src="../assets/images/logo/logo-white2.png" alt="Logo Images">
                                 </a>
                             </div>
-                            <h1 class="title">Sign Up</h1>
+                            <h1 class="title">Admin Login Page</h1>
                             <!-- <h5>Please , Fill the form below</h5> -->
                             <!-- <p>No spam, notifications only about news products, updates.</p> -->
                             <div class="inner d-flex align-items-center flex-wrap">
@@ -69,21 +69,25 @@
                                     <li><a href="maintenance.html#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul> -->
                             </div>
-                            <form action="process/auth/signup.inc.php" method="post" class="sign-form">
+                            <form action="process/login.inc.php" method="post" class="sign-form">
                                 <div class="form-group">
-                                        <?php if(isset($_GET['error'])): $error = $_GET['error']; ?>
-                                                <div>
-                                                    <h5 class="text-danger"><?php echo $error ?></h5>
-                                                </div>
-                                        <?php endif ?>
-                                        <input type="text" name="username" placeholder="Enter your username" required><br>
+                                <?php if(isset($_GET['message'])): $msg = $_GET['message']; ?>
+                                                    <div>
+                                                        <p class="text-success"><?php echo $msg ?></p>
+                                                    </div>
+                                            <?php endif ?>
+                                            <?php if(isset($_GET['error'])): $error = $_GET['error']; ?>
+                                                    <div>
+                                                        <p class="text-danger"><?php echo $error ?></p>
+                                                    </div>
+                                 <?php endif ?>
                                         <input type="email" name="email" placeholder="Enter your email" required><br>
-                                        <input type="password" name="password" placeholder="Create your password" required><br>
-                                        <button class="axil-button button-rounded" type="submit" name="submit">Sign Up</button>
-                                        <span>Or</span>
-                                        <div class="social">
+                                        <input type="password" name="password" placeholder="Enter your password" required><br>
+                                        <button class="axil-button button-rounded" type="submit" name="login">Log In</button>
+                                       <!-- <span>Admin</span> -->
+                                        <!-- <div class="social">
                                             <button class="axil-button button-rounded" id="google">Sign up with Google</button>
-                                        </div>
+                                        </div> -->
 
                                 </div>
                             </form>
@@ -91,7 +95,7 @@
                     </div>
                     <div class="order-1 order-lg-2 col-lg-5 offset-lg-1">
                         <div class="thumbnail">
-                            <img src="assets/images/others/maintenence.png" alt="Images">
+                            <img src="../assets/images/others/maintenence.png" alt="Images">
                         </div>
                     </div>
                 </div>
@@ -106,19 +110,19 @@
     <!-- JS
 ============================================ -->
     <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
+    <script src="../assets/js/vendor/modernizr.min.js"></script>
     <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery.js"></script>
+    <script src="../assets/js/vendor/jquery.js"></script>
     <!-- Bootstrap JS -->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/tweenmax.min.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/jquery.style.switcher.js"></script>
+    <script src="../assets/js/vendor/bootstrap.min.js"></script>
+    <script src="../assets/js/vendor/slick.min.js"></script>
+    <script src="../assets/js/vendor/tweenmax.min.js"></script>
+    <script src="../assets/js/vendor/js.cookie.js"></script>
+    <script src="../assets/js/vendor/jquery.style.switcher.js"></script>
 
 
     <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 

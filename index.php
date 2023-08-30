@@ -1,3 +1,7 @@
+<?php
+include 'process\includes\constraints.php';
+?>
+
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -51,7 +55,7 @@
                 <div class="row justify-content-between align-items-center">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-12">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="<?=$BASE_URL?>">
                                 <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Blogar logo">
                                 <img class="light-logo" src="assets/images/logo/logo-white2.png" alt="Blogar logo">
                             </a>
@@ -63,12 +67,12 @@
                             <nav class="mainmenu-nav">
                                 <!-- Start Mainmanu Nav -->
                                 <ul class="mainmenu">
-                                    <li class="menu-item-has-children"><a href="index.html#">Home</a>
-                                        <ul class="axil-submenu">
+                                    <li class="menu-item-has-children"><a href="<?=$BASE_URL?>">Home</a>
+                                        <!-- <ul class="axil-submenu">
                                             <li>
                                                 <a class="hover-flip-item-wrapper" href="index.html">
                                                     <span class="hover-flip-item">
-                        <span data-text="Home Default">Home Default</span>
+                                                    <span data-text="Home Default">Home Default</span>
                                                     </span>
                                                 </a>
                                             </li>
@@ -100,7 +104,7 @@
                                                     </span>
                                                 </a>
                                             </li>
-                                        </ul>
+                                        </ul> -->
                                     </li>
 
                                     <li class="menu-item-has-children"><a href="index.html#">Posts</a>
@@ -721,11 +725,17 @@
                                     </div>
                                 </form>
                             </div>
-                            <ul class="metabar-block">
+                            <?php
+                               if(isset($_SESSION['id'])) {?>
+                                <ul class="metabar-block">
                                 <li class="icon"><a href="index.html#"><i class="fas fa-bookmark"></i></a></li>
                                 <li class="icon"><a href="index.html#"><i class="fas fa-bell"></i></a></li>
-                                <li><a href="index.html#"><img src="assets/images/others/author.png" alt="Author Images"></a></li>
+                                <li><a href="process/auth/logout.php"><img src="assets/images/others/author.png" alt="Author Images"></a></li>
                             </ul>
+                            <?php }else{?>
+                                <a href="login.php"><button class="axil-button button-rounded" type="submit" name="submit">Sign in</button></a>
+                            <?php  } ?>
+                            
                             <!-- Start Hamburger Menu  -->
                             <div class="hamburger-menu d-block d-xl-none">
                                 <div class="hamburger-inner">
@@ -3860,9 +3870,11 @@
 
                         <div class="col-lg-4 col-md-4">
                             <div class="logo">
-                                <a href="index.html">
-                                    <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
-                                    <img class="white-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
+                                By
+                                <a href="<?=$BASE_URL?>">
+                                    <!-- <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
+                                    <img class="white-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images"> -->
+                                     <h3 class='text-primary'><b>Xcole</b></h3>
                                 </a>
                             </div>
                         </div>
