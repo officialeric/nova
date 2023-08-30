@@ -1,1 +1,1 @@
-# full-stack blog application with HTML + css + php
+# full-stack blog application with HTML + CSS + PHP + JS
