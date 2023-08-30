@@ -8784,7 +8784,8 @@ Navigation Css
   cursor: pointer;
 }
 
-.subscription-form .form-group {
+.subscription-form .form-group ,
+.sign-form .form-group{
   position: relative;
 }
 .subscription-form .form-group input {
@@ -8793,8 +8794,56 @@ Navigation Css
   padding-right: 130px;
   padding-left: 30px;
 }
+.sign-form .form-group {
+  padding-right: 5em;
+}
+.sign-form .form-group input{
+  margin-bottom: .5em;
+  border-radius: 100px;
+  padding-right: 130px;
+  padding-left: 30px;
+}
+.sign-form .form-group button {
+  width: 30%;
+}
+.sign-form .form-group #google {
+  width: 50%;
+  background-color: #D93E40;
+  border: none;
+}
+.sign-form .form-group .forgot{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.sign-form .form-group .social  {
+  display: flex;
+  justify-content: center;
+}
+.sign-form .form-group span {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+
+}
+.sign-form .form-group span:before, .sign-form .form-group span:after{
+  content: "";
+  color: #acadaf;
+  flex: 1 1;
+  border-bottom: 1px solid;
+  margin: auto;
+}
+.sign-form .form-group span:before {
+  margin-right: 10px
+}
+.sign-form .form-group span:after {
+  margin-left: 10px
+}
+
 @media only screen and (max-width: 767px) {
-  .subscription-form .form-group input {
+  .subscription-form .form-group input ,
+  .sign-form .form-group input{
     padding-right: 30px;
   }
 }

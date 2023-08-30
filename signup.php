@@ -1,10 +1,10 @@
-    <!doctype html>
+<!doctype html>
 <html class="no-js" lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Maintanence || Blogar - Personal Blog Template</title>
+    <title>Sign up || Blogar - Personal Blog Template</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,22 +53,29 @@
                                     <img class="light-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
                                 </a>
                             </div>
-                            <h1 class="title">This project is under construction</h1>
-                            <h5>Subscribe to our weekly newsletter</h5>
-                            <p>No spam, notifications only about news products, updates.</p>
+                            <h1 class="title">Sign Up</h1>
+                            <!-- <h5>Please , Fill the form below</h5> -->
+                            <!-- <p>No spam, notifications only about news products, updates.</p> -->
                             <div class="inner d-flex align-items-center flex-wrap">
-                                <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
+                                <!-- <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                                 <ul class="social-icon color-tertiary md-size justify-content-start">
                                     <li><a href="maintenance.html#"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="maintenance.html#"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="maintenance.html#"><i class="fab fa-twitter"></i></a></li>
                                     <li><a href="maintenance.html#"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
+                                </ul> -->
                             </div>
-                            <form action="maintenance.html#" class="subscription-form">
+                            <form action="process/auth/signup.inc.php" method="post" class="sign-form">
                                 <div class="form-group">
-                                    <input type="text" name="subscription-email" placeholder="Enter your email">
-                                    <button class="axil-button button-rounded"><span>Subscribe</span></button>
+                                        <input type="text" name="username" placeholder="Enter your username" required><br>
+                                        <input type="email" name="email" placeholder="Enter your email" required><br>
+                                        <input type="password" name="password" placeholder="Create your password" required><br>
+                                        <button class="axil-button button-rounded" type="submit" name="submit">Sign Up</button>
+                                        <span>Or</span>
+                                        <div class="social">
+                                            <button class="axil-button button-rounded" id="google">Sign up with Google</button>
+                                        </div>
+
                                 </div>
                             </form>
                         </div>
