@@ -24,6 +24,7 @@ if(isset($_POST['login'])) {
         $logged_user = mysqli_fetch_assoc($result);
         
         $_SESSION['id'] = $logged_user['id'];
+        $_SESSION['profile_img'] = $logged_user['profile_img'];
 
         header('location:../../index.php?user_id='.$_SESSION['id']);
     } else {

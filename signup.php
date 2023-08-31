@@ -79,7 +79,10 @@
                                         <input type="text" name="username" placeholder="Enter your username" required><br>
                                         <input type="email" name="email" placeholder="Enter your email" required><br>
                                         <input type="password" name="password" placeholder="Create your password" required><br>
-                                        <button class="axil-button button-rounded" type="submit" name="submit">Sign Up</button>
+                                        <button class="axil-button button-rounded mb-5 mt-3" type="submit" name="submit">Sign Up</button><br>
+
+                                        Don't have an account? <a href="login.php">Log In</a>
+
                                         <span>Or</span>
                                         <div class="social">
                                             <button class="axil-button button-rounded" id="google">Sign up with Google</button>

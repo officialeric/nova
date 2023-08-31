@@ -30,6 +30,30 @@
 </head>
 
 <body>
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Forget Password</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body form-group">
+        <form action="process/auth/forget-password.php" method='post' id='pwd'>
+            <p>The permission link will sent to the provided email below!    <br>
+             Click that link to change your password</p>
+        <input type="email" name="email" placeholder="Enter your email" required><br>
+        </form>
+      </div>
+      <div class="modal-footer">
+      <button class="axil-button button-rounded" name='request' type='submit' form='pwd'>Request Permission</button>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="main-wrapper">
         <div id="my_switcher" class="my_switcher">
             <ul>
@@ -45,11 +69,15 @@
                 </li>
             </ul>
         </div>
+
         <!-- Start Maintanence Area  -->
         <div class="maintanence-area">
+            
             <div class="container">
                 <div class="row align-items-center">
+                    
                     <div class="order-2 order-lg-1 col-lg-6 mt_md--40 mt_sm--40">
+                        
                         <div class="content">
                             <div class="logo">
                                 <a href="index.html">
@@ -83,10 +111,14 @@
                                             <?php endif ?>
                                         <input type="email" name="email" placeholder="Enter your email" required><br>
                                         <input type="password" name="password" placeholder="Enter your password" required><br>
-                                        <div class="forgot">
+                                        <div class="forgot mb-5">
                                             <button class="axil-button button-rounded" name='login' type='submit'>Log In</button>
-                                            <a href="#">Forget password?</a>
+                                            <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            Launch demo modal
+                                            </button> -->
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Forget password?</a>
                                         </div>
+                                        Don't have an account? <a href="signup.php">Sign Up</a>
                                         <span>Or</span>
                                         <div class="social">
                                             <button class="axil-button button-rounded" id="google">Login with Google</button>

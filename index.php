@@ -3830,14 +3830,14 @@ include 'process\includes\constraints.php';
                                 <h2 class="title">Health</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">Movies</a></li>
-                                        <li><a href="index.html#">Conflicts</a></li>
-                                        <li><a href="index.html#">Terrorism</a></li>
-                                        <li><a href="index.html#">Disasters</a></li>
-                                        <li><a href="index.html#">Global Economy</a></li>
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Religion</a></li>
-                                        <li><a href="index.html#">Scandals</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Movies</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -3870,11 +3870,11 @@ include 'process\includes\constraints.php';
 
                         <div class="col-lg-4 col-md-4">
                             <div class="logo">
-                                By
+                                <b>By</b>
                                 <a href="<?=$BASE_URL?>">
                                     <!-- <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
                                     <img class="white-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images"> -->
-                                     <h3 class='text-primary'><b>Xcole</b></h3>
+                                     <h1 class='text-primary'><b>Xcole</b></h1>
                                 </a>
                             </div>
                         </div>
