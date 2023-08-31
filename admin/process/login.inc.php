@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../../process/db_connect.php';
 
 if(isset($_POST['login'])){
@@ -16,7 +17,8 @@ if(isset($_POST['login'])){
     if(mysqli_num_rows($data) > 0) { 
         $user = mysqli_fetch_assoc($data);
         if($user['role_id'] == 1){
-            header('location:../layouts/index.html?role=admin!');
+            $_SESSION['id'] = $user['id'];  
+            header('location:../layouts/index.html?user_id='. $_SESSION['id'] .'&role=admin!');
         }else{
             // http_response_code(404);
             header('location:../index.php?error=You are not allowed!');
