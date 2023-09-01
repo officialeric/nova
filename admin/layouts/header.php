@@ -377,7 +377,7 @@ include '../paths.php';
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.html#" role="button"
+                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.php#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
                                     <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">

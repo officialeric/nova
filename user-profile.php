@@ -1,17 +1,473 @@
-<?php 
-include 'header.php'; 
-
-include '../../process/db_connect.php';
-    $id = $_GET['user_id'];
-    $sql2 = "SELECT * FROM users WHERE id=$id";
-    $datas = mysqli_query($conn, $sql2);
-
-    if(mysqli_num_rows($datas) == 1) {
-        $user_data =  mysqli_fetch_assoc($datas);
-    }
+<?php
+// include '../paths.php';
 ?>
 
-            <?php include 'sidebar.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <title>Dashboard | Xcole</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
+        <meta content="Techzaa" name="author" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="user-profile-assets/images/favicon.ico">
+
+        <!-- Daterangepicker css -->
+        <link rel="stylesheet" href="user-profile-assets/vendor/daterangepicker/daterangepicker.css">
+
+        <!-- Vector Map css -->
+        <link rel="stylesheet" href="user-profile-assets/vendor/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css">
+
+        <!-- Theme Config Js -->
+        <script src="user-profile-assets/js/config.js"></script>
+
+        <!-- App css -->
+        <link href="user-profile-assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
+
+        <!-- Icons css -->
+        <link href="user-profile-assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <!-- Begin page -->
+        <div class="wrapper">
+
+            
+            <!-- ========== Topbar Start ========== -->
+            <div class="navbar-custom">
+                <div class="topbar container-fluid">
+                    <div class="d-flex align-items-center gap-1">
+
+                        <!-- Topbar Brand Logo -->
+                        <div class="logo-topbar">
+                            <!-- Logo light -->
+                            <a href="index.html" class="logo-light">
+                                <span class="logo-lg">
+                                    <img src="user-profile-assets/images/logo.png" alt="logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="user-profile-assets/images/logo-sm.png" alt="small logo">
+                                </span>
+                            </a>
+
+                            <!-- Logo Dark -->
+                            <a href="index.html" class="logo-dark">
+                                <span class="logo-lg">
+                                    <img src="user-profile-assets/images/logo-dark.png" alt="dark logo">
+                                </span>
+                                <span class="logo-sm">
+                                    <img src="user-profile-assets/images/logo-sm.png" alt="small logo">
+                                </span>
+                            </a>
+                        </div>
+
+                        <!-- Sidebar Menu Toggle Button -->
+                        <button class="button-toggle-menu">
+                            <i class="ri-menu-line"></i>
+                        </button>
+
+                        <!-- Horizontal Menu Toggle Button -->
+                        <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </button>
+
+                        <!-- Topbar Search Form -->
+                        <div class="app-search d-none d-lg-block">
+                            <form>
+                                <div class="input-group">
+                                    <input type="search" class="form-control" placeholder="Search...">
+                                    <span class="ri-search-line search-icon text-muted"></span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <ul class="topbar-menu d-flex align-items-center gap-3">
+                        <li class="dropdown d-lg-none">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="ri-search-line fs-22"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-animated dropdown-lg p-0">
+                                <form class="p-3">
+                                    <input type="search" class="form-control" placeholder="Search ..."
+                                        aria-label="Recipient's username">
+                                </form>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <img src="user-profile-assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
+                                <span class="align-middle d-none d-lg-inline-block">English</span> <i
+                                    class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <img src="user-profile-assets/images/flags/germany.jpg" alt="user-image" class="me-1" height="12"> <span
+                                        class="align-middle">German</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <img src="user-profile-assets/images/flags/italy.jpg" alt="user-image" class="me-1" height="12"> <span
+                                        class="align-middle">Italian</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <img src="user-profile-assets/images/flags/spain.jpg" alt="user-image" class="me-1" height="12"> <span
+                                        class="align-middle">Spanish</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="javascript:void(0);" class="dropdown-item">
+                                    <img src="user-profile-assets/images/flags/russia.jpg" alt="user-image" class="me-1" height="12"> <span
+                                        class="align-middle">Russian</span>
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="ri-mail-line fs-22"></i>
+                                <span class="noti-icon-badge badge text-bg-purple">4</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h6 class="m-0 fs-16 fw-semibold"> Messages</h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                <small>Clear All</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="max-height: 300px;" data-simplebar>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <div class="notify-icon">
+                                                        <img src="user-profile-assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle"
+                                                            alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 text-truncate ms-2">
+                                                    <h5 class="noti-item-title fw-semibold fs-14">Cristina Pride <small
+                                                            class="fw-normal text-muted float-end ms-1">1 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What about our
+                                                        next meeting</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <div class="notify-icon">
+                                                        <img src="user-profile-assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle"
+                                                            alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 text-truncate ms-2">
+                                                    <h5 class="noti-item-title fw-semibold fs-14">Sam Garret <small
+                                                            class="fw-normal text-muted float-end ms-1">2 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Yeah everything is fine</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <div class="notify-icon">
+                                                        <img src="user-profile-assets/images/users/avatar-3.jpg" class="img-fluid rounded-circle"
+                                                            alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 text-truncate ms-2">
+                                                    <h5 class="noti-item-title fw-semibold fs-14">Karen Robinson <small
+                                                            class="fw-normal text-muted float-end ms-1">2 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Wow that's great</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <div class="notify-icon">
+                                                        <img src="user-profile-assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle"
+                                                            alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 text-truncate ms-2">
+                                                    <h5 class="noti-item-title fw-semibold fs-14">Sherry Marshall <small
+                                                            class="fw-normal text-muted float-end ms-1">3 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What about our
+                                                        next meeting</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);"
+                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <div class="flex-shrink-0">
+                                                    <div class="notify-icon">
+                                                        <img src="user-profile-assets/images/users/avatar-5.jpg" class="img-fluid rounded-circle"
+                                                            alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1 text-truncate ms-2">
+                                                    <h5 class="noti-item-title fw-semibold fs-14">Shawn Millard <small
+                                                            class="fw-normal text-muted float-end ms-1">4 day ago</small></h5>
+                                                    <small class="noti-item-subtitle text-muted">Yeah everything is fine</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <!-- All-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item text-center text-primary text-decoration-underline fw-bold notify-item border-top border-light py-2">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="dropdown notification-list">
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="ri-notification-3-line fs-22"></i>
+                                <span class="noti-icon-badge badge text-bg-pink">3</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
+                                <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h6 class="m-0 fs-16 fw-semibold"> Notification</h6>
+                                        </div>
+                                        <div class="col-auto">
+                                            <a href="javascript: void(0);" class="text-dark text-decoration-underline">
+                                                <small>Clear All</small>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="max-height: 300px;" data-simplebar>
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-primary-subtle">
+                                            <i class="mdi mdi-comment-account-outline text-primary"></i>
+                                        </div>
+                                        <p class="notify-details">Caleb Flakelar commented on Admin
+                                            <small class="noti-time">1 min ago</small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-warning-subtle">
+                                            <i class="mdi mdi-account-plus text-warning"></i>
+                                        </div>
+                                        <p class="notify-details">New user registered.
+                                            <small class="noti-time">5 hours ago</small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-danger-subtle">
+                                            <i class="mdi mdi-heart text-danger"></i>
+                                        </div>
+                                        <p class="notify-details">Carlos Crouch liked
+                                            <small class="noti-time">3 days ago</small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-pink-subtle">
+                                            <i class="mdi mdi-comment-account-outline text-pink"></i>
+                                        </div>
+                                        <p class="notify-details">Caleb Flakelar commented on Admi
+                                            <small class="noti-time">4 days ago</small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-purple-subtle">
+                                            <i class="mdi mdi-account-plus text-purple"></i>
+                                        </div>
+                                        <p class="notify-details">New user registered.
+                                            <small class="noti-time">7 days ago</small>
+                                        </p>
+                                    </a>
+
+                                    <!-- item-->
+                                    <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                        <div class="notify-icon bg-success-subtle">
+                                            <i class="mdi mdi-heart text-success"></i>
+                                        </div>
+                                        <p class="notify-details">Carlos Crouch liked <b>Admin</b>.
+                                            <small class="noti-time">Carlos Crouch liked</small>
+                                        </p>
+                                    </a>
+                                </div>
+
+                                <!-- All-->
+                                <a href="javascript:void(0);"
+                                    class="dropdown-item text-center text-primary text-decoration-underline fw-bold notify-item border-top border-light py-2">
+                                    View All
+                                </a>
+
+                            </div>
+                        </li>
+
+                        <li class="d-none d-sm-inline-block">
+                            <a class="nav-link" data-bs-toggle="offcanvas" href="index.html#theme-settings-offcanvas">
+                                <i class="ri-settings-3-line fs-22"></i>
+                            </a>
+                        </li>
+
+                        <li class="d-none d-sm-inline-block">
+                            <div class="nav-link" id="light-dark-mode">
+                                <i class="ri-moon-line fs-22"></i>
+                            </div>
+                        </li>
+
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.html#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <span class="account-user-avatar">
+                                    <img src="user-profile-assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                </span>
+                                <span class="d-lg-block d-none">
+                                    <h5 class="my-0 fw-normal">Thomson <i
+                                            class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
+                                <!-- item-->
+                                <div class=" dropdown-header noti-title">
+                                    <h6 class="text-overflow m-0">Welcome !</h6>
+                                </div>
+
+                                <!-- item-->
+                                <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
+                                    <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
+                                    <span>My Account</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="pages-profile.php" class="dropdown-item">
+                                    <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
+                                    <span>Settings</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="pages-faq.php" class="dropdown-item">
+                                    <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
+                                    <span>Support</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="auth-lock-screen.php" class="dropdown-item">
+                                    <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
+                                    <span>Lock Screen</span>
+                                </a>
+
+                                <!-- item-->
+                                <a href="auth-logout.php" class="dropdown-item">
+                                    <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- ========== Topbar End ========== -->
+            
+
+            <!-- ========== Left Sidebar Start ========== -->
+
+            <!-- <div class="leftside-menu"> -->
+
+                <!-- Brand Logo Light -->
+                <!-- <a href="index.php" class="logo logo-light">
+                    <span class="logo-lg">
+                        <img src="user-profile-assets/images/logo.png" alt="logo">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="user-profile-assets/images/logo-sm.png" alt="small logo">
+                    </span>
+                </a> -->
+
+                <!-- Brand Logo Dark -->
+                <!-- <a href="index.php" class="logo logo-dark">
+                    <span class="logo-lg">
+                        <img src="user-profile-assets/images/logo-dark.png" alt="dark logo">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="user-profile-assets/images/logo-sm.png" alt="small logo">
+                    </span>
+                </a> -->
+
+<?php 
+// include 'header.php'; 
+
+// include '../../process/db_connect.php';
+//     $id = $_GET['user_id'];
+//     $sql2 = "SELECT * FROM users WHERE id=$id";
+//     $datas = mysqli_query($conn, $sql2);
+
+//     if(mysqli_num_rows($datas) == 1) {
+//         $user_data =  mysqli_fetch_assoc($datas);
+//     }
+?>
+
+<?php //include 'sidebar.php'; ?>
 
                 <div class="clearfix"></div>
             </div>
@@ -32,7 +488,7 @@ include '../../process/db_connect.php';
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="profile-bg-picture"
-                                style="background-image:url('assets/images/bg-profile.jpg')">
+                                style="background-image:url('user-profile-assets/images/bg-profile.jpg')">
                                 <span class="picture-bg-overlay"></span>
                                 <!-- overlay -->
                             </div>
@@ -40,12 +496,12 @@ include '../../process/db_connect.php';
                             <div class="profile-user-box">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="profile-user-img"><img src="assets/images/users/avatar-1.jpg" alt=""
+                                        <div class="profile-user-img"><img src="user-profile-assets/images/users/avatar-1.jpg" alt=""
                                                 class="avatar-lg rounded-circle"></div>
                                         <div class="">
-                                            <h4 class="mt-4 fs-17 ellipsis"><?=$user_data['fullname'];?></h4>
-                                            <p class="font-13"> Admin</p>  
-                                            <p class="text-muted mb-0"><small><?=$user_data['email']?></small></p>
+                                            <h4 class="mt-4 fs-17 ellipsis">Fullname</h4>
+                                            <p class="font-13"> Role</p>  
+                                            <p class="text-muted mb-0"><small>Email</small></p>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
@@ -92,10 +548,10 @@ include '../../process/db_connect.php';
                                             <div class="tab-pane active" id="aboutme" role="tabpanel"
                                                 aria-labelledby="home-tab" tabindex="0">
                                                 <div class="profile-desk">
-                                                    <h5 class="text-uppercase fs-17 text-dark"><?=$user_data['username']?></h5>
+                                                    <h5 class="text-uppercase fs-17 text-dark">username</h5>
                                                     <div class="designation mb-4">Admin</div>
                                                     <p class="text-muted fs-16">
-                                                    <?=$user_data['about']?>
+                                                    About
                                                     </p>
 
                                                     <h5 class="mt-4 fs-17 text-dark">Contact Information</h5>
@@ -104,27 +560,22 @@ include '../../process/db_connect.php';
                                                             <tr>
                                                                 <th scope="row">Url</th>
                                                                 <td>
-                                                                    <a href="<?=$user_data['website']?>" target='_blank' class="ng-binding">
-                                                                        <?=$user_data['website']?>
+                                                                    <a href="example.com" target='_blank' class="ng-binding">
+                                                                        website
                                                                     </a>
                                                                 </td>
                                                             </tr>
                                                             <tr>
                                                                 <th scope="row">Email</th>
                                                                 <td>
-                                                                    <a href="mailto:<?=$user_data['email']?>" class="ng-binding">
-                                                                    <?=$user_data['email']?>                                                                    
-                                                                   </a>
+                                                                    <a href="mailto: " class="ng-binding">
+                                                                    Email                                                                   </a>
                                                                 </td>
                                                             </tr>
 
                                                             <tr>
                                                                 <th scope="row">Phone</th>
-                                                                <td class="ng-binding">
-                                                                <a href="tel:+<?=$user_data['phone']?>" class="ng-binding">
-                                                                    <?=$user_data['phone']?>                                                                    
-                                                                   </a>
-                                                                </td>
+                                                                <td class="ng-binding">phone</td>
                                                             </tr>
                                                             <!-- <tr>
                                                                 <th scope="row">Skype</th>
@@ -148,9 +599,9 @@ include '../../process/db_connect.php';
                                                             <div class="text-muted">5 minutes ago</div>
                                                             <p><strong><a href="pages-profile.html#" class="text-info">John
                                                                         Doe</a></strong>Uploaded a photo</p>
-                                                            <img src="assets/images/small/small-3.jpg" alt=""
+                                                            <img src="user-profile-assets/images/small/small-3.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
-                                                            <img src="assets/images/small/small-4.jpg" alt=""
+                                                            <img src="user-profile-assets/images/small/small-4.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
                                                         </div>
                                                     </div>
@@ -185,9 +636,9 @@ include '../../process/db_connect.php';
                                                             <div class="text-muted">5 minutes ago</div>
                                                             <p><strong><a href="pages-profile.html#" class="text-info">John
                                                                         Doe</a></strong> Uploaded 2 new photos</p>
-                                                            <img src="assets/images/small/small-2.jpg" alt=""
+                                                            <img src="user-profile-assets/images/small/small-2.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
-                                                            <img src="assets/images/small/small-1.jpg" alt=""
+                                                            <img src="user-profile-assets/images/small/small-1.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
                                                         </div>
                                                     </div>
@@ -223,54 +674,51 @@ include '../../process/db_connect.php';
                                             <div id="edit-profile" class="tab-pane">
                                                 <div class="user-profile-content">
                                                     <form action="../process/profiling.php" method="post">
-                                                        <input type="hidden" name="logged_user_id" value='<?=$_GET['user_id']?>'>
+                                                        <input type="hidden" name="logged_user_id" value='user_id'>
                                                         <div class="row row-cols-sm-2 row-cols-1">
                                                             <div class="mb-2">
                                                                 <label class="form-label" for="FullName">Full
                                                                     Name</label>
-                                                                <input type="text" value="<?=$user_data['fullname']?>" id="FullName"
+                                                                <input type="text" value="fullname" id="FullName"
                                                                     class="form-control" name="fname">
                                                             </div>
                                                             
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="Email">Email</label>
-                                                                <input type="email" value="<?=$user_data['email']?>"
+                                                                <input type="email" value="email"
                                                                     id="Email" class="form-control" name="email">
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label class="form-label" for="web-url">Website</label>
-                                                                <input type="text" value="<?=$user_data['website']?>"
+                                                                <input type="text" value="website"
                                                                     id="web-url" class="form-control" name="website">
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label class="form-label"
                                                                     for="phone">Phone</label>
                                                                 <input type="tel" placeholder="+255 625-290-997"
-                                                                value='<?=$user_data['phone']?>'
+                                                                value='phone'
                                                                     id="phone" class="form-control" name="phone">
                                                             </div>
                                                             
                                                             <div class="mb-3">
                                                                 <label class="form-label"
-                                                                    for="Password">Password</label><br>
-                                                                    <small class='text-primary'> Your password is encrypted for security, But it's still the same! 
-                                                                                                  You may change it only if you want to edit it.
-                                                                    </small>
+                                                                    for="Password">Password</label>
                                                                 <input type="password" placeholder="6 - 15 Characters"
-                                                                value='<?=$user_data['password']?>'
+                                                                value='password'
                                                                     id="Password" class="form-control" name="password">
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label class="form-label"
                                                                     for="Username">Username</label>
-                                                                <input type="text" value="<?=$user_data['username']?>" id="Username"
+                                                                <input type="text" value="username" id="Username"
                                                                     class="form-control" name="uname">
                                                             </div>
                                                             <div class="col-sm-12 mb-3">
                                                                 <label class="form-label" for="AboutMe">About Me</label>
                                                                 <textarea style="height: 125px;" id="AboutMe" name="about"
                                                                     class="form-control">
-                                                                    <?=$user_data['about']?>
+                                                                    about
                                                                 </textarea>
                                                             </div>
                                                         </div>
@@ -372,7 +820,7 @@ include '../../process/db_connect.php';
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <script>document.write(new Date().getFullYear())</script> © <b>Xcole Corp</b>
+                        <script>document.write(new Date().getFullYear())</script> © Velonic - Theme by <b>Techzaa</b>
                     </div>
                 </div>
             </div>
@@ -405,7 +853,7 @@ include '../../process/db_connect.php';
                             <div class="form-check form-switch card-switch mb-1">
                                 <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-light" value="light">
                                 <label class="form-check-label" for="layout-color-light">
-                                    <img src="assets/images/layouts/light.png" alt="" class="img-fluid">
+                                    <img src="user-profile-assets/images/layouts/light.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="font-14 text-center text-muted mt-2">Light</h5>
@@ -415,7 +863,7 @@ include '../../process/db_connect.php';
                             <div class="form-check form-switch card-switch mb-1">
                                 <input class="form-check-input" type="checkbox" name="data-bs-theme" id="layout-color-dark" value="dark">
                                 <label class="form-check-label" for="layout-color-dark">
-                                    <img src="assets/images/layouts/dark.png" alt="" class="img-fluid">
+                                    <img src="user-profile-assets/images/layouts/dark.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
@@ -430,7 +878,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-fluid" value="fluid">
                                     <label class="form-check-label" for="layout-mode-fluid">
-                                        <img src="assets/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/light.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Fluid</h5>
@@ -441,7 +889,7 @@ include '../../process/db_connect.php';
                                     <div class="form-check form-switch card-switch mb-1">
                                         <input class="form-check-input" type="checkbox" name="data-layout-mode" id="layout-mode-boxed" value="boxed">
                                         <label class="form-check-label" for="layout-mode-boxed">
-                                            <img src="assets/images/layouts/boxed.png" alt="" class="img-fluid">
+                                            <img src="user-profile-assets/images/layouts/boxed.png" alt="" class="img-fluid">
                                         </label>
                                     </div>
                                     <h5 class="font-14 text-center text-muted mt-2">Boxed</h5>
@@ -457,7 +905,7 @@ include '../../process/db_connect.php';
                             <div class="form-check form-switch card-switch mb-1">
                                 <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-light" value="light">
                                 <label class="form-check-label" for="topbar-color-light">
-                                    <img src="assets/images/layouts/light.png" alt="" class="img-fluid">
+                                    <img src="user-profile-assets/images/layouts/light.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="font-14 text-center text-muted mt-2">Light</h5>
@@ -467,7 +915,7 @@ include '../../process/db_connect.php';
                             <div class="form-check form-switch card-switch mb-1">
                                 <input class="form-check-input" type="checkbox" name="data-topbar-color" id="topbar-color-dark" value="dark">
                                 <label class="form-check-label" for="topbar-color-dark">
-                                    <img src="assets/images/layouts/topbar-dark.png" alt="" class="img-fluid">
+                                    <img src="user-profile-assets/images/layouts/topbar-dark.png" alt="" class="img-fluid">
                                 </label>
                             </div>
                             <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
@@ -482,7 +930,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-light" value="light">
                                     <label class="form-check-label" for="leftbar-color-light">
-                                        <img src="assets/images/layouts/sidebar-light.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/sidebar-light.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Light</h5>
@@ -492,7 +940,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-menu-color" id="leftbar-color-dark" value="dark">
                                     <label class="form-check-label" for="leftbar-color-dark">
-                                        <img src="assets/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/light.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Dark</h5>
@@ -508,7 +956,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-default" value="default">
                                     <label class="form-check-label" for="leftbar-size-default">
-                                        <img src="assets/images/layouts/light.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/light.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Default</h5>
@@ -518,7 +966,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-compact" value="compact">
                                     <label class="form-check-label" for="leftbar-size-compact">
-                                        <img src="assets/images/layouts/compact.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/compact.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Compact</h5>
@@ -528,7 +976,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-small" value="condensed">
                                     <label class="form-check-label" for="leftbar-size-small">
-                                        <img src="assets/images/layouts/sm.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/sm.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Condensed</h5>
@@ -539,7 +987,7 @@ include '../../process/db_connect.php';
                                 <div class="form-check form-switch card-switch mb-1">
                                     <input class="form-check-input" type="checkbox" name="data-sidenav-size" id="leftbar-size-full" value="full">
                                     <label class="form-check-label" for="leftbar-size-full">
-                                        <img src="assets/images/layouts/full.png" alt="" class="img-fluid">
+                                        <img src="user-profile-assets/images/layouts/full.png" alt="" class="img-fluid">
                                     </label>
                                 </div>
                                 <h5 class="font-14 text-center text-muted mt-2">Full Layout</h5>
@@ -573,16 +1021,16 @@ include '../../process/db_connect.php';
         </div>
     </div>
     <!-- Vendor js -->
-    <script src="assets/js/vendor.min.js"></script>
+    <script src="user-profile-assets/js/vendor.min.js"></script>
 
     <!-- Chart.js -->
-    <script src="assets/vendor/chart.js/chart.min.js"></script>
+    <script src="user-profile-assets/vendor/chart.js/chart.min.js"></script>
 
     <!-- Profile Demo App js -->
-    <script src="assets/js/pages/profile.init.js"></script>
+    <script src="user-profile-assets/js/pages/profile.init.js"></script>
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="user-profile-assets/js/app.min.js"></script>
 
 </body>
 

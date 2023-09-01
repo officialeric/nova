@@ -1,6 +1,6 @@
 <?php
 // include '../paths.php'; 
-include '../../process/db_connect.php';
+include 'process/db_connect.php';
 
 if(isset($_POST['submit'])){
     function validate($data) {
@@ -15,13 +15,10 @@ if(isset($_POST['submit'])){
     $website = validate($_POST['website']);
     $about = validate($_POST['about']);
     $phone = validate($_POST['phone']);
-    $uname = validate($_POST['uname']);
-    $email = validate($_POST['email']);
-    $password = validate($_POST['password']);
     $user_id = $_POST['logged_user_id'];
 
-    $hashed_pwd = md5($password);
-    $sql = "UPDATE users SET username='$uname',email='$email',password='$hashed_pwd', fullname='$full_name', website='$website', about='$about', phone='$phone' WHERE id='$user_id'";
+
+    $sql = "UPDATE users SET fullname='$full_name', website='$website', about='$about', phone='$phone' WHERE id='$user_id'";
     $results = mysqli_query($conn, $sql);   
 
     $sql2 = "SELECT * FROM users WHERE id=$user_id";
