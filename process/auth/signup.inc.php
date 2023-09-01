@@ -1,5 +1,5 @@
 <?php
-include '../includes/constraints.php';
+include '../includes/paths.php';
 include 'function.php';
 
 if(isset($_POST['submit'])) {
@@ -8,6 +8,8 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password'];
 
     registerNewUser($username,$email,$password);
+}else{
+    header('location:../../index.php');
 }
 
 if(isset($_POST['login'])) {
@@ -32,4 +34,6 @@ if(isset($_POST['login'])) {
     }
     
    
+}else{
+    header('location:../../index.php');
 }
