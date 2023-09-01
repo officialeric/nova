@@ -27,8 +27,8 @@ function registerNewUser($user,$email,$pass){
         header('location:../../signup.php?error=Email already exists!');
     } 
     else {
-        $sql = "INSERT INTO users(username,email,password) 
-                VALUES('$username','$email','$hashed_password')";
+        $sql = "INSERT INTO users(username,email,password,fullname,website,about,phone) 
+                VALUES('$username','$email','$hashed_password','John Doe','example.com','Hello there',255)";
         $result = $conn->query($sql);
         header('location:../../login.php?message=Signup successfull login to continue');
     }

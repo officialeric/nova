@@ -1,4 +1,10 @@
-<?php include 'header.php' ?>
+<?php 
+    include 'header.php'; 
+    include '../../process/db_connect.php';
+    
+    $sql = "SELECT * FROM users WHERE role_id = 1";
+    $roles = mysqli_query($conn, $sql);
+?>
 
 
                 <!-- Sidebar -left -->
@@ -53,21 +59,25 @@
                                         <thead>
                                             <tr>
                                                 <th>S/N</th>
+                                                <th>Name</th>
                                                 <th>Role</th>
                                                 <th>Action</th>
-                                                
                                             </tr>
                                         </thead>
 
 
                                         <tbody>
+                                        <?php 
+                                            $i = 0;
+                                            foreach($roles as $role): $i++;
+                                        ?>
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                
+                                                <td><?= $i; ?></td>
+                                                <td><?= $role['username'] ?></td>
+                                                <td><?= $role['role_id'] ?></td>
+                                                <td><?= $role['email'] ?></td> 
                                             </tr>
-                                        
+                                        <?php endforeach; ?>
                                         </tbody>
                                     </table>
 

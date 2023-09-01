@@ -1,5 +1,5 @@
 <?php
-session_start();
+include '../paths.php';
 ?>
 
 <!DOCTYPE html>
@@ -394,31 +394,31 @@ session_start();
                                 </div>
 
                                 <!-- item-->
-                                <a href="pages-profile.html" class="dropdown-item">
+                                <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
                                     <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
                                     <span>My Account</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-profile.html" class="dropdown-item">
+                                <a href="pages-profile.php" class="dropdown-item">
                                     <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
                                     <span>Settings</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-faq.html" class="dropdown-item">
+                                <a href="pages-faq.php" class="dropdown-item">
                                     <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
                                     <span>Support</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="auth-lock-screen.html" class="dropdown-item">
+                                <a href="auth-lock-screen.php" class="dropdown-item">
                                     <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
                                     <span>Lock Screen</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="auth-logout.html" class="dropdown-item">
+                                <a href="auth-logout.php" class="dropdown-item">
                                     <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -434,7 +434,7 @@ session_start();
             <div class="leftside-menu">
 
                 <!-- Brand Logo Light -->
-                <a href="index.html" class="logo logo-light">
+                <a href="index.php" class="logo logo-light">
                     <span class="logo-lg">
                         <img src="assets/images/logo.png" alt="logo">
                     </span>
@@ -444,7 +444,7 @@ session_start();
                 </a>
 
                 <!-- Brand Logo Dark -->
-                <a href="index.html" class="logo logo-dark">
+                <a href="index.php" class="logo logo-dark">
                     <span class="logo-lg">
                         <img src="assets/images/logo-dark.png" alt="dark logo">
                     </span>

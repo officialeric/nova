@@ -1,3 +1,5 @@
+
+
 <div class="h-100" id="leftside-menu-container" data-simplebar>
                     <!--- Sidemenu -->
                     <ul class="side-nav">
@@ -5,7 +7,7 @@
                         <li class="side-nav-title">Main</li>
 
                         <li class="side-nav-item">
-                            <a href="index.php" class="side-nav-link">
+                            <a href="<?=$BASE_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <span class="badge bg-success float-end">9+</span>
                                 <span> Dashboard </span>
@@ -13,7 +15,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="manage-user.php" class="side-nav-link">
+                            <a href="<?=$USERS_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <!-- <span class="badge bg-success float-end">9+</span> -->
                                 <span> Manage Users </span>
@@ -21,7 +23,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="manage-roles.php" class="side-nav-link">
+                            <a href="<?=$ROLES_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <!-- <span class="badge bg-success float-end">9+</span> -->
                                 <span> Manage Roles </span>
@@ -29,7 +31,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="manage-categories.php" class="side-nav-link">
+                            <a href="<?=$CATEGORIES_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <!-- <span class="badge bg-success float-end">9+</span> -->
                                 <span> Manage Category </span>
@@ -37,7 +39,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="subscribers.php" class="side-nav-link">
+                            <a href="<?=$SUBSCRIBERS_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <!-- <span class="badge bg-success float-end">9+</span> -->
                                 <span> Subscribers </span>
@@ -45,7 +47,7 @@
                         </li>
 
                         <li class="side-nav-item">
-                            <a href="manage-posts.php" class="side-nav-link">
+                            <a href="<?=$POSTS_URL;?>" class="side-nav-link">
                                 <i class="ri-dashboard-3-line"></i>
                                 <!-- <span class="badge bg-success float-end">9+</span> -->
                                 <span> Manage Posts </span>
