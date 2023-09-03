@@ -40,8 +40,8 @@ include '../../process/db_connect.php';
                             <div class="profile-user-box">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="profile-user-img"><img src="assets/images/users/avatar-1.jpg" alt=""
-                                                class="avatar-lg rounded-circle"></div>
+                                        <div class="profile-user-img">
+                                            <img src="../process/uploads/<?=$img_display['profile_img']?>" alt="" class="avatar-lg rounded-circle"></div>
                                         <div class="">
                                             <h4 class="mt-4 fs-17 ellipsis"><?=$user_data['fullname'];?></h4>
                                             <p class="font-13"> Admin</p>  
@@ -50,11 +50,36 @@ include '../../process/db_connect.php';
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="d-flex justify-content-end align-items-center gap-2">
-                                            <button type="button" class="btn btn-soft-danger">
-                                                <i class="ri-settings-2-line align-text-bottom me-1 fs-16 lh-1"></i>
-                                                Edit Profile
-                                            </button>
-                                            <a class="btn btn-soft-info" href="pages-profile.html#"> <i class="ri-check-double-fill fs-18 me-1 lh-1"></i> Following</a>
+                                            <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Edit Profile Photo
+                                    </button>
+
+                                <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Upload Image</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="../process/profiling.php" method="post" id='form' enctype="multipart/form-data">
+                                                <input type="hidden" name="user_id" value='<?=$user_data['id']?>'>
+                                                <label for="inputGroupFile04">Choose Image File</label>
+                                                <div class="input-group">
+                                                    <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                                    <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button> -->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-soft-danger" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="submit" name="img_submit" class="btn btn-primary" form='form'>Upload</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
                                         </div>
                                     </div>
                                 </div>
@@ -81,7 +106,7 @@ include '../../process/db_connect.php';
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                                     data-bs-target="#edit-profile" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true"
-                                                    href="pages-profile.html#edit-profile">Settings</a></li>
+                                                    href="pages-profile.php#edit-profile">Settings</a></li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                                     data-bs-target="#projects" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true"
@@ -129,7 +154,7 @@ include '../../process/db_connect.php';
                                                             <!-- <tr>
                                                                 <th scope="row">Skype</th>
                                                                 <td>
-                                                                    <a href="pages-profile.html#" class="ng-binding">
+                                                                    <a href="pages-profile.php#" class="ng-binding">
                                                                         jonathandeo123
                                                                     </a>
                                                                 </td>
@@ -146,7 +171,7 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">5 minutes ago</div>
-                                                            <p><strong><a href="pages-profile.html#" class="text-info">John
+                                                            <p><strong><a href="pages-profile.php#" class="text-info">John
                                                                         Doe</a></strong>Uploaded a photo</p>
                                                             <img src="assets/images/small/small-3.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
@@ -158,7 +183,7 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">30 minutes ago</div>
-                                                            <p><a href="pages-profile.html" class="text-info">Lorem</a> commented your
+                                                            <p><a href="pages-profile.php" class="text-info">Lorem</a> commented your
                                                                 post.
                                                             </p>
                                                             <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -171,8 +196,8 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">59 minutes ago</div>
-                                                            <p><a href="pages-profile.html" class="text-info">Jessi</a> attended a meeting
-                                                                with<a href="pages-profile.html#" class="text-success">John Doe</a>.</p>
+                                                            <p><a href="pages-profile.php" class="text-info">Jessi</a> attended a meeting
+                                                                with<a href="pages-profile.php#" class="text-success">John Doe</a>.</p>
                                                             <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing
                                                                     elit.
                                                                     Aliquam laoreet tellus ut tincidunt euismod. "</em>
@@ -183,7 +208,7 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">5 minutes ago</div>
-                                                            <p><strong><a href="pages-profile.html#" class="text-info">John
+                                                            <p><strong><a href="pages-profile.php#" class="text-info">John
                                                                         Doe</a></strong> Uploaded 2 new photos</p>
                                                             <img src="assets/images/small/small-2.jpg" alt=""
                                                                 height="40" width="60" class="rounded-1">
@@ -195,7 +220,7 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">30 minutes ago</div>
-                                                            <p><a href="pages-profile.html" class="text-info">Lorem</a> commented your
+                                                            <p><a href="pages-profile.php" class="text-info">Lorem</a> commented your
                                                                 post.
                                                             </p>
                                                             <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -208,8 +233,8 @@ include '../../process/db_connect.php';
                                                     <div class="time-item">
                                                         <div class="item-info ms-3 mb-3">
                                                             <div class="text-muted">59 minutes ago</div>
-                                                            <p><a href="pages-profile.html" class="text-info">Jessi</a> attended a meeting
-                                                                with<a href="pages-profile.html#" class="text-success">John Doe</a>.</p>
+                                                            <p><a href="pages-profile.php" class="text-info">Jessi</a> attended a meeting
+                                                                with<a href="pages-profile.php#" class="text-success">John Doe</a>.</p>
                                                             <p><em>"Lorem ipsum dolor sit amet, consectetur adipiscing
                                                                     elit.
                                                                     Aliquam laoreet tellus ut tincidunt euismod. "</em>
@@ -275,7 +300,10 @@ include '../../process/db_connect.php';
                                                             </div>
                                                         </div>
                                                         <button class="btn btn-primary" type="submit" name="submit"><i
-                                                                class="ri-save-line me-1 fs-16 lh-1"></i> Save</button>
+                                                                class="ri-save-line me-1 fs-16 lh-1"></i> 
+                                                                Save
+                                                        </button>
+
                                                     </form>
                                                 </div>
                                             </div>
@@ -572,6 +600,7 @@ include '../../process/db_connect.php';
             </div>
         </div>
     </div>
+
     <!-- Vendor js -->
     <script src="assets/js/vendor.min.js"></script>
 

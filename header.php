@@ -1,5 +1,18 @@
 <?php
-include 'process\includes\paths.php';
+include 'process/includes/paths.php';
+include 'process/db_connect.php';
+
+if(isset($_SESSION['id'])){
+    $id = $_GET['user_id'];
+
+    $sql = "SELECT * FROM users WHERE id=$id";
+    $datas = mysqli_query($conn, $sql);
+    
+    if(mysqli_num_rows($datas) == 1) {
+        $user_data =  mysqli_fetch_assoc($datas);
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -30,7 +43,6 @@ include 'process\includes\paths.php';
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
-
 <body>
     <div class="main-wrapper">
         <div class="mouse-cursor cursor-outer"></div>
@@ -109,7 +121,7 @@ include 'process\includes\paths.php';
                                         </ul> -->
                                     </li>
 
-                                    <!-- <li class="menu-item-has-children"><a href="index.html#">Posts</a>
+                                    <!-- <li class="menu-item-has-children"><a href="<?=$BASE_URL?>">Posts</a>
                                         <ul class="axil-submenu">
                                             <li>
                                                 <a class="hover-flip-item-wrapper" href="post-format-standard.html">
@@ -182,38 +194,41 @@ include 'process\includes\paths.php';
                                             <li class="megamenu-item">
 
                                                 <!-- Start Verticle Nav  -->
-                                                <div class="axil-vertical-nav">
+
+    <!-- These are the vertical alignment of mega menu -->
+
+                                                <!-- <div class="axil-vertical-nav">
                                                     <ul class="vertical-nav-menu">
                                                         <li class="vertical-nav-item active">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#tab1">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                     <span data-text="Accessibility">Accessibility</span>
                                                                 </span>
                                                             </a>
                                                         </li>
                                                         <li class="vertical-nav-item">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#tab2">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                     <span data-text="Android Dev">Android Dev</span>
                                                                 </span>
                                                             </a>
                                                         </li>
                                                         <li class="vertical-nav-item">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#tab3">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                     <span data-text="Blockchain">Blockchain</span>
                                                                 </span>
                                                             </a>
                                                         </li>
                                                         <li class="vertical-nav-item">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#tab4">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                     <span data-text="Gadgets">Gadgets</span>
                                                                 </span>
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                </div>
+                                                </div> -->
                                                 <!-- Start Verticle Nav  -->
 
                                                 <!-- Start Verticle Menu  -->
@@ -227,21 +242,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-01.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">India may require online shops to hand</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">India may require online shops to hand</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -251,21 +266,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-02.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="CREATIVE">CREATIVE</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Lightweight, grippable, and ready to go.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable, and ready to go.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -275,21 +290,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-03.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="TRAVEL">TRAVEL</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Bold new experience. Same Mac magic.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same Mac magic.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -299,25 +314,27 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="GADGETS">GADGETS</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Creative Game With The New DJI Mavic Air</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New DJI Mavic Air</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                                 <!-- End Post List  -->
+                                                                
+                                                                
 
                                                             </div>
                                                         </div>
@@ -333,21 +350,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">India may require online shops to hand</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">India may require online shops to hand</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -356,21 +373,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-03.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Lightweight, grippable, and ready to go.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable, and ready to go.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -379,21 +396,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-02.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Bold new experience. Same Mac magic.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same Mac magic.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -402,21 +419,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Creative Game With The New DJI Mavic Air</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New DJI Mavic Air</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -436,21 +453,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Creative Game With The New DJI Mavic Air</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New DJI Mavic Air</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -459,21 +476,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-03.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Bold new experience. Same Mac magic.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same Mac magic.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -482,21 +499,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-02.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Lightweight, grippable, and ready to go.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable, and ready to go.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -505,21 +522,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">India may require online shops to hand</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">India may require online shops to hand</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -539,21 +556,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-01.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">India may require online shops to hand</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">India may require online shops to hand</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -562,21 +579,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Lightweight, grippable, and ready to go.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable, and ready to go.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -586,21 +603,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-03.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Bold new experience. Same Mac magic.</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same Mac magic.</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -610,21 +627,21 @@ include 'process\includes\paths.php';
                                                                 <div class="col-lg-3">
                                                                     <div class="content-block image-rounded">
                                                                         <div class="post-thumbnail mb--20">
-                                                                            <a href="post-details.html">
+                                                                            <a href="<?=$POSTS_URL?>">
                                                                                 <img class="w-100" src="assets/images/others/mega-post-04.jpg" alt="Post Images">
                                                                             </a>
                                                                         </div>
                                                                         <div class="post-content">
                                                                             <div class="post-cat">
                                                                                 <div class="post-cat-list">
-                                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                                         <span class="hover-flip-item">
                                                             <span data-text="DESIGN">DESIGN</span>
                                                                                         </span>
                                                                                     </a>
                                                                                 </div>
                                                                             </div>
-                                                                            <h5 class="title"><a href="post-details.html">Creative Game With The New DJI Mavic Air</a></h5>
+                                                                            <h5 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New DJI Mavic Air</a></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -643,7 +660,7 @@ include 'process\includes\paths.php';
                                     <li class="menu-item-has-children"><a href="<?=$ABOUT_PAGE_URL?>">About Us</a></li>
                                     <li class="menu-item-has-children"><a href="<?=$CONTACT_PAGE_URL?>">Contact Us</a></li>
 
-                                    <!-- <li class="menu-item-has-children"><a href="index.html#">Pages</a>
+                                    <!-- <li class="menu-item-has-children"><a href="<?=$BASE_URL?>">Pages</a>
                                         <ul class="axil-submenu">
                                             <li>
                                                 <a class="hover-flip-item-wrapper" href="post-list.html">
@@ -732,10 +749,10 @@ include 'process\includes\paths.php';
                             <?php
                                if(isset($_SESSION['id'])) {?>
                                 <ul class="metabar-block">
-                                <!-- <li class="icon"><a href="index.html#"><i class="fas fa-bookmark"></i></a></li> -->
+                                <!-- <li class="icon"><a href=""><i class="fas fa-bookmark"></i></a></li> -->
                                 <li class="icon"><a href="#"><i class="fas fa-bell"></i></a></li>
                                 
-                                <li><a href="<?=$PROFILE_URL?>"><img src="assets/images/default.jpg" alt="Author Images"></a></li>
+                                <li><a href="<?=$PROFILE_URL?>"><img src="process/auth/uploads/<?=$user_data['profile_img'];?>" alt="User Image"></a></li>
                             </ul>
                             <?php }else{?>
                                 <a href="login.php"><button class="axil-button button-rounded" type="submit" name="submit">Sign in</button></a>
@@ -789,7 +806,7 @@ include 'process\includes\paths.php';
                             <li><a href="<?=$$CATEGORY_PAGE_URL?>">Android Dev</a></li>
                         </ul>
                     </li>
-                    <!-- <li class="menu-item-has-children"><a href="index.html#">Post Format</a>
+                    <!-- <li class="menu-item-has-children"><a href="<?=$BASE_URL?>">Post Format</a>
                         <ul class="axil-submenu">
                             <li><a href="post-format-standard.html">Post Format Standard</a></li>
                             <li><a href="post-format-video.html">Post Format Video</a></li>
@@ -802,7 +819,7 @@ include 'process\includes\paths.php';
                             <li><a href="post-layout-5.html">Post Layout Five</a></li>
                         </ul>
                     </li> 
-                    <li class="menu-item-has-children"><a href="index.html#">Pages</a>
+                    <li class="menu-item-has-children"><a href="<?=$BASE_URL?>">Pages</a>
                         <ul class="axil-submenu">
                             <li><a href="post-list.html">Post List</a></li>
                             <li><a href="archive.html">Post Archive</a></li>
@@ -817,7 +834,7 @@ include 'process\includes\paths.php';
                     <li><a href="<?=$CONTACT_PAGE_URL?>">Contact Us</a></li>
                 </ul>
                 <div class="buy-now-btn">
-                    <a href="index.html#">Buy Now <span class="badge">$15</span></a>
+                    <a href="<?=$BASE_URL?>">Buy Now <span class="badge">$15</span></a>
                 </div>
             </div>
         </div>

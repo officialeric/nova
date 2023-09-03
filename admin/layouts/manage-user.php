@@ -4,6 +4,8 @@
     
     $sql = "SELECT * FROM users WHERE role_id = 4";
     $users = mysqli_query($conn, $sql);
+
+    
 ?>
 
 
@@ -83,7 +85,13 @@
                                                 <td><?= $user['email'] ?></td>
                                                 <td><?= $user['password'] ?></td>
                                                 <td><?= $user['role_id'] ?></td>
-                                                <td>Action</td>
+                                                <td>
+                                                    <a class="text-soft-danger" href="../process/delete-action.php?del_id=<?=$user['id']?>">
+                                                        <button type="button" class="btn btn-soft-danger">
+                                                            Remove
+                                                        </button>
+                                                    </a>
+                                                </td>
                                             </tr>
                                         <?php endforeach;  ?>
                                         </tbody>

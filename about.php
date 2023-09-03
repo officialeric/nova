@@ -49,7 +49,7 @@ include 'header.php';
                             <div class="axil-single-widget widget widget_categories mb--30">
                                 <ul>
                                     <li class="cat-item">
-                                        <a href="about.html#" class="inner">
+                                        <a href="about.php#" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-01.jpg" alt="">
                                             </div>
@@ -59,7 +59,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="about.html#" class="inner">
+                                        <a href="about.php#" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-02.jpg" alt="">
                                             </div>
@@ -69,7 +69,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="about.html#" class="inner">
+                                        <a href="about.php#" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-03.jpg" alt="">
                                             </div>
@@ -79,7 +79,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="about.html#" class="inner">
+                                        <a href="about.php#" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-04.jpg" alt="">
                                             </div>
@@ -95,7 +95,7 @@ include 'header.php';
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_search mb--30">
                                 <h5 class="widget-title">Search</h5>
-                                <form action="about.html#">
+                                <form action="about.php#">
                                     <div class="axil-search form-group">
                                         <button type="submit" class="search-button"><i class="fal fa-search"></i></button>
                                         <input type="text" class="form-control" placeholder="Search">
@@ -113,12 +113,12 @@ include 'header.php';
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
+                                            <a href="post-details.php">
                                                 <img src="assets/images/small-images/blog-sm-01.jpg" alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">The underrated design book that transformed the way I
+                                            <h6 class="title"><a href="post-details.php">The underrated design book that transformed the way I
                                                     work </a></h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
@@ -133,12 +133,12 @@ include 'header.php';
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
+                                            <a href="post-details.php">
                                                 <img src="assets/images/small-images/blog-sm-02.jpg" alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">Here’s what you should (and shouldn’t) do when</a>
+                                            <h6 class="title"><a href="post-details.php">Here’s what you should (and shouldn’t) do when</a>
                                             </h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
@@ -153,12 +153,12 @@ include 'header.php';
                                     <!-- Start Single Post  -->
                                     <div class="content-block post-medium mb--20">
                                         <div class="post-thumbnail">
-                                            <a href="post-details.html">
+                                            <a href="post-details.php">
                                                 <img src="assets/images/small-images/blog-sm-03.jpg" alt="Post Images">
                                             </a>
                                         </div>
                                         <div class="post-content">
-                                            <h6 class="title"><a href="post-details.html">How a developer and designer duo at Deutsche Bank keep
+                                            <h6 class="title"><a href="post-details.php">How a developer and designer duo at Deutsche Bank keep
                                                     remote</a></h6>
                                             <div class="post-meta">
                                                 <ul class="post-meta-list">
@@ -181,11 +181,11 @@ include 'header.php';
                                 <h5 class="widget-title">Stay In Touch</h5>
                                 <!-- Start Post List  -->
                                 <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="about.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-slack"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-slack"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                                 <!-- End Post List  -->
                             </div>
@@ -212,37 +212,37 @@ include 'header.php';
                     <div class="col-lg-12">
                         <ul class="instagram-post-list">
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-01.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-02.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-03.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-04.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-05.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="about.html#">
+                                <a href="about.php#">
                                     <img src="assets/images/small-images/instagram-md-06.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
@@ -265,10 +265,10 @@ include 'header.php';
                             <div class="inner d-flex align-items-center flex-wrap">
                                 <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                                 <ul class="social-icon color-tertiary md-size justify-content-start">
-                                    <li><a href="about.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="about.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="about.php#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- End Post List  -->
@@ -285,42 +285,42 @@ include 'header.php';
                         <div class="col-lg-9 col-md-12">
                             <div class="copyright-left">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
                                         <img class="light-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
                                     </a>
                                 </div>
                                 <ul class="mainmenu justify-content-start">
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="about.html#">
+                                        <a class="hover-flip-item-wrapper" href="about.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Contact Us">Contact Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="about.html#">
+                                        <a class="hover-flip-item-wrapper" href="about.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Terms of Use">Terms of Use</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="about.html#">
+                                        <a class="hover-flip-item-wrapper" href="about.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="AdChoices">AdChoices</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="about.html#">
+                                        <a class="hover-flip-item-wrapper" href="about.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Advertise with Us">Advertise with Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="about.html#">
+                                        <a class="hover-flip-item-wrapper" href="about.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Blogar Store">Blogar Store</span>
                                             </span>

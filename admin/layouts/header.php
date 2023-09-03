@@ -1,5 +1,28 @@
 <?php
 include '../paths.php';
+include '../../process/db_connect.php';
+
+$id = $_GET['user_id'];
+$sql = "SELECT * FROM users WHERE id=$id";
+$datas = mysqli_query($conn, $sql);
+
+if(mysqli_num_rows($datas) == 1) {
+    $user_data =  mysqli_fetch_assoc($datas);
+}
+if(isset($_GET['msg'])) {
+    $message = $_GET['msg'];
+}
+if(isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+
+$img_query = "SELECT profile_img FROM users WHERE id=$id";
+$img_result = mysqli_query($conn, $img_query);
+
+if(mysqli_num_rows($img_result) == 1) {
+    $img_display = mysqli_fetch_assoc($img_result);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +34,15 @@ include '../paths.php';
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
         <meta content="Techzaa" name="author" />
+
+        <!-- sample -->
+            <!-- Add these lines to your HTML file -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <!-- sample end -->
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="assets/images/favicon.ico">
@@ -46,7 +78,7 @@ include '../paths.php';
                             <!-- Logo light -->
                             <a href="index.html" class="logo-light">
                                 <span class="logo-lg">
-                                    <img src="assets/images/logo.png" alt="logo">
+                                    <img src="assets/images/logo-sm.png" alt="logo">
                                 </span>
                                 <span class="logo-sm">
                                     <img src="assets/images/logo-sm.png" alt="small logo">
@@ -380,11 +412,13 @@ include '../paths.php';
                             <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.php#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
-                                    <img src="assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                    <img src="../process/uploads/<?=$img_display['profile_img']?>" alt="user-image" width="32" class="avatar-sm rounded-circle">
                                 </span>
                                 <span class="d-lg-block d-none">
-                                    <h5 class="my-0 fw-normal">Thomson <i
-                                            class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
+                                    <h5 class="my-0 fw-normal">
+                                        <?=$user_data['username'];?> 
+                                        <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
+                                    </h5>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -400,25 +434,25 @@ include '../paths.php';
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-profile.php" class="dropdown-item">
+                                <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
                                     <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
                                     <span>Settings</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-faq.php" class="dropdown-item">
+                                <a href="<?=$FAQ_URL;?>" class="dropdown-item">
                                     <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
                                     <span>Support</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="auth-lock-screen.php" class="dropdown-item">
+                                <!-- <a href="auth-lock-screen.php" class="dropdown-item">
                                     <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
                                     <span>Lock Screen</span>
-                                </a>
+                                </a> -->
 
                                 <!-- item-->
-                                <a href="auth-logout.php" class="dropdown-item">
+                                <a href="../process/logout.php" class="dropdown-item">
                                     <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
                                     <span>Logout</span>
                                 </a>
@@ -434,21 +468,21 @@ include '../paths.php';
             <div class="leftside-menu">
 
                 <!-- Brand Logo Light -->
-                <a href="index.php" class="logo logo-light">
+                <i class="logo logo-light">
                     <span class="logo-lg">
                         <img src="assets/images/logo.png" alt="logo">
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo-sm.png" alt="small logo">
                     </span>
-                </a>
+                </i>
 
                 <!-- Brand Logo Dark -->
-                <a href="index.php" class="logo logo-dark">
+                <i class="logo logo-dark">
                     <span class="logo-lg">
                         <img src="assets/images/logo-dark.png" alt="dark logo">
                     </span>
                     <span class="logo-sm">
                         <img src="assets/images/logo-sm.png" alt="small logo">
                     </span>
-                </a>
+                </i>

@@ -19,5 +19,8 @@ session_start();
 // post page
 (isset($_SESSION['id']) ? $POSTS_URL = 'post-details.php?user_id='.$_SESSION['id'] :$POSTS_URL = 'post-details.php');
 
+// faq management
+(isset($_SESSION['id']) ? $FAQ_URL = 'pages-faq.php?user_id='.$_SESSION['id'] :$FAQ_URL = 'pages-faq.php');
+
 // AUTHOR PAGE
 (isset($_SESSION['id']) ? $AUTHOR_URL = 'author.php?user_id='.$_SESSION['id'] :$AUTHOR_URL = 'author.php');

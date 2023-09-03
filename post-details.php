@@ -21,7 +21,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="FEATURED POST">FEATURED POST</span>
                                                             </span>
@@ -38,7 +38,7 @@ include 'header.php';
                                                         </div>
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                     </span>
@@ -51,10 +51,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="post-layout-1.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="post-layout-1.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="post-layout-1.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="post-layout-1.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="post-layout-1.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="post-layout-1.php#"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="post-layout-1.php#"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="post-layout-1.php#"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -110,7 +110,7 @@ include 'header.php';
                                     of achievement and excellence.</figcaption>
                             </figure>
                             <h2>Apple Design Award Winners: Apps</h2>
-                            <p><a href="post-layout-1.html#">Apple today named</a> eight app and game developers receiving an Apple Design
+                            <p><a href="post-layout-1.php#">Apple today named</a> eight app and game developers receiving an Apple Design
                                 Award, each one selected for being thoughtful and creative. Apple Design Award winners
                                 bring distinctive new ideas to life and demonstrate deep mastery of Apple technology.
                                 The apps spring up from developers large and small, in every part of the world, and
@@ -128,7 +128,7 @@ include 'header.php';
                                     of achievement and excellence.</figcaption>
                             </figure>
                             <h3>Apple Design Award Winners: Apps </h3>
-                            <p> <a href="post-layout-1.html#">Apple today named</a> eight app and game developers receiving an Apple
+                            <p> <a href="post-layout-1.php#">Apple today named</a> eight app and game developers receiving an Apple
                                 Design Award, each one selected for being thoughtful and creative. Apple Design Award
                                 winners bring distinctive new ideas to life and demonstrate deep mastery of Apple
                                 technology. The apps spring up from developers large and small, in every part of the
@@ -146,26 +146,26 @@ include 'header.php';
                                 entire categories. Previous winners such as Pixelmator, djay, Complete Anatomy,
                                 HomeCourt, “Florence,” and “Crossy Road” have set the standard in areas such as
                                 storytelling, interface design, and use of Apple tools and technologies.</p>
-                            <p>For more information on the apps and games, visit the <a href="post-layout-1.html#">App Store</a>.</p>
+                            <p>For more information on the apps and games, visit the <a href="post-layout-1.php#">App Store</a>.</p>
 
                             <div class="tagcloud">
-                                <a href="post-layout-1.html#">Design</a>
-                                <a href="post-layout-1.html#">Life Style</a>
-                                <a href="post-layout-1.html#">Web Design</a>
-                                <a href="post-layout-1.html#">Development</a>
-                                <a href="post-layout-1.html#">Design</a>
-                                <a href="post-layout-1.html#">Life Style</a>
+                                <a href="post-layout-1.php#">Design</a>
+                                <a href="post-layout-1.php#">Life Style</a>
+                                <a href="post-layout-1.php#">Web Design</a>
+                                <a href="post-layout-1.php#">Development</a>
+                                <a href="post-layout-1.php#">Design</a>
+                                <a href="post-layout-1.php#">Life Style</a>
                             </div>
 
                             <div class="social-share-block">
                                 <div class="post-like">
-                                    <a href="post-layout-1.html#"><i class="fal fa-thumbs-up"></i><span>2.2k Like</span></a>
+                                    <a href="post-layout-1.php#"><i class="fal fa-thumbs-up"></i><span>2.2k Like</span></a>
                                 </div>
                                 <ul class="social-icon icon-rounded-transparent md-size">
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
 
@@ -173,14 +173,14 @@ include 'header.php';
                             <div class="about-author">
                                 <div class="media">
                                     <div class="thumbnail">
-                                        <a href="post-layout-1.html#">
+                                        <a href="post-layout-1.php#">
                                             <img src="assets/images/post-images/author/author-b1.png" alt="Author Images">
                                         </a>
                                     </div>
                                     <div class="media-body">
                                         <div class="author-info">
                                             <h5 class="title">
-                                                <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Rahabi Ahmed Khan">Rahabi Ahmed Khan</span>
                                                     </span>
@@ -194,11 +194,11 @@ include 'header.php';
                                                 daughter up top, makes me so proud of how far I’ve come, and so thankful
                                                 for where I come from.</p>
                                             <ul class="social-share-transparent size-md">
-                                                <li><a href="post-layout-1.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="post-layout-1.html#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="post-layout-1.html#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="post-layout-1.html#"><i class="far fa-envelope"></i></a></li>
-                                                <li><a href="post-layout-1.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                                <li><a href="post-layout-1.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="post-layout-1.php#"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="post-layout-1.php#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="post-layout-1.php#"><i class="far fa-envelope"></i></a></li>
+                                                <li><a href="post-layout-1.php#"><i class="fab fa-linkedin-in"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -213,14 +213,14 @@ include 'header.php';
                                         <h4 class="mb--0">30+ Comments</h4>
                                     </div>
                                     <div class="add-comment-button cerchio">
-                                        <a class="axil-button button-rounded" href="post-details.html" tabindex="0"><span>Add Your Comment</span></a>
+                                        <a class="axil-button button-rounded" href="<?=$POSTS_URL?>" tabindex="0"><span>Add Your Comment</span></a>
                                     </div>
                                 </div>
 
                                 <!-- Start Comment Respond  -->
                                 <div class="comment-respond">
                                     <h4 class="title">Post a comment</h4>
-                                    <form action="post-layout-1.html#">
+                                    <form action="post-layout-1.php#">
                                         <p class="comment-notes"><span id="email-notes">Your email address will not be
                                                 published.</span> Required fields are marked <span
                                                 class="required">*</span></p>
@@ -279,7 +279,7 @@ include 'header.php';
                                                     </div>
                                                     <div class="comment-inner">
                                                         <h6 class="commenter">
-                                                            <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                            <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="Cameron Williamson">Cameron
                                                                         Williamson</span>
@@ -290,7 +290,7 @@ include 'header.php';
                                                             <div class="time-spent">Nov 23, 2018 at 12:23 pm</div>
                                                             <div class="reply-edit">
                                                                 <div class="reply">
-                                                                    <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                                    <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Reply">Reply</span>
                                                                         </span>
@@ -319,7 +319,7 @@ include 'header.php';
                                                             </div>
                                                             <div class="comment-inner">
                                                                 <h6 class="commenter">
-                                                                    <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Rahabi Khan">Rahabi
                                                                                 Khan</span>
@@ -331,7 +331,7 @@ include 'header.php';
                                                                     </div>
                                                                     <div class="reply-edit">
                                                                         <div class="reply">
-                                                                            <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                                            <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                                 <span class="hover-flip-item">
                                                                                     <span data-text="Reply">Reply</span>
                                                                                 </span>
@@ -364,7 +364,7 @@ include 'header.php';
                                                     </div>
                                                     <div class="comment-inner">
                                                         <h6 class="commenter">
-                                                            <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                            <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="Rahabi Khan">Rahabi Khan</span>
                                                                 </span>
@@ -374,7 +374,7 @@ include 'header.php';
                                                             <div class="time-spent">Nov 23, 2018 at 12:23 pm</div>
                                                             <div class="reply-edit">
                                                                 <div class="reply">
-                                                                    <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.html#">
+                                                                    <a class="comment-reply-link hover-flip-item-wrapper" href="post-layout-1.php#">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Reply">Reply</span>
                                                                         </span>
@@ -428,17 +428,17 @@ include 'header.php';
                         <!-- Start Post List  -->
                         <div class="post-stories content-block mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="<?=$POSTS_URL?>">
                                     <img src="assets/images/post-single/stories-01.jpg" alt="Post Images">
                                 </a>
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a href="post-layout-1.html#">LEADERSHIP</a>
+                                        <a href="post-layout-1.php#">LEADERSHIP</a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Microsoft and Bridgestone launch real-time
+                                <h5 class="title"><a href="<?=$POSTS_URL?>">Microsoft and Bridgestone launch real-time
                                         tire</a></h5>
                             </div>
                         </div>
@@ -451,17 +451,17 @@ include 'header.php';
                         <!-- Start Post List  -->
                         <div class="post-stories content-block mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="<?=$POSTS_URL?>">
                                     <img src="assets/images/post-single/stories-02.jpg" alt="Post Images">
                                 </a>
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a href="post-layout-1.html#">DESIGN</a>
+                                        <a href="post-layout-1.php#">DESIGN</a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Microsoft and Bridgestone launch real-time
+                                <h5 class="title"><a href="<?=$POSTS_URL?>">Microsoft and Bridgestone launch real-time
                                         tire</a></h5>
                             </div>
                         </div>
@@ -474,17 +474,17 @@ include 'header.php';
                         <!-- Start Post List  -->
                         <div class="post-stories content-block mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="<?=$POSTS_URL?>">
                                     <img src="assets/images/post-single/stories-03.jpg" alt="Post Images">
                                 </a>
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a href="post-layout-1.html#">PRODUCT UPDATES</a>
+                                        <a href="post-layout-1.php#">PRODUCT UPDATES</a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Microsoft and Bridgestone launch real-time
+                                <h5 class="title"><a href="<?=$POSTS_URL?>">Microsoft and Bridgestone launch real-time
                                         tire</a></h5>
                             </div>
                         </div>
@@ -497,17 +497,17 @@ include 'header.php';
                         <!-- Start Post List  -->
                         <div class="post-stories content-block mt--30">
                             <div class="post-thumbnail">
-                                <a href="post-details.html">
+                                <a href="<?=$POSTS_URL?>">
                                     <img src="assets/images/post-single/stories-04.jpg" alt="Post Images">
                                 </a>
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a href="post-layout-1.html#">COLLABORATION</a>
+                                        <a href="post-layout-1.php#">COLLABORATION</a>
                                     </div>
                                 </div>
-                                <h5 class="title"><a href="post-details.html">Microsoft and Bridgestone launch real-time
+                                <h5 class="title"><a href="<?=$POSTS_URL?>">Microsoft and Bridgestone launch real-time
                                         tire</a></h5>
                             </div>
                         </div>
@@ -533,37 +533,37 @@ include 'header.php';
                     <div class="col-lg-12">
                         <ul class="instagram-post-list">
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-01.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-02.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-03.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-04.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-05.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="post-layout-1.html#">
+                                <a href="post-layout-1.php#">
                                     <img src="assets/images/small-images/instagram-md-06.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
@@ -586,10 +586,10 @@ include 'header.php';
                             <div class="inner d-flex align-items-center flex-wrap">
                                 <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                                 <ul class="social-icon color-tertiary md-size justify-content-start">
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="post-layout-1.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="post-layout-1.php#"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- End Post List  -->
@@ -606,42 +606,42 @@ include 'header.php';
                         <div class="col-lg-9 col-md-12">
                             <div class="copyright-left">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="index.php">
                                         <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
                                         <img class="light-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images">
                                     </a>
                                 </div>
                                 <ul class="mainmenu justify-content-start">
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Contact Us">Contact Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Terms of Use">Terms of Use</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="AdChoices">AdChoices</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Advertise with Us">Advertise with Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="post-layout-1.html#">
+                                        <a class="hover-flip-item-wrapper" href="post-layout-1.php#">
                                             <span class="hover-flip-item">
                                         <span data-text="Blogar Store">Blogar Store</span>
                                             </span>

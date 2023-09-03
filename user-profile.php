@@ -1,12 +1,21 @@
 <?php
 include 'process/db_connect.php';
-$id = $_GET['user_id'];
-$sql2 = "SELECT * FROM users WHERE id=$id";
-$datas = mysqli_query($conn, $sql2);
+include 'process/includes/paths.php';
+    $id = $_GET['user_id'];
+    $sql2 = "SELECT * FROM users WHERE id=$id";
+    $datas = mysqli_query($conn, $sql2);
 
-if(mysqli_num_rows($datas) == 1) {
-    $user_data =  mysqli_fetch_assoc($datas);
-}
+    if(mysqli_num_rows($datas) == 1) {
+        $user_data =  mysqli_fetch_assoc($datas);
+    }
+    if(isset($_GET['msg'])) {
+        $message = $_GET['msg'];
+    }
+    if(isset($_GET['error'])) {
+        $error = $_GET['error'];
+    }
+
+   
 ?>
 
 <!DOCTYPE html>
@@ -100,7 +109,7 @@ if(mysqli_num_rows($datas) == 1) {
 
                     <ul class="topbar-menu d-flex align-items-center gap-3">
                         <li class="dropdown d-lg-none">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
+                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.php#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <i class="ri-search-line fs-22"></i>
                             </a>
@@ -220,14 +229,15 @@ if(mysqli_num_rows($datas) == 1) {
                         </li>
 
                         <li class="dropdown">
-                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.html#" role="button"
+                            <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.php#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
-                                    <img src="user-profile-assets/images/users/avatar-1.jpg" alt="user-image" width="32" class="rounded-circle">
+                                    <img src="process/auth/uploads/<?=$user_data['profile_img'];?>" alt="user-image" width="32" class="avatar-sm rounded-circle">
                                 </span>
                                 <span class="d-lg-block d-none">
-                                    <h5 class="my-0 fw-normal">Thomson <i
-                                            class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i></h5>
+                                    <h5 class="my-0 fw-normal"><?=$user_data['username']?> 
+                                        <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
+                                    </h5>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
@@ -243,22 +253,22 @@ if(mysqli_num_rows($datas) == 1) {
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-profile.php" class="dropdown-item">
+                                <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
                                     <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
                                     <span>Settings</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="pages-faq.php" class="dropdown-item">
+                                <a href="<?=$FAQ_URL;?>" class="dropdown-item">
                                     <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
                                     <span>Support</span>
                                 </a>
 
                                 <!-- item-->
-                                <a href="auth-lock-screen.php" class="dropdown-item">
+                                <!-- <a href="auth-lock-screen.php" class="dropdown-item">
                                     <i class="ri-lock-password-line fs-18 align-middle me-1"></i>
                                     <span>Lock Screen</span>
-                                </a>
+                                </a> -->
 
                                 <!-- item-->
                                 <a href="process/auth/logout.php" class="dropdown-item">
@@ -339,20 +349,51 @@ if(mysqli_num_rows($datas) == 1) {
                             <div class="profile-user-box">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="profile-user-img"><img src="user-profile-assets/images/users/avatar-1.jpg" alt=""
-                                                class="avatar-lg rounded-circle"></div>
+                                        <div class="profile-user-img">
+                                            <img src="process/auth/uploads/<?=$user_data['profile_img'];?>" alt="user-profile-image" class="avatar-lg rounded-circle">
+                                        </div>
                                         <div class="">
-                                            <h4 class="mt-4 fs-17 ellipsis"><?=$user_data['username']?></h4>
-                                            <p class="font-13"> Role</p>  
+                                            <h4 class="mt-4 fs-17 ellipsis"><?=$user_data['fullname']?></h4>
+                                            <p class="font-13"> <?=($user_data['role_id'] == 4 ? 'User' : 'Admin')?></p>  
                                             <p class="text-muted mb-0"><small><?=$user_data['email']?></small></p>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="d-flex justify-content-end align-items-center gap-2">
-                                            <button type="button" class="btn btn-soft-danger">
-                                                <!-- <i class="ri-settings-2-line align-text-bottom me-1 fs-16 lh-1"></i> -->
-                                                Edit Profile Photo
-                                            </button>
+                                            
+
+                                <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Edit Profile Photo
+                                    </button>
+
+                                <!-- Modal -->
+                                    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="staticBackdropLabel">Upload Image</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="process/auth/user-profiling.php" method="post" id='form' enctype="multipart/form-data">
+                                                <input type="hidden" name="user_id" value='<?=$user_data['id']?>'>
+                                                <label for="inputGroupFile04">Choose Image File</label>
+                                                <div class="input-group">
+                                                    <input type="file" name="image" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                                    <!-- <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button> -->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-soft-danger" data-bs-dismiss="modal">Cancel</button>
+                                            <button type="submit" name="img_submit" class="btn btn-primary" form='form'>Upload</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                <!-- end of button trigger modal and modal -->
+
                                             <!-- <a class="btn btn-primary" href="pages-profile.html#">
                                                  <i class="ri-check-double-fill fs-18 me-1 lh-1"></i> 
                                                  Followers</a> -->
@@ -375,18 +416,18 @@ if(mysqli_num_rows($datas) == 1) {
                                                     data-bs-target="#aboutme" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true" href="pages-profile.php#aboutme">About</a>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                            <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                                     data-bs-target="#user-activities" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true"
-                                                    href="pages-profile.php#user-activities">Activities</a></li>
+                                                    href="pages-profile.php#user-activities">Activities</a></li> -->
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                                     data-bs-target="#edit-profile" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true"
-                                                    href="pages-profile.html#edit-profile">Settings</a></li>
-                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="pages-profile.php#edit-profile">Settings</a></li>
+                                            <!-- <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
                                                     data-bs-target="#projects" type="button" role="tab"
                                                     aria-controls="home" aria-selected="true"
-                                                    href="pages-profile.php#projects">Projects</a></li>
+                                                    href="pages-profile.php#projects">Projects</a></li> -->
                                         </ul>
 
                                         <div class="tab-content m-0 p-4">
@@ -546,15 +587,16 @@ if(mysqli_num_rows($datas) == 1) {
                                                                     id="phone" class="form-control" name="phone">
                                                             </div>
                                                             
-                                                            <div class="mb-3">
+                                                            <div class="mb-4">
                                                                 <label class="form-label"
                                                                     for="Password">Password</label><br>
-                                                                    <small class='text-primary'> Your password is encrypted for security, But it's still the same! 
-                                                                                                  You may change it only if you want to edit it.
+                                                                    <small class='text-primary'> 
+                                                                        Your password is encrypted for security, But it's still the same! 
+                                                                        You may change it only if you want to edit it.
                                                                     </small>
                                                                 <input type="password" placeholder="6 - 15 Characters"
-                                                                value='<?=$user_data['password']?>'
-                                                                    id="Password" class="form-control" name="password">
+                                                                        value='<?=$user_data['password']?>'
+                                                                         id="Password" class="form-control" name="password">
                                                             </div>
                                                             <div class="mb-3">
                                                                 <label class="form-label"
@@ -570,8 +612,11 @@ if(mysqli_num_rows($datas) == 1) {
                                                                 </textarea>
                                                             </div>
                                                         </div>
-                                                        <button class="btn btn-primary" type="submit" name="submit"><i
-                                                                class="ri-save-line me-1 fs-16 lh-1"></i> Save</button>
+                                                        <button class="btn btn-primary" type="submit" name="submit" id="btn"><i
+                                                                class="ri-save-line me-1 fs-16 lh-1"></i> 
+                                                            Save
+                                                        </button>
+
                                                     </form>
                                                 </div>
                                             </div>
@@ -867,6 +912,7 @@ if(mysqli_num_rows($datas) == 1) {
             </div>
         </div>
     </div>
+
     <!-- Vendor js -->
     <script src="user-profile-assets/js/vendor.min.js"></script>
 

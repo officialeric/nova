@@ -28,7 +28,7 @@ function registerNewUser($user,$email,$pass){
     } 
     else {
         $sql = "INSERT INTO users(username,email,password,fullname,website,about,phone) 
-                VALUES('$username','$email','$hashed_password','John Doe','example.com','Hello there',255)";
+                VALUES('$username','$email','$hashed_password','Your Full name','example.com','Hello there',255)";
         $result = $conn->query($sql);
         header('location:../../login.php?message=Signup successfull login to continue');
     }

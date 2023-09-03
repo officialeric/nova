@@ -490,7 +490,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="CASE STUDY">CASE STUDY</span>
                                                                 </span>
@@ -515,7 +515,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
                                                                 </span>
@@ -540,7 +540,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
                                                                 </span>
@@ -571,7 +571,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
                                                                 </span>
@@ -596,7 +596,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -621,7 +621,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -646,7 +646,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -677,7 +677,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="APPLE DESIGN">APPLE DESIGN</span>
                                                                 </span>
@@ -702,7 +702,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="GADGETS">GADGETS</span>
                                                                 </span>
@@ -726,7 +726,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="GADGETS">GADGETS</span>
                                                                 </span>
@@ -751,7 +751,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="GADGETS">GADGETS</span>
                                                                 </span>
@@ -791,7 +791,7 @@ include 'header.php';
                     </div>
                     <div class="col-lg-6 col-md-4 col-sm-4 col-12">
                         <div class="see-all-topics text-start text-sm-end mt_mobile--20">
-                            <a class="axil-link-button" href="index.html#">See All Topics</a>
+                            <a class="axil-link-button" href="<?=$BASE_URL?>">See All Topics</a>
                         </div>
                     </div>
                 </div>
@@ -803,7 +803,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-01.jpg" alt="post categories images">
                                         </div>
@@ -818,7 +818,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-02.jpg" alt="post categories images">
                                         </div>
@@ -833,7 +833,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-03.jpg" alt="post categories images">
                                         </div>
@@ -848,7 +848,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-04.jpg" alt="post categories images">
                                         </div>
@@ -863,7 +863,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-05.jpg" alt="post categories images">
                                         </div>
@@ -878,7 +878,7 @@ include 'header.php';
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
-                                    <a href="index.html#">
+                                    <a href="<?=$BASE_URL?>">
                                         <div class="thumbnail">
                                             <img src="assets/images/post-images/post-sm-06.jpg" alt="post categories images">
                                         </div>
@@ -913,16 +913,16 @@ include 'header.php';
                         <!-- Start Axil Tab Button  -->
                         <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="trend-one" data-bs-toggle="tab" href="index.html#trendone" role="tab" aria-controls="trend-one" aria-selected="true">Accessibility</a>
+                                <a class="nav-link active" id="trend-one" data-bs-toggle="tab" href="<?=$BASE_URL?>trendone" role="tab" aria-controls="trend-one" aria-selected="true">Accessibility</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="trend-two" data-bs-toggle="tab" href="index.html#trendtwo" role="tab" aria-controls="trend-two" aria-selected="false">Android Dev</a>
+                                <a class="nav-link" id="trend-two" data-bs-toggle="tab" href="<?=$BASE_URL?>trendtwo" role="tab" aria-controls="trend-two" aria-selected="false">Android Dev</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="trend-three" data-bs-toggle="tab" href="index.html#trendthree" role="tab" aria-controls="trend-three" aria-selected="false">Blockchain</a>
+                                <a class="nav-link" id="trend-three" data-bs-toggle="tab" href="<?=$BASE_URL?>trendthree" role="tab" aria-controls="trend-three" aria-selected="false">Blockchain</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="trend-four" data-bs-toggle="tab" href="index.html#trendfour" role="tab" aria-controls="trend-four" aria-selected="false">Gadgets</a>
+                                <a class="nav-link" id="trend-four" data-bs-toggle="tab" href="<?=$BASE_URL?>trendfour" role="tab" aria-controls="trend-four" aria-selected="false">Gadgets</a>
                             </li>
                         </ul>
                         <!-- End Axil Tab Button  -->
@@ -940,7 +940,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -954,7 +954,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jone Doe">Jone Doe</span>
                                                                     </span>
@@ -967,10 +967,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -990,7 +990,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="BOOKS">BOOKS</span>
                                                             </span>
@@ -1003,7 +1003,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jane Afroj">Jane Afroj</span>
                                                                     </span>
@@ -1016,10 +1016,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1039,7 +1039,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="PROCESS">PROCESS</span>
                                                             </span>
@@ -1052,7 +1052,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Israt Ara">Israt Ara</span>
                                                                     </span>
@@ -1065,10 +1065,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1088,7 +1088,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1100,7 +1100,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                     </span>
@@ -1113,10 +1113,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1143,7 +1143,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1157,7 +1157,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jakowar">Jakowar</span>
                                                                     </span>
@@ -1170,10 +1170,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1193,7 +1193,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="BOOKS">BOOKS</span>
                                                             </span>
@@ -1206,7 +1206,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jasika">Jasika</span>
                                                                     </span>
@@ -1219,10 +1219,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1242,7 +1242,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="PROCESS">PROCESS</span>
                                                             </span>
@@ -1255,7 +1255,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Israt Ara">Israt Ara</span>
                                                                     </span>
@@ -1268,10 +1268,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1291,7 +1291,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1305,7 +1305,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="John Jane">John Jane</span>
                                                                     </span>
@@ -1318,10 +1318,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1349,7 +1349,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1363,7 +1363,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Najmul">Najmul</span>
                                                                     </span>
@@ -1376,10 +1376,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1399,7 +1399,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="BOOKS">BOOKS</span>
                                                             </span>
@@ -1412,7 +1412,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Kanak Lota">Kanak Lota</span>
                                                                     </span>
@@ -1425,10 +1425,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1448,7 +1448,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="PROCESS">PROCESS</span>
                                                             </span>
@@ -1461,7 +1461,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Nowsin Afroj">Nowsin Afroj</span>
                                                                     </span>
@@ -1474,10 +1474,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1497,7 +1497,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1511,7 +1511,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                     </span>
@@ -1524,10 +1524,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1555,7 +1555,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1569,7 +1569,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                     </span>
@@ -1582,10 +1582,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1605,7 +1605,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="BOOKS">BOOKS</span>
                                                             </span>
@@ -1618,7 +1618,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jasika">Jasika</span>
                                                                     </span>
@@ -1631,10 +1631,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1654,7 +1654,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="PROCESS">PROCESS</span>
                                                             </span>
@@ -1667,7 +1667,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Najmul Alom">Najmul Alom</span>
                                                                     </span>
@@ -1680,10 +1680,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1703,7 +1703,7 @@ include 'header.php';
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                             <span class="hover-flip-item">
                                                                 <span data-text="CASE STUDY">CASE STUDY</span>
                                                             </span>
@@ -1717,7 +1717,7 @@ include 'header.php';
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                                     <span class="hover-flip-item">
                                                                         <span data-text="Jakarark">Jakarark</span>
                                                                     </span>
@@ -1730,10 +1730,10 @@ include 'header.php';
                                                         </div>
                                                     </div>
                                                     <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -1763,12 +1763,12 @@ include 'header.php';
                     <div class="col-lg-12">
                         <div class="axil-social-wrapper bg-color-white radius">
                             <ul class="social-with-text">
-                                <li class="twitter"><a href="index.html#"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-                                <li class="facebook"><a href="index.html#"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-                                <li class="instagram"><a href="index.html#"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
-                                <li class="youtube"><a href="index.html#"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
-                                <li class="pinterest"><a href="index.html#"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
-                                <li class="discord"><a href="index.html#"><i class="fab fa-discord"></i><span>Discord</span></a></li>
+                                <li class="twitter"><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+                                <li class="facebook"><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+                                <li class="instagram"><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                                <li class="youtube"><a href="<?=$BASE_URL?>"><i class="fab fa-youtube"></i><span>Youtube</span></a></li>
+                                <li class="pinterest"><a href="<?=$BASE_URL?>"><i class="fab fa-pinterest"></i><span>Pinterest</span></a></li>
+                                <li class="discord"><a href="<?=$BASE_URL?>"><i class="fab fa-discord"></i><span>Discord</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -1782,16 +1782,16 @@ include 'header.php';
                     <div class="col-lg-12">
                         <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link active" id="grid-one" data-bs-toggle="tab" href="index.html#gridone" role="tab" aria-controls="grid-one" aria-selected="true">Accessibility</a>
+                                <a class="nav-link active" id="grid-one" data-bs-toggle="tab" href="<?=$BASE_URL?>gridone" role="tab" aria-controls="grid-one" aria-selected="true">Accessibility</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="grid-two" data-bs-toggle="tab" href="index.html#gridtwo" role="tab" aria-controls="grid-two" aria-selected="false">Android Dev</a>
+                                <a class="nav-link" id="grid-two" data-bs-toggle="tab" href="<?=$BASE_URL?>gridtwo" role="tab" aria-controls="grid-two" aria-selected="false">Android Dev</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="grid-three" data-bs-toggle="tab" href="index.html#gridthree" role="tab" aria-controls="grid-three" aria-selected="false">Blockchain</a>
+                                <a class="nav-link" id="grid-three" data-bs-toggle="tab" href="<?=$BASE_URL?>gridthree" role="tab" aria-controls="grid-three" aria-selected="false">Blockchain</a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="grid-four" data-bs-toggle="tab" href="index.html#gridfour" role="tab" aria-controls="grid-four" aria-selected="false">Gadgets</a>
+                                <a class="nav-link" id="grid-four" data-bs-toggle="tab" href="<?=$BASE_URL?>gridfour" role="tab" aria-controls="grid-four" aria-selected="false">Gadgets</a>
                             </li>
                         </ul>
                         <!-- Start Tab Content  -->
@@ -1812,7 +1812,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -1828,7 +1828,7 @@ include 'header.php';
                                                             </div>
                                                             <div class="content">
                                                                 <h6 class="post-author-name">
-                                                                    <a class="hover-flip-item-wrapper" href="author.html">
+                                                                    <a class="hover-flip-item-wrapper" href="author.php">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                         </span>
@@ -1841,10 +1841,10 @@ include 'header.php';
                                                             </div>
                                                         </div>
                                                         <ul class="social-share-transparent justify-content-end">
-                                                            <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1866,7 +1866,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="LIFESTYLE">LIFESTYLE</span>
                                                                         </span>
@@ -1893,7 +1893,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="TRAVEL">TRAVEL</span>
                                                                         </span>
@@ -1928,7 +1928,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -1944,7 +1944,7 @@ include 'header.php';
                                                             </div>
                                                             <div class="content">
                                                                 <h6 class="post-author-name">
-                                                                    <a class="hover-flip-item-wrapper" href="author.html">
+                                                                    <a class="hover-flip-item-wrapper" href="author.php">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                         </span>
@@ -1957,10 +1957,10 @@ include 'header.php';
                                                             </div>
                                                         </div>
                                                         <ul class="social-share-transparent justify-content-end">
-                                                            <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -1982,7 +1982,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="LIFESTYLE">LIFESTYLE</span>
                                                                         </span>
@@ -2009,7 +2009,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="TRAVEL">TRAVEL</span>
                                                                         </span>
@@ -2045,7 +2045,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -2061,7 +2061,7 @@ include 'header.php';
                                                             </div>
                                                             <div class="content">
                                                                 <h6 class="post-author-name">
-                                                                    <a class="hover-flip-item-wrapper" href="author.html">
+                                                                    <a class="hover-flip-item-wrapper" href="author.php">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                         </span>
@@ -2074,10 +2074,10 @@ include 'header.php';
                                                             </div>
                                                         </div>
                                                         <ul class="social-share-transparent justify-content-end">
-                                                            <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2099,7 +2099,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="LIFESTYLE">LIFESTYLE</span>
                                                                         </span>
@@ -2126,7 +2126,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="TRAVEL">TRAVEL</span>
                                                                         </span>
@@ -2162,7 +2162,7 @@ include 'header.php';
                                                 <div class="post-content">
                                                     <div class="post-cat">
                                                         <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="index.html#">
+                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                 <span class="hover-flip-item">
                                                                     <span data-text="DESIGN">DESIGN</span>
                                                                 </span>
@@ -2178,7 +2178,7 @@ include 'header.php';
                                                             </div>
                                                             <div class="content">
                                                                 <h6 class="post-author-name">
-                                                                    <a class="hover-flip-item-wrapper" href="author.html">
+                                                                    <a class="hover-flip-item-wrapper" href="author.php">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                                         </span>
@@ -2191,10 +2191,10 @@ include 'header.php';
                                                             </div>
                                                         </div>
                                                         <ul class="social-share-transparent justify-content-end">
-                                                            <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                                            <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                                            <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -2216,7 +2216,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="LIFESTYLE">LIFESTYLE</span>
                                                                         </span>
@@ -2243,7 +2243,7 @@ include 'header.php';
                                                         <div class="post-content">
                                                             <div class="post-cat">
                                                                 <div class="post-cat-list">
-                                                                    <a class="hover-flip-item-wrapper" href="index.html#">
+                                                                    <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                                         <span class="hover-flip-item">
                                                                             <span data-text="TRAVEL">TRAVEL</span>
                                                                         </span>
@@ -2279,7 +2279,7 @@ include 'header.php';
                     <div class="col-lg-8 col-xl-8">
                         <div class="axil-banner">
                             <div class="thumbnail">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img class="w-100" src="assets/images/add-banner/banner-01.png" alt="Banner Images">
                                 </a>
                             </div>
@@ -2294,7 +2294,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="FOOD">FOOD</span>
                                             </span>
@@ -2307,7 +2307,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Jane Ara">Jane Ara</span>
                                                     </span>
@@ -2320,10 +2320,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2340,7 +2340,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="LIFESTYLE">LIFESTYLE</span>
                                             </span>
@@ -2352,7 +2352,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Fatima Jane">Fatima Jane</span>
                                                     </span>
@@ -2365,10 +2365,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2385,7 +2385,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="TRAVEL">TRAVEL</span>
                                             </span>
@@ -2397,7 +2397,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Esrat Ara">Esrat Ara</span>
                                                     </span>
@@ -2410,10 +2410,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2430,7 +2430,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="DESIGN">DESIGN</span>
                                             </span>
@@ -2442,7 +2442,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="John Doe">John Doe</span>
                                                     </span>
@@ -2455,10 +2455,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2475,7 +2475,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="FOOD">FOOD</span>
                                             </span>
@@ -2488,7 +2488,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Asifa Fr">Asifa Fr</span>
                                                     </span>
@@ -2501,10 +2501,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2520,7 +2520,7 @@ include 'header.php';
                             <div class="axil-single-widget widget widget_categories mb--30">
                                 <ul>
                                     <li class="cat-item">
-                                        <a href="index.html#" class="inner">
+                                        <a href="<?=$BASE_URL?>" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-01.jpg" alt="">
                                             </div>
@@ -2530,7 +2530,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="index.html#" class="inner">
+                                        <a href="<?=$BASE_URL?>" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-02.jpg" alt="">
                                             </div>
@@ -2540,7 +2540,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="index.html#" class="inner">
+                                        <a href="<?=$BASE_URL?>" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-03.jpg" alt="">
                                             </div>
@@ -2550,7 +2550,7 @@ include 'header.php';
                                         </a>
                                     </li>
                                     <li class="cat-item">
-                                        <a href="index.html#" class="inner">
+                                        <a href="<?=$BASE_URL?>" class="inner">
                                             <div class="thumbnail">
                                                 <img src="assets/images/post-images/category-image-04.jpg" alt="">
                                             </div>
@@ -2566,7 +2566,7 @@ include 'header.php';
                             <!-- Start Single Widget  -->
                             <div class="axil-single-widget widget widget_search mb--30">
                                 <h5 class="widget-title">Search</h5>
-                                <form action="index.html#">
+                                <form action="<?=$BASE_URL?>">
                                     <div class="axil-search form-group">
                                         <button type="submit" class="search-button"><i class="fal fa-search"></i></button>
                                         <input type="text" class="form-control" placeholder="Search">
@@ -2652,11 +2652,11 @@ include 'header.php';
                                 <h5 class="widget-title">Stay In Touch</h5>
                                 <!-- Start Post List  -->
                                 <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-slack"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-slack"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                                 <!-- End Post List  -->
                             </div>
@@ -2668,32 +2668,32 @@ include 'header.php';
                                 <!-- Start Post List  -->
                                 <ul class="instagram-post-list-wrapper">
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-01.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-02.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-03.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-04.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-05.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
                                     <li class="instagram-post-list">
-                                        <a href="index.html#">
+                                        <a href="<?=$BASE_URL?>">
                                             <img src="assets/images/small-images/instagram-06.jpg" alt="Instagram Images">
                                         </a>
                                     </li>
@@ -2737,7 +2737,7 @@ include 'header.php';
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                                 <span data-text="CAREERS">CAREERS</span>
                                             </span>
@@ -2750,7 +2750,7 @@ include 'header.php';
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="author.php">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Ismat Jahan">Ismat Jahan</span>
                                                     </span>
@@ -2763,10 +2763,10 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="index.html#"><i class="fas fa-link"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2787,7 +2787,7 @@ include 'header.php';
                                     <div class="post-content">
                                         <div class="post-cat">
                                             <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="index.html#">
+                                                <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                     <span class="hover-flip-item">
                                                         <span data-text="DESIGN">DESIGN</span>
                                                     </span>
@@ -2812,7 +2812,7 @@ include 'header.php';
                                     <div class="post-content">
                                         <div class="post-cat">
                                             <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="index.html#">
+                                                <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                     <span class="hover-flip-item">
                                                         <span data-text="LEADERSHIP">LEADERSHIP</span>
                                                     </span>
@@ -2837,7 +2837,7 @@ include 'header.php';
                                     <div class="post-content">
                                         <div class="post-cat">
                                             <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="index.html#">
+                                                <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                     <span class="hover-flip-item">
                                                         <span data-text="PRODUCT UPDATES">PRODUCT UPDATES</span>
                                                     </span>
@@ -2862,7 +2862,7 @@ include 'header.php';
                                     <div class="post-content">
                                         <div class="post-cat">
                                             <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="index.html#">
+                                                <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                                     <span class="hover-flip-item">
                                                         <span data-text="COLLABORATION">COLLABORATION</span>
                                                     </span>
@@ -2896,37 +2896,37 @@ include 'header.php';
                     <div class="col-lg-12">
                         <ul class="instagram-post-list">
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-01.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-02.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-03.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-04.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-05.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
                             </li>
                             <li class="single-post">
-                                <a href="index.html#">
+                                <a href="<?=$BASE_URL?>">
                                     <img src="assets/images/small-images/instagram-md-06.jpg" alt="Instagram Images">
                                     <span class="instagram-button"><i class="fab fa-instagram"></i></span>
                                 </a>
@@ -2948,14 +2948,14 @@ include 'header.php';
                                 <h2 class="title">World</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">U.N.</a></li>
-                                        <li><a href="index.html#">Conflicts</a></li>
-                                        <li><a href="index.html#">Terrorism</a></li>
-                                        <li><a href="index.html#">Disasters</a></li>
-                                        <li><a href="index.html#">Global Economy</a></li>
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Religion</a></li>
-                                        <li><a href="index.html#">Scandals</a></li>
+                                        <li><a href="<?=$BASE_URL?>">U.N.</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2965,14 +2965,14 @@ include 'header.php';
                                 <h2 class="title">Politics</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">Executive</a></li>
-                                        <li><a href="index.html#">Senate</a></li>
-                                        <li><a href="index.html#">House</a></li>
-                                        <li><a href="index.html#">Judiciary</a></li>
-                                        <li><a href="index.html#">Global Economy</a></li>
-                                        <li><a href="index.html#">Foreign policy</a></li>
-                                        <li><a href="index.html#">Polls</a></li>
-                                        <li><a href="index.html#">Elections</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Executive</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Senate</a></li>
+                                        <li><a href="<?=$BASE_URL?>">House</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Judiciary</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Foreign policy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Polls</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Elections</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2982,14 +2982,14 @@ include 'header.php';
                                 <h2 class="title">Entertainment</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">Celebrity News</a></li>
-                                        <li><a href="index.html#">Movies</a></li>
-                                        <li><a href="index.html#">TV News</a></li>
-                                        <li><a href="index.html#">Disasters</a></li>
-                                        <li><a href="index.html#">Music News</a></li>
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Style News</a></li>
-                                        <li><a href="index.html#">Entertainment Video</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Celebrity News</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Movies</a></li>
+                                        <li><a href="<?=$BASE_URL?>">TV News</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Music News</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Style News</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Entertainment Video</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -2999,14 +2999,14 @@ include 'header.php';
                                 <h2 class="title">Business</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Conflicts</a></li>
-                                        <li><a href="index.html#">Terrorism</a></li>
-                                        <li><a href="index.html#">Disasters</a></li>
-                                        <li><a href="index.html#">Global Economy</a></li>
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Religion</a></li>
-                                        <li><a href="index.html#">Scandals</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -3033,14 +3033,14 @@ include 'header.php';
                                 <h2 class="title">About</h2>
                                 <div class="inner">
                                     <ul class="ft-menu-list">
-                                        <li><a href="index.html#">U.N.</a></li>
-                                        <li><a href="index.html#">Conflicts</a></li>
-                                        <li><a href="index.html#">Terrorism</a></li>
-                                        <li><a href="index.html#">Disasters</a></li>
-                                        <li><a href="index.html#">Global Economy</a></li>
-                                        <li><a href="index.html#">Environment</a></li>
-                                        <li><a href="index.html#">Religion</a></li>
-                                        <li><a href="index.html#">Scandals</a></li>
+                                        <li><a href="<?=$BASE_URL?>">U.N.</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
+                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -3070,10 +3070,10 @@ include 'header.php';
                             <div class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
                                 <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
                                 <ul class="social-icon color-tertiary md-size justify-content-start">
-                                    <li><a href="index.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="index.html#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-linkedin-in"></i></a></li>
                                 </ul>
                             </div>
                             <!-- End Post List  -->
@@ -3092,35 +3092,35 @@ include 'header.php';
                             <div class="copyright-left">
                                 <ul class="mainmenu justify-content-start">
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                         <span data-text="Contact Us">Contact Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                         <span data-text="Terms of Use">Terms of Use</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                         <span data-text="AdChoices">AdChoices</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                         <span data-text="Advertise with Us">Advertise with Us</span>
                                             </span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="hover-flip-item-wrapper" href="index.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
                                             <span class="hover-flip-item">
                                         <span data-text="Blogar Store">Blogar Store</span>
                                             </span>

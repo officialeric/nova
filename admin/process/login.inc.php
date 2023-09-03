@@ -18,7 +18,9 @@ if(isset($_POST['login'])){
         $user = mysqli_fetch_assoc($data);
         if($user['role_id'] == 1){
             $_SESSION['id'] = $user['id'];  
-            header('location:../layouts/index.php?user_id='. $_SESSION['id'] .'&role=admin!');
+            $_SESSION['username'] = $user['username'];  
+
+            header('location:../layouts/index.php?user_id='. $_SESSION['id'] .'&role=admin');
         }else{
             // http_response_code(404);
             header('location:../index.php?error=You are not allowed!');

@@ -8,8 +8,8 @@ if(isset($_POST['submit'])) {
     $password = $_POST['password'];
 
     registerNewUser($username,$email,$password);
-}else{
-    header('location:../../index.php');
+    header('location:../../login.php');
+
 }
 
 if(isset($_POST['login'])) {
@@ -34,6 +34,4 @@ if(isset($_POST['login'])) {
     }
     
    
-}else{
-    header('location:../../index.php');
 }
