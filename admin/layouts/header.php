@@ -2,6 +2,7 @@
 include '../paths.php';
 include '../../process/db_connect.php';
 
+if(isset($_SESSION['id'])){
 $id = $_GET['user_id'];
 $sql = "SELECT * FROM users WHERE id=$id";
 $datas = mysqli_query($conn, $sql);
@@ -15,13 +16,9 @@ if(isset($_GET['msg'])) {
 if(isset($_GET['error'])) {
     $error = $_GET['error'];
 }
-
-$img_query = "SELECT profile_img FROM users WHERE id=$id";
-$img_result = mysqli_query($conn, $img_query);
-
-if(mysqli_num_rows($img_result) == 1) {
-    $img_display = mysqli_fetch_assoc($img_result);
 }
+
+
 
 ?>
 
@@ -60,6 +57,7 @@ if(mysqli_num_rows($img_result) == 1) {
         <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" id="app-style" />
 
         <!-- Icons css -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     </head>
 
@@ -98,8 +96,9 @@ if(mysqli_num_rows($img_result) == 1) {
 
                         <!-- Sidebar Menu Toggle Button -->
                         <button class="button-toggle-menu">
-                            <i class="ri-menu-line"></i>
-                        </button>
+                        <span class="material-symbols-outlined">
+menu
+</span>                        </button>
 
                         <!-- Horizontal Menu Toggle Button -->
                         <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
@@ -115,7 +114,8 @@ if(mysqli_num_rows($img_result) == 1) {
                             <form>
                                 <div class="input-group">
                                     <input type="search" class="form-control" placeholder="Search...">
-                                    <span class="ri-search-line search-icon text-muted"></span>
+                                    <!-- <span class="ri-search-line search-icon text-muted"></span> -->
+                                    
                                 </div>
                             </form>
                         </div>
@@ -139,8 +139,9 @@ if(mysqli_num_rows($img_result) == 1) {
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <img src="assets/images/flags/us.jpg" alt="user-image" class="me-0 me-sm-1" height="12">
-                                <span class="align-middle d-none d-lg-inline-block">English</span> <i
-                                    class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
+                                <span class="align-middle d-none d-lg-inline-block">English</span>
+                                 <!-- <i
+                                    class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i> -->
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated">
 
@@ -172,143 +173,15 @@ if(mysqli_num_rows($img_result) == 1) {
                         </li>
 
                         <li class="dropdown notification-list">
-                            <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
-                                aria-haspopup="false" aria-expanded="false">
-                                <i class="ri-mail-line fs-22"></i>
-                                <span class="noti-icon-badge badge text-bg-purple">4</span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
-                                <div class="p-2 border-top-0 border-start-0 border-end-0 border-dashed border">
-                                    <div class="row align-items-center">
-                                        <div class="col">
-                                            <h6 class="m-0 fs-16 fw-semibold"> Messages</h6>
-                                        </div>
-                                        <div class="col-auto">
-                                            <a href="javascript: void(0);" class="text-dark text-decoration-underline">
-                                                <small>Clear All</small>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div style="max-height: 300px;" data-simplebar>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-1.jpg" class="img-fluid rounded-circle"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold fs-14">Cristina Pride <small
-                                                            class="fw-normal text-muted float-end ms-1">1 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What about our
-                                                        next meeting</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold fs-14">Sam Garret <small
-                                                            class="fw-normal text-muted float-end ms-1">2 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Yeah everything is fine</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-3.jpg" class="img-fluid rounded-circle"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold fs-14">Karen Robinson <small
-                                                            class="fw-normal text-muted float-end ms-1">2 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Wow that's great</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold fs-14">Sherry Marshall <small
-                                                            class="fw-normal text-muted float-end ms-1">3 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Hi, How are you? What about our
-                                                        next meeting</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-
-                                    <!-- item-->
-                                    <a href="javascript:void(0);"
-                                        class="dropdown-item p-0 notify-item read-noti card m-0 shadow-none">
-                                        <div class="card-body">
-                                            <div class="d-flex align-items-center">
-                                                <div class="flex-shrink-0">
-                                                    <div class="notify-icon">
-                                                        <img src="assets/images/users/avatar-5.jpg" class="img-fluid rounded-circle"
-                                                            alt="" />
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1 text-truncate ms-2">
-                                                    <h5 class="noti-item-title fw-semibold fs-14">Shawn Millard <small
-                                                            class="fw-normal text-muted float-end ms-1">4 day ago</small></h5>
-                                                    <small class="noti-item-subtitle text-muted">Yeah everything is fine</small>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
-                                <!-- All-->
-                                <a href="javascript:void(0);"
-                                    class="dropdown-item text-center text-primary text-decoration-underline fw-bold notify-item border-top border-light py-2">
-                                    View All
-                                </a>
-
-                            </div>
+                            
                         </li>
 
                         <li class="dropdown notification-list">
                             <a class="nav-link dropdown-toggle arrow-none" data-bs-toggle="dropdown" href="index.html#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
-                                <i class="ri-notification-3-line fs-22"></i>
+                                <span class="material-symbols-outlined">
+notifications
+</span>
                                 <span class="noti-icon-badge badge text-bg-pink">3</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated dropdown-lg py-0">
@@ -396,53 +269,57 @@ if(mysqli_num_rows($img_result) == 1) {
                             </div>
                         </li>
 
-                        <li class="d-none d-sm-inline-block">
+                        <!-- <li class="d-none d-sm-inline-block">
                             <a class="nav-link" data-bs-toggle="offcanvas" href="index.html#theme-settings-offcanvas">
-                                <i class="ri-settings-3-line fs-22"></i>
+                            <i class="bi bi-list"></i>
                             </a>
-                        </li>
+                        </li> -->
 
                         <li class="d-none d-sm-inline-block">
                             <div class="nav-link" id="light-dark-mode">
-                                <i class="ri-moon-line fs-22"></i>
-                            </div>
+                            <span class="material-symbols-outlined">
+contrast
+</span>                        </div>
                         </li>
 
                         <li class="dropdown">
                             <a class="nav-link dropdown-toggle arrow-none nav-user" data-bs-toggle="dropdown" href="index.php#" role="button"
                                 aria-haspopup="false" aria-expanded="false">
                                 <span class="account-user-avatar">
-                                    <img src="../process/uploads/<?=$img_display['profile_img']?>" alt="user-image" width="32" class="avatar-sm rounded-circle">
+                                    <img src="../process/uploads/<?=$user_data['profile_img']?>" alt="user-image" width="32" class="avatar-sm rounded-circle">
                                 </span>
                                 <span class="d-lg-block d-none">
                                     <h5 class="my-0 fw-normal">
                                         <?=$user_data['username'];?> 
-                                        <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i>
+                                        <!-- <i class="ri-arrow-down-s-line d-none d-sm-inline-block align-middle"></i> -->
                                     </h5>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated profile-dropdown">
                                 <!-- item-->
-                                <div class=" dropdown-header noti-title">
+                                <!-- <div class=" dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome !</h6>
-                                </div>
+                                </div> -->
 
                                 <!-- item-->
                                 <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
-                                    <i class="ri-account-circle-line fs-18 align-middle me-1"></i>
-                                    <span>My Account</span>
+                                <span class="material-symbols-outlined">
+account_circle
+</span>                                    <span class='ml-3'>My Account</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="<?=$PROFILE_URL;?>" class="dropdown-item">
-                                    <i class="ri-settings-4-line fs-18 align-middle me-1"></i>
-                                    <span>Settings</span>
+                                <span class="material-symbols-outlined">
+settings
+</span>                                    <span class='ml-3'>Settings</span>
                                 </a>
 
                                 <!-- item-->
                                 <a href="<?=$FAQ_URL;?>" class="dropdown-item">
-                                    <i class="ri-customer-service-2-line fs-18 align-middle me-1"></i>
-                                    <span>Support</span>
+                                <span class="material-symbols-outlined">
+info
+</span>                                    <span class='ml-3'>Support</span>
                                 </a>
 
                                 <!-- item-->
@@ -453,8 +330,9 @@ if(mysqli_num_rows($img_result) == 1) {
 
                                 <!-- item-->
                                 <a href="../process/logout.php" class="dropdown-item">
-                                    <i class="ri-logout-box-line fs-18 align-middle me-1"></i>
-                                    <span>Logout</span>
+                                <span class="material-symbols-outlined">
+logout
+</span>                                    <span class='ml-3'>Logout</span>
                                 </a>
                             </div>
                         </li>

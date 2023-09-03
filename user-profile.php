@@ -429,7 +429,7 @@ include 'process/includes/paths.php';
                                                     aria-controls="home" aria-selected="true"
                                                     href="pages-profile.php#projects">Projects</a></li> -->
                                         </ul>
-
+    
                                         <div class="tab-content m-0 p-4">
                                             <div class="tab-pane active" id="aboutme" role="tabpanel"
                                                 aria-labelledby="home-tab" tabindex="0">

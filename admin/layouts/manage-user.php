@@ -2,8 +2,7 @@
     include 'header.php'; 
     include '../../process/db_connect.php';
     
-    $sql = "SELECT * FROM users WHERE role_id = 4";
-    $users = mysqli_query($conn, $sql);
+  
 
     
 ?>
@@ -50,12 +49,12 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="header-title">Multi item selection</h4>
-                                    <p class="text-muted mb-0">
+                                    <h4 class="header-title">Search input should be here</h4>
+                                    <!-- <p class="text-muted mb-0">
                                         This example shows the multi option. Note how a click on a row will toggle its
                                         selected state without effecting other rows,
                                         unlike the os and single options shown in other examples.
-                                    </p>
+                                    </p> -->
                                 </div>
                                 <div class="card-body">
                                 <table id="selection-datatable"
@@ -80,11 +79,11 @@
                                         ?>    
                                             <tr>
                                                 <td><?= $i; ?></td>
-                                                <td><?= $user['profile_img'] ?></td>
+                                                <td><img src="../../process/auth/uploads/<?=$user['profile_img']?>" width="10%" ></td>
                                                 <td><?= $user['username'] ?></td>
                                                 <td><?= $user['email'] ?></td>
                                                 <td><?= $user['password'] ?></td>
-                                                <td><?= $user['role_id'] ?></td>
+                                                <td><?=($user_data['role_id'] == 4 ? 'Admin' : 'User')?></td>
                                                 <td>
                                                     <a class="text-soft-danger" href="../process/delete-action.php?del_id=<?=$user['id']?>">
                                                         <button type="button" class="btn btn-soft-danger">
