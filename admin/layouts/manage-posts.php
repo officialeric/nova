@@ -30,9 +30,18 @@
                                     <h4 class="page-title">Manage Posts</h4>
                                 </div>
                             </div>
-                            <div class="col-12">
+
+
+                            <a class="col-12" data-bs-toggle="tab" data-bs-target="#edit-profile" type="button" role="tab" aria-controls="home" aria-selected="true" href="pages-profile.php#edit-profile">
                                 <button class='btn btn-primary rounded'>Add Post</button>
-                            </div>
+                            </a>
+
+                            <!-- <div class="col-12">
+                                <button class='btn btn-primary rounded'>Add Post</button>
+                            </div> -->
+
+
+
                         </div>
                         <!-- end page title -->
                         <div class="row">
@@ -54,11 +63,11 @@
                                                 <th>S/N</th>
                                                 <th>Banner</th>
                                                 <th>Title</th>
-                                                <th>Discription</th>
+                                                <th>Description</th>
                                                 <th>category</th>
                                                 <th>CreatedAt</th>
                                                 <th>Status</th>
-                                                <th>CteatedBy</th>
+                                                <th>CreatedBy</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -73,6 +82,10 @@
                                                 <td>61</td>
                                                 <td>2011/04/25</td>
                                                 <td>$320,800</td>
+
+                                                <td>Active</td>
+                                                <td>Xcole corp</td>
+                                                <td><button>DELETE</button></td>
                                             </tr>
                                         
                                         </tbody>

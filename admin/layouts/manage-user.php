@@ -2,8 +2,8 @@
     include 'header.php'; 
     include '../../process/db_connect.php';
     
-  
-
+    $sql = "SELECT * FROM users WHERE role_id=4";
+    $users = mysqli_query($conn, $sql);
     
 ?>
 
@@ -36,7 +36,7 @@
                                     </div>
                                     <h4 class="page-title">Manage Users</h4>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12 mb-3">
                                 <button class='btn btn-primary rounded'>Add User</button>
                             </div>
                             </div>
@@ -79,13 +79,13 @@
                                         ?>    
                                             <tr>
                                                 <td><?= $i; ?></td>
-                                                <td><img src="../../process/auth/uploads/<?=$user['profile_img']?>" width="10%" ></td>
+                                                <td><img src="../../process/auth/uploads/<?=$user['profile_img']?>" width="10%" class="avatar-sm rounded-circle"></td>
                                                 <td><?= $user['username'] ?></td>
                                                 <td><?= $user['email'] ?></td>
                                                 <td><?= $user['password'] ?></td>
                                                 <td><?=($user_data['role_id'] == 4 ? 'Admin' : 'User')?></td>
                                                 <td>
-                                                    <a class="text-soft-danger" href="../process/delete-action.php?del_id=<?=$user['id']?>">
+                                                    <a class="text-soft-danger" href="../process/delete-action.php?page=users&user_id=<?=$_GET['user_id']?>&del_id=<?=$user['id']?>">
                                                         <button type="button" class="btn btn-soft-danger">
                                                             Remove
                                                         </button>

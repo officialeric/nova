@@ -3,7 +3,7 @@ include 'process/includes/paths.php';
 include 'process/db_connect.php';
 
 if(isset($_SESSION['id'])){
-    $id = $_GET['user_id'];
+    $id = $_SESSION['id'];
 
     $sql = "SELECT * FROM users WHERE id=$id";
     $datas = mysqli_query($conn, $sql);

@@ -7,18 +7,19 @@ $id = $_GET['user_id'];
 $sql = "SELECT * FROM users WHERE id=$id";
 $datas = mysqli_query($conn, $sql);
 
-if(mysqli_num_rows($datas) == 1) {
-    $user_data =  mysqli_fetch_assoc($datas);
-}
-if(isset($_GET['msg'])) {
-    $message = $_GET['msg'];
-}
-if(isset($_GET['error'])) {
-    $error = $_GET['error'];
-}
+    if(mysqli_num_rows($datas) == 1) {
+        $user_data =  mysqli_fetch_assoc($datas);
+    }
+    if(isset($_GET['msg'])) {
+        $message = $_GET['msg'];
+    }
+    if(isset($_GET['error'])) {
+        $error = $_GET['error'];
+    }
 }
 
-
+$query = "SELECT * FROM category";
+$results = mysqli_query($conn, $query);
 
 ?>
 

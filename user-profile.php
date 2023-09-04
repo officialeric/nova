@@ -435,7 +435,7 @@ include 'process/includes/paths.php';
                                                 aria-labelledby="home-tab" tabindex="0">
                                                 <div class="profile-desk">
                                                     <h5 class="text-uppercase fs-17 text-dark"><?=$user_data['username']?></h5>
-                                                    <div class="designation mb-4">Admin</div>
+                                                    <div class="designation mb-4">z</div>
                                                     <p class="text-muted fs-16">
                                                     <?=$user_data['about']?>
                                                     </p>
