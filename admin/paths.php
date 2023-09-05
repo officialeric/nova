@@ -20,6 +20,9 @@ session_start();
 // post management
 (isset($_SESSION['id']) ? $POSTS_URL = 'manage-posts.php?user_id='.$_SESSION['id'] :$POSTS_URL = 'manage-posts.php');
 
+// post adding
+(isset($_SESSION['id']) ? $ADD_POST_URL = 'add-posts.php?user_id='.$_SESSION['id'] :$ADD_POST_URL = 'add-posts.php');
+
 // profile management
 (isset($_SESSION['id']) ? $PROFILE_URL = 'pages-profile.php?user_id='.$_SESSION['id'] :$PROFILE_URL = 'pages-profile.php');
 

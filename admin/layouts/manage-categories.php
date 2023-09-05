@@ -42,28 +42,58 @@
                     tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="staticBackdropLabel">ADD CATEGORY</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="../process/adding-activity.php" method="post" id='form'>
-                                    <label for="inputGroupFile04">Category Name</label>
-                                    <div class="input-group">
-                                        <input type="text" name="category" class="form-control" id="inputGroupFile04"
-                                            aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-soft-danger"
-                                    data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" name="add_cat" class="btn btn-primary"
-                                    form='form'>
-                                    Add
-                                </button>
-                            </div>
+                            <?php if(isset($_GET['action'])) { ?>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">ADD CATEGORY</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="../process/adding-activity.php" method="post" id='form'>
+                                        <label for="inputGroupFile04">Category Name</label>
+                                        <div class="input-group">
+                                            <input type="text" name="category" class="form-control" id="inputGroupFile04"
+                                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-soft-danger"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" name="add_cat" class="btn btn-primary"
+                                        form='form'>
+                                        Add
+                                    </button>
+                                </div>
+                            <?php } else {?>
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Edit CATEGORY</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form action="../process/adding-activity.php" method="post" id='form'>
+                                        <label for="inputGroupFile04">Category Name</label>
+                                        <div class="input-group">
+                                            <input type="text" name="edit" class="form-control" id="inputGroupFile04"
+                                                aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-soft-danger"
+                                        data-bs-dismiss="modal">Cancel</button>
+                                    <button type="submit" name="edit_cat" class="btn btn-primary"
+                                        form='form'>
+                                        Edit
+                                    </button>
+                                </div>
+                            <?php } ?>
+
                         </div>
                     </div>
                
@@ -100,10 +130,10 @@
                             <td><?=$i;?></td>
                             <td><?=$result['category_name'];?></td>
                             <td>
-                                <a href="#">
-                                <button type="button" class="btn btn-soft-primary rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                    Edit
-                                </button>
+                                <a href="#&action=edit&page=category&edit_id=<?=$result['id'];?>">
+                                    <button type="button" class="btn btn-soft-primary rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        Edit
+                                    </button>
                                 </a>
                                 <a class="text-soft-danger" href="../process/delete-action.php?page=category&user_id=<?=$_GET['user_id']?>&del_id=<?=$result['id'];?>">
                                     <button type="button" class="btn btn-soft-danger">

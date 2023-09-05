@@ -1,4 +1,41 @@
-                <?php include 'header.php' ?>
+                <?php 
+                    include 'header.php';
+                    
+                    $sql = "SELECT * FROM users WHERE role_id=4";
+                    $results = mysqli_query($conn, $sql);
+
+                    $sql = "SELECT * FROM category";
+                    $result = mysqli_query($conn, $sql);
+                    $total_categoties = mysqli_num_rows($result);
+
+                    $sql = "SELECT * FROM posts";
+                    $res = mysqli_query($conn, $sql);
+                    $total_posts = mysqli_num_rows($res);
+
+                    $current_time = time();
+                    $time_limit = 24 * 60 * 60;
+                   
+                    if(mysqli_num_rows($results) > 0) {
+                        $total_users = mysqli_num_rows($results);
+
+                        $daily_visits = 0;
+
+                        while($row = mysqli_fetch_assoc($results)) {
+                            $user_signed_time = strtotime($row['signed_time']);
+
+                            $time_diff = $current_time - $user_signed_time;
+
+                            if ($time_diff <= $time_limit) {
+                                $daily_visits++;
+                            }
+                        }
+
+                        $daily_visitsPercentage = ($daily_visits / $total_users) * 100;
+                        
+                    } else {
+                        $daily_visitsPercentage = 0 . "%";
+                    }
+                ?>
 
                 <!-- Sidebar -left -->
                 <?php  include 'sidebar.php'; ?>
@@ -35,13 +72,13 @@
 
                         <div class="row">
                             <div class="col-xxl-3 col-sm-6">
-                                <div class="card widget-flat text-bg-pink">
+                                <div class="card widget-flat text-bg-primary">
                                     <div class="card-body">
                                         <div class="float-end">
                                             <i class="ri-eye-line widget-icon"></i>
                                         </div>
-                                        <h6 class="text-uppercase mt-0" title="Customers">Daily Visits</h6>
-                                        <h2 class="my-2">8,652</h2>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Total users</h6>
+                                        <h2 class="my-2"><?=$total_users;?></h2>
                                         <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-10 me-1">2.97%</span>
                                             <span class="text-nowrap">Since last month</span>
@@ -56,8 +93,8 @@
                                         <div class="float-end">
                                             <i class="ri-wallet-2-line widget-icon"></i>
                                         </div>
-                                        <h6 class="text-uppercase mt-0" title="Customers">Revenue</h6>
-                                        <h2 class="my-2">$9,254.62</h2>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Total posts</h6>
+                                        <h2 class="my-2"><?=$total_posts?></h2>
                                         <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
                                             <span class="text-nowrap">Since last month</span>
@@ -72,8 +109,8 @@
                                         <div class="float-end">
                                             <i class="ri-shopping-basket-line widget-icon"></i>
                                         </div>
-                                        <h6 class="text-uppercase mt-0" title="Customers">Orders</h6>
-                                        <h2 class="my-2">753</h2>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Total categories</h6>
+                                        <h2 class="my-2"><?=$total_categoties?></h2>
                                         <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
                                             <span class="text-nowrap">Since last month</span>
@@ -83,12 +120,12 @@
                             </div> <!-- end col-->
 
                             <div class="col-xxl-3 col-sm-6">
-                                <div class="card widget-flat text-bg-primary">
+                                <div class="card widget-flat text-bg-pink">
                                     <div class="card-body">
                                         <div class="float-end">
                                             <i class="ri-group-2-line widget-icon"></i>
                                         </div>
-                                        <h6 class="text-uppercase mt-0" title="Customers">Users</h6>
+                                        <h6 class="text-uppercase mt-0" title="Customers">Daily visits</h6>
                                         <h2 class="my-2">63,154</h2>
                                         <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-10 me-1">8.21%</span>

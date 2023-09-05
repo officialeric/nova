@@ -102,24 +102,23 @@
                                             </tr>
                                         </thead>
 
-
                                         <tbody>
-                                        <?php $i = 0; foreach($roles as $role): $i++; ?>
-                                            <tr>
-                                                <td><?= $i; ?></td>
-                                                <td><?= $role['role_name'] ?></td>
-                                                <td>
-                                                    <button type="button" class="btn btn-soft-primary">
-                                                        Edit
-                                                    </button>
-                                                    <a class="text-soft-danger" href="../process/delete-action.php?page=roles&user_id=<?=$_GET['user_id']?>&del_id=<?=$role['id'];?>">
-                                                        <button type="button" class="btn btn-soft-danger">
-                                                            Delete
+                                            <?php $i = 0; foreach($roles as $role): $i++; ?>
+                                                <tr>
+                                                    <td><?= $i; ?></td>
+                                                    <td><?= $role['role_name'] ?></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-soft-primary">
+                                                            Edit
                                                         </button>
-                                                    </a>
-                                                </td> 
-                                            </tr>
-                                        <?php endforeach; ?>
+                                                        <a class="text-soft-danger" href="../process/delete-action.php?page=roles&user_id=<?=$_GET['user_id']?>&del_id=<?=$role['id'];?>">
+                                                            <button type="button" class="btn btn-soft-danger">
+                                                                Delete
+                                                            </button>
+                                                        </a>
+                                                    </td> 
+                                                </tr>
+                                            <?php endforeach; ?>
                                         </tbody>
                                     </table>
 

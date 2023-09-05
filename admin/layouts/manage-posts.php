@@ -32,7 +32,7 @@
                             </div>
 
 
-                            <a class="col-12" data-bs-toggle="tab" data-bs-target="#edit-profile" type="button" role="tab" aria-controls="home" aria-selected="true" href="pages-profile.php#edit-profile">
+                            <a class="col-12"  href="<?=$ADD_POST_URL?>">
                                 <button class='btn btn-primary rounded'>Add Post</button>
                             </a>
 

@@ -21,6 +21,9 @@ $datas = mysqli_query($conn, $sql);
 $query = "SELECT * FROM category";
 $results = mysqli_query($conn, $query);
 
+$cate_query = "SELECT * FROM category";
+$categories = mysqli_query($conn, $cate_query);
+
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +63,21 @@ $results = mysqli_query($conn, $query);
         <!-- Icons css -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+        <style>
+            #container {
+                width: 1000px;
+                margin: 10px auto;
+            }
+            .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 200px;
+            }
+            .ck-content .image {
+                /* block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }
+        </style>
     </head>
 
     <body>
