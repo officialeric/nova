@@ -24,6 +24,19 @@ $results = mysqli_query($conn, $query);
 $cate_query = "SELECT * FROM category";
 $categories = mysqli_query($conn, $cate_query);
 
+$selected_post_query = "SELECT * FROM posts";
+$posts = mysqli_query($conn, $selected_post_query);
+
+if(isset($_GET['post_id'])){
+    $post_id = $_GET['post_id'];
+    $selected_query = "SELECT * FROM posts WHERE id=$post_id";
+    $edit_posts = mysqli_query($conn, $selected_query);
+    
+    if(mysqli_num_rows($edit_posts)){
+        $edited_post = mysqli_fetch_assoc($edit_posts);
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -65,12 +78,12 @@ $categories = mysqli_query($conn, $cate_query);
         <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <style>
             #container {
-                width: 1000px;
+                width: 100%;
                 margin: 10px auto;
             }
             .ck-editor__editable[role="textbox"] {
                 /* editing area */
-                min-height: 200px;
+                min-height: 500px;
             }
             .ck-content .image {
                 /* block images */

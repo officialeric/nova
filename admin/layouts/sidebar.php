@@ -58,6 +58,15 @@
             </a>
         </li>
 
+        <li class="side-nav-item">
+            <a href="<?=$UPLOADED_URL?>" class="side-nav-link">
+                <span class="material-symbols-outlined">
+                    upload
+                </span><!-- <span class="badge bg-success float-end">9+</span> -->
+                <span class='ml-3'>Uploaded files </span>
+            </a>
+        </li>
+
 
 
         <li class="side-nav-item">

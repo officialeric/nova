@@ -1,4 +1,6 @@
-<?php include 'header.php' ?>
+<?php 
+// include '../process/posting.php';
+include 'header.php' ?>
 
 
                 <!-- Sidebar -left -->
@@ -44,25 +46,28 @@
 
                         </div>
                         <!-- end page title -->
-
+                        <form action="<?=$PROCESS_POST_URL?>" method="post" id='form' enctype='multipart/form-data'>
+                            <input type="hidden" name="post_id" value='<?=$edited_post['id'] ?? null?>'>
                         <div class="row">
                         <div class="col-12">
                             <div class="card">
-                            
+                            <div class="card-header">
+                                
+                                  
+                            </div>
                                 <div class="card-body">
                                 
-                                <form action="" method="post" id='form'>
                                         <label for="inputGroupFile04">Title :</label>
                                         <div class="input-group">
-                                            <input type="text" name="category" class="form-control" id="inputGroupFile04"
-                                                aria-describedby="inputGroupFileAddon04" aria-label="Upload" placeholder='Post Title..'>
+                                            <input type="text" name="title" class="form-control" id="inputGroupFile04"
+                                                aria-describedby="inputGroupFileAddon04" aria-label="Upload" placeholder='Post Title..' value='<?=$edited_post['title'] ?? null?>'>
                                         </div>
                                         <div class="row mt-3">
                                             <div class="col-4">
                                             <label for="inputGroupFile04">Category :</label>
 
                                                 <div class="input-group">
-                                                <select class="form-select" aria-label="Default select example">
+                                                <select class="form-select" name='post_category' aria-label="Default select example">
                                                     <option selected>Select Category</option>
                                                     <?php  foreach($categories as $category):?>
                                                     <option value="<?=$category['category_name']?>"><?=$category['category_name']?></option>
@@ -70,15 +75,17 @@
 
                                                 </select>
                                             </div>
-                                            <div class="col">
-                                            <!-- <label for="inputGroupFile04">Title :</label>
-
-                                                    <div class="input-group">
-                                                    <input type="text" name="category" class="form-control" id="inputGroupFile04"
-                                                        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-                                                </div> -->
-                                            </div>
+                                            
                                         </div>
+                                       
+                                        <!-- <div class="col"></div> -->
+                                        <div class="col-4">
+                                                <label for="inputGroupFile04">Post Banner :</label>
+                                                <div class="input-group">
+                                                    <input type="file" name="banner" class="form-control" id="inputGroupFile04"
+                                                        aria-describedby="inputGroupFileAddon04" aria-label="Upload" value=<?=$edited_post['banner'] ?? null?>>
+                                                </div>
+                                            </div>
                                     </form>
 
                                 </div> <!-- end card body-->
@@ -101,19 +108,20 @@
                                 <div class="card-body">
                                 
                                 <div id="container">
-                                    <div id="editor">
-                                    </div>
+                                    <textarea name="post_content" id="editor" cols="30" rows="10">
+                                        <?=$edited_post['description'] ?? null?>
+                                    </textarea>
                                 </div>
 
                                 </div> <!-- end card body-->
                                 <div class="card-footer">
-                                    <button class='btn btn-primary  '>Create Post</button>
+                                    <button class='btn btn-primary' type='submit' name='<?=(isset($_GET['post_id']) ? 'edit-post' : 'create-post')?>'>Create Post</button>
                                 </div>
                             </div> <!-- end card -->
                         </div><!-- end col-->
                     </div> <!-- end row-->
 
-
+                                                    </form>
                         
                         
             

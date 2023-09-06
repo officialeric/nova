@@ -12,6 +12,7 @@ include 'header.php';
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
+                            
                             <div class="slider-activation axil-slick-arrow">
                                 <!-- Start Single Slide  -->
                                 <div class="content-block">

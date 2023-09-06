@@ -12,6 +12,13 @@ if(isset($_SESSION['id'])){
         $user_data =  mysqli_fetch_assoc($datas);
     }
 }
+$post_id =6;
+    $selected_query = "SELECT * FROM posts WHERE id=$post_id";
+    $edit_posts = mysqli_query($conn, $selected_query);
+    
+    if(mysqli_num_rows($edit_posts)){
+        $post = mysqli_fetch_assoc($edit_posts);
+    }
 
 ?>
 

@@ -47,14 +47,7 @@
                         <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h4 class="header-title">Multi item selection</h4>
-                                    <p class="text-muted mb-0">
-                                        This example shows the multi option. Note how a click on a row will toggle its
-                                        selected state without effecting other rows,
-                                        unlike the os and single options shown in other examples.
-                                    </p>
-                                </div>
+
                                 <div class="card-body">
                                     <table id="selection-datatable"
                                         class="table table-striped dt-responsive nowrap w-100">
@@ -68,26 +61,54 @@
                                                 <th>CreatedAt</th>
                                                 <th>Status</th>
                                                 <th>CreatedBy</th>
-                                                <th>Action</th>
+                                                <th>Operations</th>
                                             </tr>
                                         </thead>
 
 
                                         <tbody>
+                                            <?php $i=1; foreach($posts as $post) : ?>
                                             <tr>
-                                                <td>1</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
+                                                <td><?=$i++?></td>
+                                                <td><img src="../process/uploads/<?=$post['banner']?>" alt="" width='80%'></td>
+                                                <td><?=$post['title']?></td>
                                                 
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                <td>Click Edit to view full post</td>
+                                                <td><?=$post['category']?></td>
+                                                <td><?=$post['createdAt']?></td>
 
-                                                <td>Active</td>
-                                                <td>Xcole corp</td>
-                                                <td><button>DELETE</button></td>
+                                                <td><?=$post['status']?></td>
+                                                <td><?=$post['posted_by']?></td>
+                                                <td>
+                                                    <div class="d-flex">
+                                                    <a class="text-soft-danger" href="<?=$ADD_POST_URL?>&post_id=<?=$post['id'];?>">
+
+                                                    <button class='btn btn-primary m-2'>
+                                                    <span class="material-symbols-outlined">
+                                                    edit
+                                                    </span>           
+                                                    </button>
+                                                    </a>
+                                                    
+                                                    <a href="../process/posting.php?publish_id=<?=$post['id']?>" name='publish'>
+                                                        <button class='btn btn-primary m-2'>
+                                                            <span class="material-symbols-outlined">
+                                                            post
+                                                            </span>           
+                                                        </button>
+                                                    </a>
+
+                                                    <a class="text-soft-danger" href="../process/delete-action.php?page=posts&user_id=<?=$_GET['user_id']?>&del_id=<?=$post['id'];?>">
+                                                    <button class='btn btn-danger m-2'>
+                                                    <span class="material-symbols-outlined">
+                                                    delete
+                                                    </span> 
+                                                    </button>
+                                                    </a>
+                                                    </div>  
+                                                </td>
                                             </tr>
-                                        
+                                        <?php endforeach ?>
                                         </tbody>
                                     </table>
 

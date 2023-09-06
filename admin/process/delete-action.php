@@ -34,5 +34,14 @@ if(isset($_GET['del_id'])) {
             }else{
                 header("location: ../layouts/". $ROLES_URL ."&error=Failed to delete role!");
             }
+        }else if ($page == 'posts') {
+            $del = "DELETE FROM posts WHERE  id=$del_id";
+            $deleted = mysqli_query($conn, $del);
+
+            if($deleted) {
+                header("location: ../layouts/". $POSTS_URL ."&msg=Post deleted!");
+            }else{
+                header("location: ../layouts/". $POSTS_URL ."&error=Failed to delete post!");
+            }
         }
     }

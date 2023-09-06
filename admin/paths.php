@@ -31,3 +31,9 @@ session_start();
 
 // setting header
 (isset($_SESSION['id']) ? $SET_HEADER_URL = 'setting-header.php?user_id='.$_SESSION['id'] :$SET_HEADER_URL = 'setting-header.php');
+
+// posting process
+(isset($_SESSION['id']) ? $PROCESS_POST_URL = '../process/posting.php?user_id='.$_SESSION['id'] :$PROCESS_POST_URL = '../process/posting.php');
+
+// uploaded files
+(isset($_SESSION['id']) ? $UPLOADED_URL = 'uploaded-files.php?user_id='.$_SESSION['id'] :$UPLOADED_URL = 'uploaded-files.php');
