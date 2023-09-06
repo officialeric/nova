@@ -43,7 +43,7 @@
         <li class="side-nav-item">
             <a href="<?=$SUBSCRIBERS_URL;?>" class="side-nav-link">
                 <span class="material-symbols-outlined">
-                    category
+                    subscriptions   
                 </span> <!-- <span class="badge bg-success float-end">9+</span> -->
                 <span class='ml-3'> Subscribers </span>
             </a>
@@ -138,9 +138,7 @@
                     <li>
                         <a href="#">Footer</a>
                     </li>
-                    <li>
-                        <a href="auth-forgotpw.php">Forgot Password</a>
-                    </li>
+                    
                     <li>
                         <a href="auth-lock-screen.php">Lock Screen</a>
                     </li>

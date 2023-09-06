@@ -2,7 +2,7 @@
 session_start();
 include '../../process/db_connect.php';
 
-if(isset($_POST['login'])){
+if(isset($_POST['login'])) {
 
     $email = $_POST['email'];
     $password = $_POST['password'];

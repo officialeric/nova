@@ -315,8 +315,10 @@ include '../../process/db_connect.php';
                                                                 </textarea>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-primary" type="submit" name="submit"><i
-                                                        class="ri-save-line me-1 fs-16 lh-1"></i>
+                                                <button class="btn btn-primary" type="submit" name="submit">
+                                                <!-- <span class="material-symbols-outlined">
+                                                    save   
+                                                </span> -->
                                                     Save
                                                 </button>
 

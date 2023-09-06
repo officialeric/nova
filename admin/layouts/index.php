@@ -75,8 +75,9 @@
                                 <div class="card widget-flat text-bg-primary">
                                     <div class="card-body">
                                         <div class="float-end">
-                                            <i class="ri-eye-line widget-icon"></i>
-                                        </div>
+                                        <span class="material-symbols-outlined ">
+                                        manage_accounts
+                                        </span>                                        </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Total users</h6>
                                         <h2 class="my-2"><?=$total_users;?></h2>
                                         <p class="mb-0">
@@ -91,7 +92,10 @@
                                 <div class="card widget-flat text-bg-purple">
                                     <div class="card-body">
                                         <div class="float-end">
-                                            <i class="ri-wallet-2-line widget-icon"></i>
+                                            <!-- <i class="ri-wallet-2-line widget-icon"></i> -->
+                                            <span class="material-symbols-outlined">
+                                        post
+                                        </span>
                                         </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Total posts</h6>
                                         <h2 class="my-2"><?=$total_posts?></h2>
@@ -107,7 +111,10 @@
                                 <div class="card widget-flat text-bg-info">
                                     <div class="card-body">
                                         <div class="float-end">
-                                            <i class="ri-shopping-basket-line widget-icon"></i>
+                                            <!-- <i class="ri-shopping-basket-line widget-icon"></i> -->
+                                            <span class="material-symbols-outlined">
+                                        category
+                                        </span> 
                                         </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Total categories</h6>
                                         <h2 class="my-2"><?=$total_categoties?></h2>
@@ -123,7 +130,10 @@
                                 <div class="card widget-flat text-bg-pink">
                                     <div class="card-body">
                                         <div class="float-end">
-                                            <i class="ri-group-2-line widget-icon"></i>
+                                            <!-- <i class="ri-group-2-line widget-icon"></i> -->
+                                            <span class="material-symbols-outlined">
+                                            manage_search
+                                            </span>
                                         </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Daily visits</h6>
                                         <h2 class="my-2">63,154</h2>

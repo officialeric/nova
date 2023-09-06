@@ -47,7 +47,7 @@ if(isset($_GET['post_id'])){
         <title>Dashboard | Xcole</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
-        <meta content="Techzaa" name="author" />
+        <meta content="Xcole" name="author" />
 
         <!-- sample -->
             <!-- Add these lines to your HTML file -->
@@ -59,7 +59,8 @@ if(isset($_GET['post_id'])){
         <!-- sample end -->
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <!-- <link rel="shortcut icon" href="assets/images/favicon.ico"> -->
+        <link rel="shortcut icon" href="../../assets/images/favicon.png" type="image/x-icon">
 
         <!-- Daterangepicker css -->
         <link rel="stylesheet" href="assets/vendor/daterangepicker/daterangepicker.css">

@@ -57,7 +57,7 @@ if(isset($_POST['create-post'])){
 
                 if($stmt){
                     header('location:../layouts/'.$ADD_POST_URL.'&info=Post submitted successful');
-                exit();
+                    exit();
                 }else{
                     header('location:../layouts/'.$ADD_POST_URL.'&error=Failed to submit post');
                     exit();

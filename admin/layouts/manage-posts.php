@@ -47,7 +47,9 @@
                         <div class="row">
                         <div class="col-12">
                             <div class="card">
-
+                                <div class="card-header">
+                                    <p>Search input should be here</p>
+                                </div>
                                 <div class="card-body">
                                     <table id="selection-datatable"
                                         class="table table-striped dt-responsive nowrap w-100">
