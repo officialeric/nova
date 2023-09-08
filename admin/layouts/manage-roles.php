@@ -108,9 +108,6 @@
                                                     <td><?= $i; ?></td>
                                                     <td><?= $role['role_name'] ?></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-soft-primary">
-                                                            Edit
-                                                        </button>
                                                         <a class="text-soft-danger" href="../process/delete-action.php?page=roles&user_id=<?=$_GET['user_id']?>&del_id=<?=$role['id'];?>">
                                                             <button type="button" class="btn btn-soft-danger">
                                                                 Delete

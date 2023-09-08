@@ -57,7 +57,8 @@ include 'header.php';
                                     <!-- settings -->
                                     <div id="edit-profile" class="">
                                         <div class="user-profile-content">
-                                            <form action="../process/process-staff.php" method="post">
+                                            <?php if(!isset($_GET['staff_id'])) { ?>
+                                                <form action="../process/process-staff.php" method="post">
                                                 <input type="hidden" name="staff_id" value='<?=$_GET['staff_id']?>'>
                                                 <input type="hidden" name="logged_user_id" >
                                                 <div class="row row-cols-sm-2 row-cols-1">
@@ -73,49 +74,75 @@ include 'header.php';
 
                                                     </select>
                                                 </div>
-                                                <!-- </div>
+                                                </div>
                                                 <div class="col">
                                                     <div class="mb-3">
                                                         <label class="form-label" for="Email">Email</label>
-                                                        <input type="email"  id="Email"
-                                                            class="form-control" name="email" value='<?=$edited_staff['email'] ?? null?>'>
+                                                        <input type="email" id="Email" class="form-control" name="email"
+                                                            value='<?=$edited_staff['email'] ?? null?>'>
                                                     </div>
-                                                    
-                                                    </div>
-                                                        </div>
-                                                    <div class="row">
-                                                        <div class="col">
-                                                        <div class="mb-3">
-                                                        <label class="form-label" for="username">Username</label><br>
-                                                        <br>
-                                                        <input type="text"  id="username"
-                                                            class="form-control" name="username" value='<?=$edited_staff['username'] ?? null?>'>
-                                                    </div>
-                                                        </div>
-                                                        <div class="col">
-                                                        <div class="mb-3">
-                                                        <label class="form-label" for="Password">Password</label><br>
-                                                        <small class='text-primary'> Your password is encrypted for
-                                                            security, But it's still the same!
-                                                            You may change it only if you want to edit it.
-                                                        </small>
-                                                        <input type="password" placeholder="6 - 15 Characters"
-                                                            id="Password"
-                                                            class="form-control" name="password" value='<?=$edited_staff['password'] ?? null?>'>
-                                                    </div>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                   
-                                                </div> -->
-                                                <button class="btn btn-primary my-3" type="submit" name="<?=(isset($_GET['staff_id']) ? 'update' : 'submit')?>">
-                                                <!-- <span class="material-symbols-outlined">
-                                                    save   
-                                                </span> -->
-                                                    Update
-                                                </button>
 
+                                                </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"
+                                                                for="username">Username</label><br>
+                                                            <br>
+                                                            <input type="text" id="username" class="form-control"
+                                                                name="username"
+                                                                value='<?=$edited_staff['username'] ?? null?>'>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="mb-3">
+                                                            <label class="form-label"
+                                                                for="Password">Password</label><br>
+                                                            <small class='text-primary'> Your password is encrypted for
+                                                                security, But it's still the same!
+                                                                You may change it only if you want to edit it.
+                                                            </small>
+                                                            <input type="password" placeholder="6 - 15 Characters"
+                                                                id="Password" class="form-control" name="password"
+                                                                value='<?=$edited_staff['password'] ?? null?>'>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                </div>
+                                                <button class="btn btn-primary my-3" type="submit" name="submit">
+                                                    <!-- <span class="material-symbols-outlined">
+                                                        save   
+                                                    </span> -->
+                                                    Save
+                                                </button>
                                             </form>
+                                            <?php } else { ?>
+                                                <form action="../process/process-staff.php" method="post">
+                                                    <input type="hidden" name="staff_id" value='<?=$_GET['staff_id']?>'>
+                                                    <input type="hidden" name="logged_user_id">
+                                                    <div class="row row-cols-sm-2 row-cols-1">
+                                                        <div class="col">
+                                                            <label class="form-label" for="role">Role</label>
+
+                                                            <div class="input-group">
+                                                                <select class="form-select" id='role' name='staff_role'
+                                                                    aria-label="Default select example">
+                                                                    <option selected>Select Role</option>
+                                                                    <?php  foreach($roles as $role):?>
+                                                                    <option value="<?=$role['id']?>">
+                                                                        <?=$role['role_name']?></option>
+                                                                    <?php endforeach; ?>
+
+                                                                </select>
+                                                            </div>
+                                                            <button class="btn btn-primary my-3 me-5" type="submit"
+                                                                name="update">
+                                                                Update
+                                                            </button>
+                                                </form>
+                                            <?php } ?>
                                         </div>
                                     </div>
 

@@ -34,27 +34,27 @@ if(isset($_POST['submit'])) {
         }
     }
 }else if(isset($_POST['update'])){
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    // $username = $_POST['username'];
+    // $email = $_POST['email'];
+    // $password = $_POST['password'];
     $role = $_POST['staff_role'];
     $staff_id = $_POST['staff_id'];
 
-    if(!$username){
-        header('location:../layouts/'.$ADD_STAFF_URL .'&error=Username must be filled!');
-        exit();
-    }else if(!$email){
-        header('location:../layouts/'.$ADD_STAFF_URL .'&error=Email must be filled!');
-        exit();
-    }else if(!$password){
-        header('location:../layouts/'.$ADD_STAFF_URL .'&error=Password must be filled!');
-        exit();
-    }else{
+    // if(!$username){
+    //     header('location:../layouts/'.$ADD_STAFF_URL .'&error=Username must be filled!');
+    //     exit();
+    // }else if(!$email){
+    //     header('location:../layouts/'.$ADD_STAFF_URL .'&error=Email must be filled!');
+    //     exit();
+    // }else if(!$password){
+    //     header('location:../layouts/'.$ADD_STAFF_URL .'&error=Password must be filled!');
+    //     exit();
+    // }else{
         #hashing password
-        $hashed_pwd = md5($password);
+        // $hashed_pwd = md5($password);
 
         #update staff 
-        $sql = "UPDATE users SET username='$username',email='$email',password='$hashed_pwd', role_id=$role WHERE id=$staff_id";
+        $sql = "UPDATE users SET role_id=$role WHERE id=$staff_id";
         $stmt = mysqli_query($conn,$sql);
 
         if($stmt){
@@ -64,5 +64,5 @@ if(isset($_POST['submit'])) {
             header('location:../layouts/'.$STAFF_URL .'&error=Failed to update selected staff!');
            exit();
         }
-    }
+    // }
 }

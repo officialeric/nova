@@ -1,6 +1,5 @@
 <?php
 include 'header.php';
-
 ?>
 
 
@@ -15,16 +14,18 @@ include 'header.php';
                             <div class="media">
                                 <div class="thumbnail">
                                     <a href="author.html#">
-                                        <img src="assets/images/post-images/author/author-b1.png" alt="Author Images">
+                                        <img src="admin/process/uploads/<?=$author['profile_img']?>" alt="Author Images">
                                     </a>
                                 </div>
                                 <div class="media-body">
                                     <div class="author-info">
-                                        <h1 class="title"><a href="author.html#">Rahabi Ahmed Khan</a></h1>
-                                        <span class="b3 subtitle">Sr. UX Designer</span>
+                                        <h1 class="title"><a href="author.html#"><?=$author['fullname']?></a></h1>
+                                        <span class="b3 subtitle">
+                                           <b><?=strtoupper($author['role_name']);?></b>
+                                        </span>
                                     </div>
                                     <div class="content">
-                                        <p class="b1 description">At 40+ years old, my favorite compliment is being told that I look like my mom. Seeing myself in her image, like this daughter up top, makes me so proud of how far I’ve come, and so thankful for where I come from</p>
+                                        <p class="b1 description"><?=$author['about']?></p>
                                         <ul class="social-share-transparent size-md">
                                             <li><a href="author.html#"><i class="fab fa-facebook-f"></i></a></li>
                                             <li><a href="author.html#"><i class="fab fa-instagram"></i></a></li>
@@ -52,39 +53,39 @@ include 'header.php';
                         </div>
                     </div>
                     <div class="col-lg-8 col-xl-8">
+                        <?php foreach($posts as $post) :?>
                         <!-- Start Post List  -->
                         <div class="content-block post-list-view mt--30">
                             <div class="post-thumbnail">
                                 <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-list-01.jpg" alt="Post Images">
+                                    <img src="admin/process/uploads/<?=$post['banner']?>" alt="Post Images">
                                 </a>
-                                <a class="video-popup icon-color-secondary size-medium position-top-center" href="post-details.html"><span class="play-icon"></span></a>
+                                <!-- <a class="video-popup icon-color-secondary size-medium position-top-center" href="post-details.html"><span class="play-icon"></span></a> -->
                             </div>
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="author.html#">
+                                        <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>&post_category=<?=$post['category']?>">
                                             <span class="hover-flip-item">
-                                                <span data-text="LIFESTYLE">LIFESTYLE</span>
+                                                <span data-text="<?=$post['category']?>"><?=$post['category']?></span>
                                             </span>
                                         </a>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="post-details.html">The 1 tool that helps remote teams
-                                        collaborate better</a></h4>
+                                <h4 class="title"><a href="<?=$POSTS_URL?>"><?=$post['title']?></a></h4>
                                 <div class="post-meta-wrapper">
                                     <div class="post-meta">
                                         <div class="content">
                                             <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
+                                                <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>">
                                                     <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Khan">Rahabi Khan</span>
+                                                        <span data-text="<?=$post['posted_by']?>"><?=$post['posted_by']?></span>
                                                     </span>
                                                 </a>
                                             </h6>
                                             <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
+                                                <li><?=$post['createdAt']?></li>
+                                                <!-- <li>3 min read</li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -98,190 +99,9 @@ include 'header.php';
                             </div>
                         </div>
                         <!-- End Post List  -->
+                        <?php endforeach; ?>
 
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-list-02.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="author.html#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="TRAVEL">TRAVEL</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">Traditional design won’t save us in the
-                                        COVID-19 era</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Khan">Rahabi Khan</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="author.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="author.html#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-list-03.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="author.html#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="FOOD">FOOD</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">Security isn’t just a technology problem
-                                        it’s about design, too</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Khan">Rahabi Khan</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="author.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="author.html#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-list-04.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="author.html#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="DESIGN">DESIGN</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">New: Freehand Templates, built for the
-                                        whole team</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Khan">Rahabi Khan</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="author.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="author.html#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
-
-                        <!-- Start Post List  -->
-                        <div class="content-block post-list-view mt--30">
-                            <div class="post-thumbnail">
-                                <a href="post-details.html">
-                                    <img src="assets/images/post-images/post-list-05.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="author.html#">
-                                            <span class="hover-flip-item">
-                                                <span data-text="CREATIVE">CREATIVE</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="post-details.html">Get Ready To Up Your Creative Game With
-                                        The New DJI Mavic Air 2</a></h4>
-                                <div class="post-meta-wrapper">
-                                    <div class="post-meta">
-                                        <div class="content">
-                                            <h6 class="post-author-name">
-                                                <a class="hover-flip-item-wrapper" href="author.html">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Rahabi Khan">Rahabi Khan</span>
-                                                    </span>
-                                                </a>
-                                            </h6>
-                                            <ul class="post-meta-list">
-                                                <li>Feb 17, 2019</li>
-                                                <li>3 min read</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <ul class="social-share-transparent justify-content-end">
-                                        <li><a href="author.html#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-instagram"></i></a></li>
-                                        <li><a href="author.html#"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="author.html#"><i class="fas fa-link"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- End Post List  -->
+                        
 
                     </div>
                     <div class="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">

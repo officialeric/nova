@@ -45,3 +45,9 @@ if(isset($_GET['del_id'])) {
             }
         }
     }
+
+    if(isset($_GET['edit_id'])) {
+        $edit_id = $_GET['edit_id'];
+
+        
+    }

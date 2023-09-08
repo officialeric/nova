@@ -24,3 +24,5 @@ session_start();
 
 // AUTHOR PAGE
 (isset($_SESSION['id']) ? $AUTHOR_URL = 'author.php?user_id='.$_SESSION['id'] :$AUTHOR_URL = 'author.php');
+ // AUTHOR PAGE
+(isset($_SESSION['id']) ? $POST_LIST_URL = 'post-list.php?user_id='.$_SESSION['id'] :$APOST_LIST_URL = 'post-list.php');

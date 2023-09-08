@@ -104,11 +104,6 @@
                             <td><?=$i;?></td>
                             <td><?=$result['category_name'];?></td>
                             <td>
-                                <a href="#&action=edit&page=category&edit_id=<?=$result['id'];?>">
-                                    <button type="button" class="btn btn-soft-primary rounded" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                        Edit
-                                    </button>
-                                </a>
                                 <a class="text-soft-danger" href="../process/delete-action.php?page=category&user_id=<?=$_GET['user_id']?>&del_id=<?=$result['id'];?>">
                                     <button type="button" class="btn btn-soft-danger">
                                         Remove
