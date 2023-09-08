@@ -37,3 +37,9 @@ session_start();
 
 // uploaded files
 (isset($_SESSION['id']) ? $UPLOADED_URL = 'uploaded-files.php?user_id='.$_SESSION['id'] :$UPLOADED_URL = 'uploaded-files.php');
+
+// staff management
+(isset($_SESSION['id']) ? $STAFF_URL = 'manage-staff.php?user_id='.$_SESSION['id'] :$STAFF_URL = 'manage-staff.php');
+
+// staff management
+(isset($_SESSION['id']) ? $ADD_STAFF_URL = 'add-staff.php?user_id='.$_SESSION['id'] :$ADD_STAFF_URL = 'add-staff.php');

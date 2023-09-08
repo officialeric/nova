@@ -73,12 +73,13 @@
                                 <div class="form-group">
                                         <?php if(isset($_GET['error'])): $error = $_GET['error']; ?>
                                                 <div>
-                                                    <h5 class="text-danger"><?php echo $error ?></h5>
+                                                    <p class="text-danger"><?php echo $error ?></p>
                                                 </div>
                                         <?php endif ?>
                                         <input type="text" name="username" placeholder="Enter your username" required><br>
                                         <input type="email" name="email" placeholder="Enter your email" required><br>
-                                        <input type="password" name="password" placeholder="Create your password" required><br>
+                                        <input type="password" name="password" placeholder="Create your password" 
+                                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" require><br>
                                         <button class="axil-button button-rounded mb-5 mt-3" type="submit" name="submit">Sign Up</button><br>
 
                                         Already have an account? <a href="login.php">Log In</a>
@@ -94,7 +95,7 @@
                     </div>
                     <div class="order-1 order-lg-2 col-lg-5 offset-lg-1">
                         <div class="thumbnail">
-                            <img src="assets/images/others/maintenence.png" alt="Images">
+                            <img src="assets/images/others/account.png" alt="Images">
                         </div>
                     </div>
                 </div>

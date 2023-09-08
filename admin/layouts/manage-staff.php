@@ -2,8 +2,9 @@
     include 'header.php'; 
     include '../../process/db_connect.php';
     
-    $sql = "SELECT * FROM users WHERE role_id=4";
-    $users = mysqli_query($conn, $sql);
+    $sql = "SELECT users.*,roles.role_name as role_name from users 
+            INNER JOIN roles ON users.role_id = roles.id WHERE role_id IN(2,3) ";
+    $staffs = mysqli_query($conn, $sql);
     
 ?>
 
@@ -34,10 +35,12 @@
                                     <div class="page-title-right">
                                         <!--  -->
                                     </div>
-                                    <h4 class="page-title">Manage Users</h4>
+                                    <h4 class="page-title">Manage Staffs</h4>
                                 </div>
                                 <div class="col-12 mb-3">
-                                <!-- <button class='btn btn-primary rounded'>Add User</button> -->
+                                <a href="<?=$ADD_STAFF_URL?>&page=staff">
+                                    <button class='btn btn-primary rounded'>Add Staff</button>
+                                </a>
                             </div>
                             </div>
                         </div>
@@ -75,19 +78,19 @@
                                         <tbody>
                                         <?php 
                                             $i = 0;
-                                            foreach($users as $user):  $i++;  
+                                            foreach($staffs as $staff):  $i++;  
                                         ?>    
                                             <tr>
                                                 <td><?= $i; ?></td>
-                                                <td><img src="../../process/auth/uploads/<?=$user['profile_img']?>" width="10%" class="avatar-sm rounded-circle"></td>
-                                                <td><?= $user['username'] ?></td>
-                                                <td><?= $user['email'] ?></td>
-                                                <td><?= $user['password'] ?></td>
-                                                <td><?=($user_data['role_id'] == 4 ? 'Admin' : 'User')?></td>
+                                                <td><img src="../../process/auth/uploads/<?=$staff['profile_img']?>" width="10%" class="avatar-sm rounded-circle"></td>
+                                                <td><?= $staff['username'] ?></td>
+                                                <td><?= $staff['email'] ?></td>
+                                                <td><?= $staff['password'] ?></td>
+                                                <td><?=$staff['role_name']?></td>
                                                 <td>
-                                                    <a class="text-soft-danger" href="../process/delete-action.php?page=users&user_id=<?=$_GET['user_id']?>&del_id=<?=$user['id']?>">
-                                                        <button type="button" class="btn btn-soft-danger">
-                                                            Remove
+                                                    <a class="text-soft-danger" href="<?=$ADD_STAFF_URL?>&page=staff&staff_id=<?=$staff['id']?>">
+                                                        <button type="button" class="btn btn-soft-primary">
+                                                            Edit
                                                         </button>
                                                     </a>
                                                 </td>

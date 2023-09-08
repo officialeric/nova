@@ -10,16 +10,14 @@ $datas = mysqli_query($conn, $sql);
     if(mysqli_num_rows($datas) == 1) {
         $user_data =  mysqli_fetch_assoc($datas);
     }
-    if(isset($_GET['msg'])) {
-        $message = $_GET['msg'];
-    }
-    if(isset($_GET['error'])) {
-        $error = $_GET['error'];
-    }
 }
 
 $query = "SELECT * FROM category";
 $results = mysqli_query($conn, $query);
+
+$roles_query = "SELECT * FROM roles WHERE NOT id=4";
+$roles = mysqli_query($conn, $roles_query);
+
 
 $cate_query = "SELECT * FROM category";
 $categories = mysqli_query($conn, $cate_query);
@@ -37,6 +35,18 @@ if(isset($_GET['post_id'])){
     }
 }
 
+if(isset($_GET['staff_id'])){
+    $roles_query = "SELECT * FROM roles";
+    $roles = mysqli_query($conn, $roles_query);
+
+    $staff_id = $_GET['staff_id'];
+    $staff_sql = "SELECT * FROM users WHERE id=$staff_id";
+    $selected_staff = mysqli_query($conn,$staff_sql);
+
+    if(mysqli_num_rows($selected_staff) === 1){
+        $edited_staff = mysqli_fetch_assoc($selected_staff);
+    }
+}
 ?>
 
 <!DOCTYPE html>

@@ -12,7 +12,9 @@
                 <span class='ml-3'> Dashboard </span>
             </a>
         </li>
-
+        <?php
+            if($user_data['role_id'] == 1) :
+        ?>
         <li class="side-nav-item">
             <a href="<?=$USERS_URL;?>" class="side-nav-link">
                 <span class="material-symbols-outlined">
@@ -30,7 +32,7 @@
                 <span class='ml-3'> Manage Roles </span>
             </a>
         </li>
-
+    <?php endif ?>
         <li class="side-nav-item">
             <a href="<?=$CATEGORIES_URL;?>" class="side-nav-link">
                 <span class="material-symbols-outlined">
@@ -66,8 +68,19 @@
                 <span class='ml-3'>Uploaded files </span>
             </a>
         </li>
+   <?php
+    if($user_data['role_id'] == 1) :
+   ?>
+        <li class="side-nav-item">
+            <a href="<?=$STAFF_URL?>" class="side-nav-link">
+                <span class="material-symbols-outlined">
+                    work
+                </span><!-- <span class="badge bg-success float-end">9+</span> -->
+                <span class='ml-3'>Manage Staff </span>
+            </a>
+        </li>
 
-
+    <?php endif ?>
 
         <li class="side-nav-item">
             <a data-bs-toggle="collapse" href="index.php#sidebarPages" aria-expanded="false"

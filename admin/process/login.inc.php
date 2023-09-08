@@ -16,11 +16,12 @@ if(isset($_POST['login'])) {
     #CHECK IF THE EMAIL EXISTS 
     if(mysqli_num_rows($data) > 0) { 
         $user = mysqli_fetch_assoc($data);
-        if($user['role_id'] == 1){
+        if($user['role_id'] == 1 || $user['role_id'] == 2 || $user['role_id'] == 3 ){
             $_SESSION['id'] = $user['id'];  
-            $_SESSION['username'] = $user['username'];  
+            $_SESSION['username'] = $user['username'];
+            $_SESSION['role_id'] = $user['role_id'];  
 
-            header('location:../layouts/index.php?user_id='. $_SESSION['id'] .'&role=admin');
+            header('location:../layouts/index.php?user_id='. $_SESSION['id'] .'&role='.$_SESSION['role_id']);
         }else{
             // http_response_code(404);
             header('location:../index.php?error=You are not allowed!');

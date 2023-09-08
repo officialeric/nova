@@ -95,7 +95,7 @@
                     </div>
                     <div class="order-1 order-lg-2 col-lg-5 offset-lg-1">
                         <div class="thumbnail">
-                            <img src="../assets/images/others/maintenence.png" alt="Images">
+                            <img src="../assets/images/others/account.png" alt="Images">
                         </div>
                     </div>
                 </div>

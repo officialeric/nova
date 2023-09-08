@@ -1,4 +1,10 @@
-<?php include 'header.php' ?>
+<?php include 'header.php';
+$dir_name = "../process/uploads/";
+$jpgs = glob($dir_name."*.jpg");
+$jpegs = glob($dir_name."*.jpeg");
+$pngs = glob($dir_name."*.png");
+
+?>
 
 
                 <!-- Sidebar -left -->
@@ -24,13 +30,29 @@
                                 <h3>Uploaded Files</h3>
                             </div>
                             <div class="card-body">
-                                <div class="row">
-                                    <div class="col">file</div>
-                                    <div class="col">file</div>
-                                    <div class="col">file</div>
-                                    <div class="col">file</div>
+                            <div class="row">
+                            <?php foreach ($jpgs as $jpg) { ?>
+                                
+                                <div class="col"><?='<img src="' . $jpg . '" alt="Image" width="100%">'?></div> 
+                                
+                             <?php }  ?>
+                            </div>
+                            <div class="row">
 
-                                </div>
+                             <?php foreach ($jpegs as $jpeg) { ?>
+                                
+                                <div class="col"><?='<img src="' . $jpeg . '" alt="Image" width="100%">'?></div> 
+                                
+                             <?php }  ?>
+                             </div>
+                             <div class="row mt-3">
+
+                             <?php foreach ($pngs as $png) { ?>
+                                
+                                <div class="col"><?='<img src="' . $png . '" alt="Image" width="100%">'?></div> 
+                                
+                             <?php }  ?>
+                             </div>
                             </div>
                         </div>
 
