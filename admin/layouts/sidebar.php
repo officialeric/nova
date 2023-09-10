@@ -146,7 +146,7 @@
                         <a href="<?=$SET_HEADER_URL?>">Header</a>
                     </li>
                     <li>
-                        <a href="#">Pages</a>
+                        <a href="<?=$PAGES_URL?>">Pages</a>
                     </li>
                     <li>
                         <a href="#">Footer</a>

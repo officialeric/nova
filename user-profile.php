@@ -559,7 +559,7 @@ include 'process/includes/paths.php';
                                             <!-- settings -->
                                             <div id="edit-profile" class="tab-pane">
                                                 <div class="user-profile-content">
-                                                    <form action="process/auth/user-profiling.php" method="post">
+                                                    <form action="admin/process/profiling.php" method="post">
                                                         <input type="hidden" name="logged_user_id" value='<?=$_GET['user_id']?>'>
                                                         <div class="row row-cols-sm-2 row-cols-1">
                                                             <div class="mb-2">

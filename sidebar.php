@@ -38,7 +38,7 @@
     <!-- Start Post List  -->
     <div class="post-medium-block">
 
-    <?php foreach($posts as $post):  ?>
+    <?php foreach($All_posts as $post):  ?>
         <!-- Start Single Post  -->
         <div class="content-block post-medium mb--20">
             <div class="post-thumbnail">

@@ -63,6 +63,7 @@
                                                 <th>CreatedAt</th>
                                                 <th>Status</th>
                                                 <th>CreatedBy</th>
+                                                <th>Likes</th>
                                                 <th>Operations</th>
                                             </tr>
                                         </thead>
@@ -81,11 +82,12 @@
 
                                                 <td><?=$post['status']?></td>
                                                 <td><?=$post['posted_by']?></td>
+                                                <td><?=$post['likes']?></td>
                                                 <td>
                                                     <div class="d-flex">
                                                     <a class="text-soft-danger" href="<?=$ADD_POST_URL?>&post_id=<?=$post['id'];?>">
 
-                                                    <button class='btn btn-primary m-2'>
+                                                    <button class='btn btn-primary'>
                                                     <span class="material-symbols-outlined">
                                                     edit
                                                     </span>           
@@ -93,7 +95,7 @@
                                                     </a>
                                                     
                                                     <a href="../process/posting.php?publish_id=<?=$post['id']?>" name='publish'>
-                                                        <button class='btn btn-primary m-2'>
+                                                        <button class='btn btn-success ml-1'>
                                                             <span class="material-symbols-outlined">
                                                             post
                                                             </span>           
@@ -101,7 +103,7 @@
                                                     </a>
 
                                                     <a class="text-soft-danger" href="../process/delete-action.php?page=posts&user_id=<?=$_GET['user_id']?>&del_id=<?=$post['id'];?>">
-                                                    <button class='btn btn-danger m-2'>
+                                                    <button class='btn btn-danger ml-1'>
                                                     <span class="material-symbols-outlined">
                                                     delete
                                                     </span> 

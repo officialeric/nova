@@ -2,7 +2,8 @@
                     include 'header.php';
                     
                     $sql = "SELECT * FROM users WHERE role_id=4";
-                    $results = mysqli_query($conn, $sql);
+                    $users = mysqli_query($conn, $sql);
+                    $total_users =  mysqli_num_rows($users);
 
                     $sql = "SELECT * FROM category";
                     $result = mysqli_query($conn, $sql);
@@ -11,30 +12,9 @@
                     $sql = "SELECT * FROM posts";
                     $res = mysqli_query($conn, $sql);
                     $total_posts = mysqli_num_rows($res);
-
-                    $current_time = time();
-                    $time_limit = 24 * 60 * 60;
+                    
                    
-                    if(mysqli_num_rows($results) > 0) {
-                        $total_users = mysqli_num_rows($results);
-
-                        $daily_visits = 0;
-
-                        while($row = mysqli_fetch_assoc($results)) {
-                            $user_signed_time = strtotime($row['signed_time']);
-
-                            $time_diff = $current_time - $user_signed_time;
-
-                            if ($time_diff <= $time_limit) {
-                                $daily_visits++;
-                            }
-                        }
-
-                        $daily_visitsPercentage = ($daily_visits / $total_users) * 100;
-                        
-                    } else {
-                        $daily_visitsPercentage = 0 . "%";
-                    }
+                  
                 ?>
 
                 <!-- Sidebar -left -->
@@ -56,7 +36,7 @@
 
                     <!-- Start Content-->
                     <div class="container-fluid">
-
+                       
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
@@ -99,10 +79,10 @@
                                         </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Total posts</h6>
                                         <h2 class="my-2"><?=$total_posts?></h2>
-                                        <p class="mb-0">
+                                        <!-- <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-10 me-1">18.25%</span>
                                             <span class="text-nowrap">Since last month</span>
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div> <!-- end col-->
@@ -118,10 +98,10 @@
                                         </div>
                                         <h6 class="text-uppercase mt-0" title="Customers">Total categories</h6>
                                         <h2 class="my-2"><?=$total_categoties?></h2>
-                                        <p class="mb-0">
+                                        <!-- <p class="mb-0">
                                             <span class="badge bg-white bg-opacity-25 me-1">-5.75%</span>
                                             <span class="text-nowrap">Since last month</span>
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div> <!-- end col-->
@@ -151,9 +131,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-widgets">
-                                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
+                                            <a href="javascript:;" data-bs-toggle="reload">
+                                            <span class="material-symbols-outlined">
+                                            refresh
+                                            </span>
+                                            </a>
                                             <a data-bs-toggle="collapse" href="index.html#weeklysales-collapse" role="button" aria-expanded="false" aria-controls="weeklysales-collapse"><i class="ri-subtract-line"></i></a>
-                                            <a href="index.html#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                            <a href="index.html#" data-bs-toggle="remove">
+                                            <span class="material-symbols-outlined">
+                                            close   
+                                            </span>             
+                                            </a>
                                         </div>
                                         <h5 class="header-title mb-0">Weekly Sales Report</h5>
 
@@ -197,9 +185,17 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="card-widgets">
-                                            <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
+                                            <a href="javascript:;" data-bs-toggle="reload">
+                                            <span class="material-symbols-outlined">
+                                            refresh
+                                            </span>
+                                            </a>
                                             <a data-bs-toggle="collapse" href="index.html#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
-                                            <a href="index.html#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                            <a href="index.html#" data-bs-toggle="remove">
+                                            <span class="material-symbols-outlined">
+                                            close   
+                                            </span>
+                                            </a>
                                         </div>
                                         <h5 class="header-title mb-0">Yearly Sales Report</h5>
 
@@ -251,9 +247,17 @@
                                     <div class="card-body p-0">
                                         <div class="p-3">
                                             <div class="card-widgets">
-                                                <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
+                                                <a href="javascript:;" data-bs-toggle="reload">
+                                                <span class="material-symbols-outlined">
+                                            refresh
+                                            </span>
+                                                </a>
                                                 <a data-bs-toggle="collapse" href="index.html#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
-                                                <a href="index.html#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                                <a href="index.html#" data-bs-toggle="remove">
+                                                <span class="material-symbols-outlined">
+                                            close   
+                                            </span>
+                                                </a>
                                             </div>
                                             <h5 class="header-title mb-0">Chat</h5>
                                         </div>
@@ -349,9 +353,21 @@
                                     <div class="card-body p-0">
                                         <div class="p-3">
                                             <div class="card-widgets">
-                                                <a href="javascript:;" data-bs-toggle="reload"><i class="ri-refresh-line"></i></a>
-                                                <a data-bs-toggle="collapse" href="index.html#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse"><i class="ri-subtract-line"></i></a>
-                                                <a href="index.html#" data-bs-toggle="remove"><i class="ri-close-line"></i></a>
+                                                <a href="javascript:;" data-bs-toggle="reload">
+                                                <span class="material-symbols-outlined">
+                                                refresh
+                                                </span>
+                                                </a>
+                                                <a data-bs-toggle="collapse" href="index.html#yearly-sales-collapse" role="button" aria-expanded="false" aria-controls="yearly-sales-collapse">
+                                                <span class="material-symbols-outlined">
+                                            minus   
+                                            </span>
+                                                </a>
+                                                <a href="index.html#" data-bs-toggle="remove">
+                                                <span class="material-symbols-outlined">
+                                            close   
+                                            </span>
+                                                </a>
                                             </div>
                                             <h5 class="header-title mb-0">Projects</h5>
                                         </div>

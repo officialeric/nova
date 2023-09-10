@@ -23,7 +23,6 @@ if(isset($_POST['login'])) {
 
             header('location:../layouts/index.php?user_id='. $_SESSION['id'] .'&role='.$_SESSION['role_id']);
         }else{
-            // http_response_code(404);
             header('location:../index.php?error=You are not allowed!');
         }
     } 

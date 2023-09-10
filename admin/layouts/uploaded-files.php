@@ -4,6 +4,7 @@ $jpgs = glob($dir_name."*.jpg");
 $jpegs = glob($dir_name."*.jpeg");
 $pngs = glob($dir_name."*.png");
 
+
 ?>
 
 
@@ -32,8 +33,9 @@ $pngs = glob($dir_name."*.png");
                             <div class="card-body">
                             <div class="row">
                             <?php foreach ($jpgs as $jpg) { ?>
-                                
-                                <div class="col"><?='<img src="' . $jpg . '" alt="Image" width="100%">'?></div> 
+                                <div class="col">
+                                    <?='<img src="' . $jpg . '" alt="Image" width="100%">'?>
+                                </div> 
                                 
                              <?php }  ?>
                             </div>
@@ -41,7 +43,9 @@ $pngs = glob($dir_name."*.png");
 
                              <?php foreach ($jpegs as $jpeg) { ?>
                                 
-                                <div class="col"><?='<img src="' . $jpeg . '" alt="Image" width="100%">'?></div> 
+                                <div class="col">
+                                    <?='<img src="' . $jpeg . '" alt="Image" width="100%">'?>
+                                </div> 
                                 
                              <?php }  ?>
                              </div>
@@ -49,7 +53,9 @@ $pngs = glob($dir_name."*.png");
 
                              <?php foreach ($pngs as $png) { ?>
                                 
-                                <div class="col"><?='<img src="' . $png . '" alt="Image" width="100%">'?></div> 
+                                <div class="col">
+                                    <?='<img src="' . $png . '" alt="Image" width="100%">'?>
+                                </div> 
                                 
                              <?php }  ?>
                              </div>

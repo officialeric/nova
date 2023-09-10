@@ -14,44 +14,63 @@ include 'header.php';
                         <div class="col-lg-12">
                             
                             <div class="slider-activation axil-slick-arrow">
+ 
+                            <?php foreach($recent_posts as $post) :
+                              
+                              $pauthor = $post['posted_by']; 
+                              $sql = "SELECT * FROM users WHERE fullname='$pauthor'";
+                              $result = mysqli_query($conn,$sql);
+
+                              if(mysqli_num_rows($result) == 1){
+                                $author = mysqli_fetch_assoc($result);
+                              }  
+                             ?>
+
                                 <!-- Start Single Slide  -->
                                 <div class="content-block">
+
                                     <!-- Start Post Thumbnail  -->
                                     <div class="post-thumbnail">
                                         <a href="<?=$POSTS_URL?>">
-                                            <img src="assets/images/post-images/gallery-post-01.jpg" alt="Post Images">
+                                            <img src="admin/process/uploads/<?=$post['banner']?>" alt="Post Images">
                                         </a>
                                     </div>
                                     <!-- End Post Thumbnail  -->
+
+
 
                                     <!-- Start Post Content  -->
                                     <div class="post-content">
                                         <div class="post-cat">
                                             <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>#">
+                                                <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>&post_category=<?=$post['category']?>">
                                                     <span class="hover-flip-item">
-                                                        <span data-text="DESIGN">DESIGN</span>
+                                                        <span data-text="<?=$post['category']?>"><?=$post['category']?></span>
                                                     </span>
                                                 </a>
                                             </div>
                                         </div>
-                                        <h2 class="title"><a href="<?=$POSTS_URL?>">4 types of research methods all designers should know</a></h2>
+                                        <h2 class="title">
+                                            <a href="<?=$POSTS_URL?>&post_id=<?=$post['id']?>">
+                                            <?=$post['title']?>
+                                            </a>
+                                        </h2>
                                         <!-- Post Meta  -->
                                         <div class="post-meta-wrapper with-button">
                                             <div class="post-meta">
-                                                <div class="post-author-avatar border-rounded">
-                                                    <img src="assets/images/post-images/author/author-image-3.png" alt="Author Images">
+                                                <div class="post-author-avatar border-rounded" style='width:1%;'>
+                                                    <img src="admin/process/uploads/<?=$author['profile_img']?>" alt="Author Images">
                                                 </div>
                                                 <div class="content">
                                                     <h6 class="post-author-name">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>&author_id=<?=$author['id']?>">
                                                             <span class="hover-flip-item">
-                                                                <span data-text="Rahabi Khan">Rahabi Khan</span>
+                                                                <span data-text="<?=$post['posted_by']?>"><?=$post['posted_by']?></span>
                                                             </span>
                                                         </a>
                                                     </h6>
                                                     <ul class="post-meta-list">
-                                                        <li>Feb 17, 2019</li>
+                                                        <li><?=$post['createdAt']?></li>
                                                         <li>300k Views</li>
                                                     </ul>
                                                 </div>
@@ -63,7 +82,7 @@ include 'header.php';
                                                 <li><a href="#"><i class="fas fa-link"></i></a></li>
                                             </ul>
                                             <div class="read-more-button cerchio">
-                                                <a class="axil-button button-rounded hover-flip-item-wrapper" href="<?=$POSTS_URL?>">
+                                                <a class="axil-button button-rounded hover-flip-item-wrapper" href="<?=$POSTS_URL?>&post_id=<?=$post['id']?>">
                                                     <span class="hover-flip-item">
                                                         <span data-text="Read Post">Read Post</span>
                                                     </span>
@@ -72,133 +91,11 @@ include 'header.php';
                                         </div>
                                     </div>
                                     <!-- End Post Content  -->
+
                                 </div>
                                 <!-- End Single Slide  -->
 
-                                <!-- Start Single Slide  -->
-                                <div class="content-block">
-                                    <!-- Start Post Thumbnail  -->
-                                    <div class="post-thumbnail">
-                                        <a href="<?=$POSTS_URL?>">
-                                            <img src="assets/images/post-images/gallery-post-03.jpg" alt="Post Images">
-                                        </a>
-                                    </div>
-                                    <!-- End Post Thumbnail  -->
-                                    <!-- Start Post Content  -->
-                                    <div class="post-content">
-                                        <div class="post-cat">
-                                            <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="CAREERS">CAREERS</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h2 class="title"><a href="<?=$POSTS_URL?>">These 5 tips will help you nail your next design presentation</a></h2>
-
-                                        <!-- Post Meta  -->
-                                        <div class="post-meta-wrapper with-button">
-                                            <div class="post-meta">
-                                                <div class="post-author-avatar border-rounded">
-                                                    <img src="assets/images/post-images/author/author-image-1.png" alt="Author Images">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="post-author-name">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$AUTHOE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="Syed Tahmim">Syed Tahmim</span>
-                                                            </span>
-                                                        </a>
-
-                                                    </h6>
-                                                    <ul class="post-meta-list">
-                                                        <li>Feb 17, 2019</li>
-                                                        <li>300k Views</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <ul class="social-share-transparent justify-content-end">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                            </ul>
-                                            <div class="read-more-button cerchio">
-                                                <a class="axil-button button-rounded hover-flip-item-wrapper" href="<?=$POSTS_URL?>">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Read Post">Read Post</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Post Content  -->
-                                </div>
-                                <!-- End Single Slide  -->
-
-                                <!-- Start Single Slide  -->
-                                <div class="content-block">
-                                    <!-- Start Post Thumbnail  -->
-                                    <div class="post-thumbnail">
-                                        <a href="<?=$POSTS_URL?>">
-                                            <img src="assets/images/post-images/gallery-post-02.jpg" alt="Post Images">
-                                        </a>
-                                    </div>
-                                    <!-- End Post Thumbnail  -->
-                                    <!-- Start Post Content  -->
-                                    <div class="post-content">
-                                        <div class="post-cat">
-                                            <div class="post-cat-list">
-                                                <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="DESIGN">DESIGN</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <h2 class="title"><a href="<?=$POSTS_URL?>">iPadOS 14 introduces
-                                                new designed specifically for iPad</a></h2>
-
-                                        <!-- Post Meta  -->
-                                        <div class="post-meta-wrapper with-button">
-                                            <div class="post-meta">
-                                                <div class="post-author-avatar border-rounded">
-                                                    <img src="assets/images/post-images/author/author-image-2.png" alt="Author Images">
-                                                </div>
-                                                <div class="content">
-                                                    <h6 class="post-author-name">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="Ismat Jahan">Ismat Jahan</span>
-                                                            </span>
-                                                        </a>
-
-                                                    </h6>
-                                                    <ul class="post-meta-list">
-                                                        <li>Feb 17, 2019</li>
-                                                        <li>300k Views</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <ul class="social-share-transparent justify-content-end">
-                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#"><i class="fas fa-link"></i></a></li>
-                                            </ul>
-                                            <div class="read-more-button cerchio">
-                                                <a class="axil-button button-rounded hover-flip-item-wrapper" href="<?=$POSTS_URL?>">
-                                                    <span class="hover-flip-item">
-                                                        <span data-text="Read Post">Read Post</span>
-                                                    </span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Post Content  -->
-                                </div>
-                                <!-- End Single Slide  -->
+                            <?php endforeach ?>
 
                             </div>
                         </div>
@@ -214,572 +111,67 @@ include 'header.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-title">
-                            <h2 class="title">More Featured Posts.</h2>
+                            <h2 class="title">Trendng Posts.</h2>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    <?php foreach($trending_posts as $post) : 
+
+                        $pauthor = $post['posted_by']; 
+                        $sql = "SELECT * FROM users WHERE fullname='$pauthor'";
+                        $result = mysqli_query($conn,$sql);
+
+                        if(mysqli_num_rows($result) == 1){
+                          $author = mysqli_fetch_assoc($result);
+                        }  
+                    ?>
                     <!-- Start Single Post  -->
                     <div class="col-lg-6 col-xl-6 col-md-12 col-12 mt--30">
                         <div class="content-block content-direction-column axil-control is-active post-horizontal thumb-border-rounded">
                             <div class="post-content">
                                 <div class="post-cat">
                                     <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
+                                        <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>&post_category=<?=$post['category']?>">
                                             <span class="hover-flip-item">
-                                                <span data-text="APPLE DESIGN">APPLE DESIGN</span>
+                                                <span data-text="<?=$post['category']?>"><?=$post['category']?></span>
                                             </span>
                                         </a>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="<?=$POSTS_URL?>">Apple reimagines the iPhone experience
-                                        with iOS 14</a></h4>
+                                <h4 class="title"><a href="<?=$POSTS_URL?>&post_id=<?=$post['id']?>"><?=$post['title']?></a></h4>
                                 <div class="post-meta">
-                                    <div class="post-author-avatar border-rounded">
-                                        <img src="assets/images/post-images/author/author-image-2.png" alt="Author Images">
+                                    <div class="post-author-avatar border-rounded" style='width:1%;'>
+                                        <img src="admin/process/uploads/<?=$author['profile_img']?>" alt="Author Images">
                                     </div>
                                     <div class="content">
                                         <h6 class="post-author-name">
-                                            <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>">
+                                            <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>&author_id=<?=$author['id']?>">
                                                 <span class="hover-flip-item">
-                                                    <span data-text="Ismat Jahan">Ismat Jahan</span>
+                                                    <span data-text="<?=$post['posted_by']?>"><?=$post['posted_by']?></span>
                                                 </span>
                                             </a>
                                         </h6>
                                         <ul class="post-meta-list">
-                                            <li>Feb 17, 2019</li>
+                                            <li><?=$post['createdAt']?></li>
                                             <li>300k Views</li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="post-thumbnail">
+                            <div class="post-thumbnail" style='width:1%;'>
                                 <a href="<?=$POSTS_URL?>">
-                                    <img src="assets/images/post-images/post-images-1.jpg" alt="Post Images">
+                                    <img src="admin/process/uploads/<?=$post['banner']?>" alt="Post Images">
                                 </a>
                             </div>
                         </div>
                     </div>
                     <!-- End Single Post  -->
+                    <?php endforeach ?>
 
-                    <!-- Start Single Post  -->
-                    <div class="col-lg-6 col-xl-6 col-md-12 col-12 mt--30">
-                        <div class="content-block content-direction-column axil-control post-horizontal  thumb-border-rounded">
-                            <div class="post-content">
-                                <div class="post-cat">
-                                    <div class="post-cat-list">
-                                        <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                            <span class="hover-flip-item">
-                                                <span data-text="TECH">TECH</span>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </div>
-                                <h4 class="title"><a href="<?=$POSTS_URL?>">Flutter: the good, the bad and the
-                                        ugly</a></h4>
-                                <div class="post-meta">
-                                    <div class="post-author-avatar border-rounded">
-                                        <img src="assets/images/post-images/author/author-image-1.png" alt="Author Images">
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="post-author-name">
-                                            <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>">
-                                                <span class="hover-flip-item">
-                                                    <span data-text="Jone Doe">Jone Doe</span>
-                                                </span>
-                                            </a>
-                                        </h6>
-                                        <ul class="post-meta-list">
-                                            <li>Feb 17, 2019</li>
-                                            <li>300k Views</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="post-thumbnail">
-                                <a href="<?=$POSTS_URL?>">
-                                    <img src="assets/images/post-images/post-images-2.jpg" alt="Post Images">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Post  -->
-                </div>
-            </div>
-        </div>
-        <!-- End Featured Area  -->
+                    
 
-        <!-- Start Tab Area  -->
-        <div class="axil-tab-area axil-section-gap bg-color-white">
-            <div class="wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="axil-banner mb--30">
-                                <div class="thumbnail">
-                                    <a href="<?=$BASE_URL?>">
-                                        <img class="w-100" src="assets/images/add-banner/banner-03.png" alt="Banner Images">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="section-title">
-                                <h2 class="title">Innovation &#38; Tech</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <!-- Start Tab Button  -->
-                            <ul class="axil-tab-button nav nav-tabs mt--20" id="axilTab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="tab-one" data-bs-toggle="tab" href="#tabone" role="tab" aria-controls="tab-one" aria-selected="true">Accessibility</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab-two" data-bs-toggle="tab" href="#tabtwo" role="tab" aria-controls="tab-two" aria-selected="false">Android Dev </a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab-three" data-bs-toggle="tab" href="#tabthree" role="tab" aria-controls="tab-three" aria-selected="false">Blockchain</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="tab-four" data-bs-toggle="tab" href="#tabfour" role="tab" aria-controls="tab-four" aria-selected="false">Gadgets</a>
-                                </li>
-                            </ul>
-                            <!-- End Tab Button  -->
-
-                            <!-- Start Tab Content Wrapper  -->
-                            <div class="tab-content" id="axilTabContent">
-                                <div class="single-tab-content tab-pane fade show active" id="tabone" role="tabpanel" aria-labelledby="tab-one">
-                                    <div class="modern-post-activation slick-layout-wrapper axil-slick-arrow arrow-between-side">
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-04.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="APPLE DESIGN">APPLE DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same
-                                                            Mac magic.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-05.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="GADGETS">GADGETS</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New
-                                                            DJI Mavic Air 2</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-06.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-07.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-                                    </div>
-                                </div>
-
-                                <div class="single-tab-content tab-pane fade" id="tabtwo" role="tabpanel" aria-labelledby="tab-two">
-                                    <div class="modern-post-activation slick-layout-wrapper axil-slick-arrow arrow-between-side">
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="APPLE DESIGN">APPLE DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Bold new experience. Same
-                                                            Mac magic.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-07.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="CASE STUDY">CASE STUDY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-06.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-05.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-04.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                    </div>
-                                </div>
-
-                                <div class="single-tab-content tab-pane fade" id="tabthree" role="tabpanel" aria-labelledby="tab-three">
-                                    <div class="modern-post-activation slick-layout-wrapper axil-slick-arrow arrow-between-side">
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="ACCESSIBILITY">ACCESSIBILITY</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-04.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="DESIGN">DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Bold new experience.
-                                                            Same Mac magic.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-08.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="DESIGN">DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-01.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="DESIGN">DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-02.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                    </div>
-                                </div>
-
-                                <div class="single-tab-content tab-pane fade" id="tabfour" role="tabpanel" aria-labelledby="tab-four">
-                                    <div class="modern-post-activation slick-layout-wrapper axil-slick-arrow arrow-between-side">
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="APPLE DESIGN">APPLE DESIGN</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Bold new experience.
-                                                            Same Mac magic.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-03.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="GADGETS">GADGETS</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Creative Game With The New DJI Mavic Air 2</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-02.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="GADGETS">GADGETS</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-01.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-
-                                        <!-- Start Single Post  -->
-                                        <div class="slick-single-layout">
-                                            <div class="content-block modern-post-style text-center content-block-column">
-                                                <div class="post-content">
-                                                    <div class="post-cat">
-                                                        <div class="post-cat-list">
-                                                            <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                                <span class="hover-flip-item">
-                                                                    <span data-text="GADGETS">GADGETS</span>
-                                                                </span>
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                    <h4 class="title"><a href="<?=$POSTS_URL?>">Lightweight, grippable,
-                                                            and ready to go.</a></h4>
-                                                </div>
-                                                <div class="post-thumbnail">
-                                                    <a href="<?=$POSTS_URL?>">
-                                                        <img src="assets/images/post-images/post-column-05.jpg" alt="Post Images">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Single Post  -->
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- End Tab Content Wrapper  -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Tab Area  -->
+    
 
         <!-- Start Categories List  -->
         <div class="axil-categories-list axil-section-gap bg-color-grey">
@@ -801,6 +193,7 @@ include 'header.php';
                         <!-- Start List Wrapper  -->
                         <div class="list-categories d-flex flex-wrap">
 
+                        <?php foreach($rcategories as $category) : ?>
                             <!-- Start Single Category  -->
                             <div class="single-cat">
                                 <div class="inner">
@@ -809,87 +202,16 @@ include 'header.php';
                                             <img src="assets/images/post-images/post-sm-01.jpg" alt="post categories images">
                                         </div>
                                         <div class="content">
-                                            <h5 class="title">Sports &#38; Fitness </h5>
+                                            <h5 class="title"><?=strtolower($category['category_name'])?></h5>
                                         </div>
                                     </a>
                                 </div>
                             </div>
+                            <?php endforeach ?>
                             <!-- End Single Category  -->
+                            
 
-                            <!-- Start Single Category  -->
-                            <div class="single-cat">
-                                <div class="inner">
-                                    <a href="<?=$BASE_URL?>">
-                                        <div class="thumbnail">
-                                            <img src="assets/images/post-images/post-sm-02.jpg" alt="post categories images">
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">Travel</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Single Category  -->
-
-                            <!-- Start Single Category  -->
-                            <div class="single-cat">
-                                <div class="inner">
-                                    <a href="<?=$BASE_URL?>">
-                                        <div class="thumbnail">
-                                            <img src="assets/images/post-images/post-sm-03.jpg" alt="post categories images">
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">lifestyle</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Single Category  -->
-
-                            <!-- Start Single Category  -->
-                            <div class="single-cat">
-                                <div class="inner">
-                                    <a href="<?=$BASE_URL?>">
-                                        <div class="thumbnail">
-                                            <img src="assets/images/post-images/post-sm-04.jpg" alt="post categories images">
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">Health</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Single Category  -->
-
-                            <!-- Start Single Category  -->
-                            <div class="single-cat">
-                                <div class="inner">
-                                    <a href="<?=$BASE_URL?>">
-                                        <div class="thumbnail">
-                                            <img src="assets/images/post-images/post-sm-05.jpg" alt="post categories images">
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">Animals</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Single Category  -->
-
-                            <!-- Start Single Category  -->
-                            <div class="single-cat">
-                                <div class="inner">
-                                    <a href="<?=$BASE_URL?>">
-                                        <div class="thumbnail">
-                                            <img src="assets/images/post-images/post-sm-06.jpg" alt="post categories images">
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title">Food &#38; Drink</h5>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            <!-- End Single Category  -->
+                            
 
                         </div>
                         <!-- Start List Wrapper  -->
@@ -912,7 +234,7 @@ include 'header.php';
                 <div class="row">
                     <div class="col-lg-12">
                         <!-- Start Axil Tab Button  -->
-                        <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
+                        <!-- <ul class="axil-tab-button nav nav-tabs mt--20" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link active" id="trend-one" data-bs-toggle="tab" href="<?=$BASE_URL?>trendone" role="tab" aria-controls="trend-one" aria-selected="true">Accessibility</a>
                             </li>
@@ -925,7 +247,7 @@ include 'header.php';
                             <li class="nav-item" role="presentation">
                                 <a class="nav-link" id="trend-four" data-bs-toggle="tab" href="<?=$BASE_URL?>trendfour" role="tab" aria-controls="trend-four" aria-selected="false">Gadgets</a>
                             </li>
-                        </ul>
+                        </ul> -->
                         <!-- End Axil Tab Button  -->
 
                         <!-- Start Axil Tab Content  -->
@@ -935,34 +257,42 @@ include 'header.php';
                             <div class="row trend-tab-content tab-pane fade show active" id="trendone" role="tabpanel" aria-labelledby="trend-one">
                                 <div class="col-lg-8">
                                     <!-- Start Single Post  -->
+                                <?php $i = 1; foreach($trending_posts as $post) : 
+
+                                    $pauthor = $post['posted_by']; 
+                                    $sql = "SELECT * FROM users WHERE fullname='$pauthor'";
+                                    $result = mysqli_query($conn,$sql);
+
+                                    if(mysqli_num_rows($result) == 1){
+                                    $author = mysqli_fetch_assoc($result);
+                                    }  
+                                    ?>
                                     <div class="content-block trend-post post-order-list axil-control">
                                         <div class="post-inner">
-                                            <span class="post-order-list">01</span>
+                                            <span class="post-order-list"><?=($i++)?></span>
                                             <div class="post-content">
                                                 <div class="post-cat">
                                                     <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
+                                                        <a class="hover-flip-item-wrapper" href="<?=$CATEGORY_PAGE_URL?>&post_category=<?=$post['category']?>">
                                                             <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
+                                                                <span data-text="<?=$post['category']?>"><?=$post['category']?></span>
                                                             </span>
                                                         </a>
                                                     </div>
                                                 </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
+                                                <h3 class="title"><a href="<?=$POSTS_URL?>&post_id=<?=$post['id']?>"><?=$post['title']?></a></h3>
                                                 <div class="post-meta-wrapper">
                                                     <div class="post-meta">
                                                         <div class="content">
                                                             <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
+                                                                <a class="hover-flip-item-wrapper" href="<?=$AUTHOR_URL?>&author_id=<?=$author['id']?>">
                                                                     <span class="hover-flip-item">
-                                                                        <span data-text="Jone Doe">Jone Doe</span>
+                                                                        <span data-text="<?=$post['posted_by']?>"><?=$post['posted_by']?></span>
                                                                     </span>
                                                                 </a>
                                                             </h6>
                                                             <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
+                                                                <li><?=$post['createdAt']?></li>
                                                                 <li>3 min read</li>
                                                             </ul>
                                                         </div>
@@ -977,778 +307,20 @@ include 'header.php';
                                             </div>
                                         </div>
                                         <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-01.jpg" alt="Post Images">
+                                            <a href="<?=$POSTS_URL?>&post_id=<?=$post['id']?>">
+                                                <img src="admin/process/uploads/<?=$post['banner']?>" alt="Post Images">
                                             </a>
                                         </div>
                                     </div>
+                                    <?php endforeach ?>
                                     <!-- End Single Post  -->
 
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list is-active">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">02</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="BOOKS">BOOKS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">The underrated design book
-                                                        that transformed the way I work</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Jane Afroj">Jane Afroj</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-02.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">03</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="PROCESS">PROCESS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">Here’s what you should
-                                                        (and shouldn’t) do when giving formal feedback</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Israt Ara">Israt Ara</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-03.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">04</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">6 ways you can make your design more inclusive and equitable</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Ismat Jahan">Ismat Jahan</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-04.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
+                                    
                                 </div>
                             </div>
                             <!-- Single Tab Content  -->
 
-                            <!-- Single Tab Content  -->
-                            <div class="row trend-tab-content tab-pane fade" id="trendtwo" role="tabpanel" aria-labelledby="trend-two">
-                                <div class="col-lg-8">
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">01</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Jakowar">Jakowar</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-01.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control is-active">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">02</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="BOOKS">BOOKS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">The underrated design book
-                                                        that transformed the way I work</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Jasika">Jasika</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-02.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">03</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="PROCESS">PROCESS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">Here’s what you should
-                                                        (and shouldn’t) do when giving formal feedback</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Israt Ara">Israt Ara</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-03.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">04</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="John Jane">John Jane</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-04.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                </div>
-                            </div>
-                            <!-- Single Tab Content  -->
-
-                            <!-- Single Tab Content  -->
-                            <div class="row trend-tab-content tab-pane fade" id="trendthree" role="tabpanel" aria-labelledby="trend-two">
-                                <div class="col-lg-8">
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">01</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Najmul">Najmul</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-01.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control is-active">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">02</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="BOOKS">BOOKS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">The underrated design book
-                                                        that transformed the way I work</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Kanak Lota">Kanak Lota</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-02.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">03</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="PROCESS">PROCESS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">Here’s what you should
-                                                        (and shouldn’t) do when giving formal feedback</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Nowsin Afroj">Nowsin Afroj</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-03.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">04</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Ismat Jahan">Ismat Jahan</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-04.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                </div>
-                            </div>
-                            <!-- Single Tab Content  -->
-
-                            <!-- Single Tab Content  -->
-                            <div class="row trend-tab-content tab-pane fade" id="trendfour" role="tabpanel" aria-labelledby="trend-two">
-                                <div class="col-lg-8">
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">01</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Ismat Jahan">Ismat Jahan</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-01.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control is-active">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">02</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="BOOKS">BOOKS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">The underrated design book
-                                                        that transformed the way I work</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Jasika">Jasika</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-02.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">03</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="PROCESS">PROCESS</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">Here’s what you should
-                                                        (and shouldn’t) do when giving formal feedback</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Najmul Alom">Najmul Alom</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-03.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block trend-post post-order-list axil-control">
-                                        <div class="post-inner">
-                                            <span class="post-order-list">04</span>
-                                            <div class="post-content">
-                                                <div class="post-cat">
-                                                    <div class="post-cat-list">
-                                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                                            <span class="hover-flip-item">
-                                                                <span data-text="CASE STUDY">CASE STUDY</span>
-                                                            </span>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <h3 class="title"><a href="<?=$POSTS_URL?>">How a developer and
-                                                        designer duo at Deutsche Bank keep remote collaboration
-                                                        alive</a></h3>
-                                                <div class="post-meta-wrapper">
-                                                    <div class="post-meta">
-                                                        <div class="content">
-                                                            <h6 class="post-author-name">
-                                                                <a class="hover-flip-item-wrapper" href="author.php">
-                                                                    <span class="hover-flip-item">
-                                                                        <span data-text="Jakarark">Jakarark</span>
-                                                                    </span>
-                                                                </a>
-                                                            </h6>
-                                                            <ul class="post-meta-list">
-                                                                <li>Feb 17, 2019</li>
-                                                                <li>3 min read</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <ul class="social-share-transparent justify-content-end">
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                                        <li><a href="<?=$BASE_URL?>"><i class="fas fa-link"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/post-images/trend-post-04.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-                                </div>
-                            </div>
-                            <!-- Single Tab Content  -->
+                                       
                         </div>
                         <!-- End Axil Tab Content  -->
                     </div>
@@ -2515,194 +1087,7 @@ include 'header.php';
                     </div>
                     <div class="col-lg-4 col-xl-4 mt_md--40 mt_sm--40">
                         <!-- Start Sidebar Area  -->
-                        <div class="sidebar-inner">
-
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_categories mb--30">
-                                <ul>
-                                    <li class="cat-item">
-                                        <a href="<?=$BASE_URL?>" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-01.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Tech</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="<?=$BASE_URL?>" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-02.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Style</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="<?=$BASE_URL?>" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-03.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Travel</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="cat-item">
-                                        <a href="<?=$BASE_URL?>" class="inner">
-                                            <div class="thumbnail">
-                                                <img src="assets/images/post-images/category-image-04.jpg" alt="">
-                                            </div>
-                                            <div class="content">
-                                                <h5 class="title">Food</h5>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <!-- End Single Widget  -->
-
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_search mb--30">
-                                <h5 class="widget-title">Search</h5>
-                                <form action="<?=$BASE_URL?>">
-                                    <div class="axil-search form-group">
-                                        <button type="submit" class="search-button"><i class="fal fa-search"></i></button>
-                                        <input type="text" class="form-control" placeholder="Search">
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- End Single Widget  -->
-
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_postlist mb--30">
-                                <h5 class="widget-title">Popular on Blogar</h5>
-                                <!-- Start Post List  -->
-                                <div class="post-medium-block">
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/small-images/blog-sm-01.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="<?=$POSTS_URL?>">The underrated design book that transformed the way I
-                                                    work </a></h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/small-images/blog-sm-02.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="<?=$POSTS_URL?>">Here’s what you should (and shouldn’t) do when</a>
-                                            </h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                    <!-- Start Single Post  -->
-                                    <div class="content-block post-medium mb--20">
-                                        <div class="post-thumbnail">
-                                            <a href="<?=$POSTS_URL?>">
-                                                <img src="assets/images/small-images/blog-sm-03.jpg" alt="Post Images">
-                                            </a>
-                                        </div>
-                                        <div class="post-content">
-                                            <h6 class="title"><a href="<?=$POSTS_URL?>">How a developer and designer duo at Deutsche Bank keep
-                                                    remote</a></h6>
-                                            <div class="post-meta">
-                                                <ul class="post-meta-list">
-                                                    <li>Feb 17, 2019</li>
-                                                    <li>300k Views</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- End Single Post  -->
-
-                                </div>
-                                <!-- End Post List  -->
-
-                            </div>
-                            <!-- End Single Widget  -->
-
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_social mb--30">
-                                <h5 class="widget-title">Stay In Touch</h5>
-                                <!-- Start Post List  -->
-                                <ul class="social-icon md-size justify-content-center">
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-slack"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                                <!-- End Post List  -->
-                            </div>
-                            <!-- End Single Widget  -->
-
-                            <!-- Start Single Widget  -->
-                            <div class="axil-single-widget widget widget_instagram mb--30">
-                                <h5 class="widget-title">Instagram</h5>
-                                <!-- Start Post List  -->
-                                <ul class="instagram-post-list-wrapper">
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-01.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-02.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-03.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-04.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-05.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                    <li class="instagram-post-list">
-                                        <a href="<?=$BASE_URL?>">
-                                            <img src="assets/images/small-images/instagram-06.jpg" alt="Instagram Images">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <!-- End Post List  -->
-                            </div>
-                            <!-- End Single Widget  -->
-                        </div>
+                        <?php include('sidebar.php') ?>
                         <!-- End Sidebar Area  -->
 
 
@@ -2883,288 +1268,4 @@ include 'header.php';
         </div>
         <!-- End Video Area  -->
 
-        <!-- Start Instagram Area  -->
-        <div class="axil-instagram-area axil-section-gap bg-color-grey">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="section-title">
-                            <h2 class="title">Instagram</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt--30">
-                    <div class="col-lg-12">
-                        <ul class="instagram-post-list">
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-01.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-02.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-03.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-04.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-05.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                            <li class="single-post">
-                                <a href="<?=$BASE_URL?>">
-                                    <img src="assets/images/small-images/instagram-md-06.jpg" alt="Instagram Images">
-                                    <span class="instagram-button"><i class="fab fa-instagram"></i></span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Instagram Area  -->
-
-        <!-- Start Footer Area  -->
-        <div class="axil-footer-area axil-footer-style-1 footer-variation-2">
-            <div class="footer-mainmenu">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">World</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">U.N.</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">Politics</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">Executive</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Senate</a></li>
-                                        <li><a href="<?=$BASE_URL?>">House</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Judiciary</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Foreign policy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Polls</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Elections</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">Entertainment</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">Celebrity News</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Movies</a></li>
-                                        <li><a href="<?=$BASE_URL?>">TV News</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Music News</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Style News</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Entertainment Video</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">Business</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">Health</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">Movies</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-2 col-md-6 col-sm-6 col-12">
-                            <div class="footer-widget">
-                                <h2 class="title">About</h2>
-                                <div class="inner">
-                                    <ul class="ft-menu-list">
-                                        <li><a href="<?=$BASE_URL?>">U.N.</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Conflicts</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Terrorism</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Disasters</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Global Economy</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Environment</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Religion</a></li>
-                                        <li><a href="<?=$BASE_URL?>">Scandals</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Start Footer Top Area  -->
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-4">
-                            <div class="logo">
-                                <b>By</b>
-                                <a href="<?=$BASE_URL?>">
-                                    <!-- <img class="dark-logo" src="assets/images/logo/logo-black.png" alt="Logo Images">
-                                    <img class="white-logo" src="assets/images/logo/logo-white2.png" alt="Logo Images"> -->
-                                     <h1 class='text-primary'><b>Xcole</b></h1>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-8 col-md-8">
-                            <!-- Start Post List  -->
-                            <div class="d-flex justify-content-start mt_sm--15 justify-content-md-end align-items-center flex-wrap">
-                                <h5 class="follow-title mb--0 mr--20">Follow Us</h5>
-                                <ul class="social-icon color-tertiary md-size justify-content-start">
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="<?=$BASE_URL?>"><i class="fab fa-linkedin-in"></i></a></li>
-                                </ul>
-                            </div>
-                            <!-- End Post List  -->
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End Footer Top Area  -->
-
-            <!-- Start Copyright Area  -->
-            <div class="copyright-area">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-9 col-md-8">
-                            <div class="copyright-left">
-                                <ul class="mainmenu justify-content-start">
-                                    <li>
-                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                            <span class="hover-flip-item">
-                                        <span data-text="Contact Us">Contact Us</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                            <span class="hover-flip-item">
-                                        <span data-text="Terms of Use">Terms of Use</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                            <span class="hover-flip-item">
-                                        <span data-text="AdChoices">AdChoices</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                            <span class="hover-flip-item">
-                                        <span data-text="Advertise with Us">Advertise with Us</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="hover-flip-item-wrapper" href="<?=$BASE_URL?>">
-                                            <span class="hover-flip-item">
-                                        <span data-text="Blogar Store">Blogar Store</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4">
-                            <div class="copyright-right text-start text-md-end mt_sm--20">
-                                <p class="b3">All Rights Reserved © 2022</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End Copyright Area  -->
-        </div>
-        <!-- End Footer Area  -->
-
-        <!-- Start Back To Top  -->
-        <a id="backto-top"></a>
-        <!-- End Back To Top  -->
-
-    </div>
-
-    <!-- JS
-============================================ -->
-    <!-- Modernizer JS -->
-    <script src="assets/js/vendor/modernizr.min.js"></script>
-    <!-- jQuery JS -->
-    <script src="assets/js/vendor/jquery.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/tweenmax.min.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/jquery.style.switcher.js"></script>
-
-
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
-
-</body>
-
-</html>
+        <?php include 'footer.php' ?>

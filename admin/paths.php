@@ -43,3 +43,6 @@ session_start();
 
 // staff management
 (isset($_SESSION['id']) ? $ADD_STAFF_URL = 'add-staff.php?user_id='.$_SESSION['id'] :$ADD_STAFF_URL = 'add-staff.php');
+
+// page management
+(isset($_SESSION['id']) ? $PAGES_URL = 'pages.php?user_id='.$_SESSION['id'] :$PAGES_URL = 'pages.php');

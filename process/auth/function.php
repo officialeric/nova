@@ -15,9 +15,8 @@ function registerNewUser($user,$email,$pass){
     $username = validate($user);
     $email  = validate($email);
     $password = validate($pass);
+    $hashed_password = md5($password);
 
-    // if(preg_match('(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}', $password)) {
-    //     $hashed_password = md5($password);
 
         #SELECT EMAIL FROM TABLE TO SEE IF IT EXISTS
         $sql2 = "SELECT * FROM users WHERE email='$email'";

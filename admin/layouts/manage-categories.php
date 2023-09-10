@@ -79,12 +79,12 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="header-title">Multi item selection</h4>
-                <p class="text-muted mb-0">
+                <h4 class="header-title">Search input should be here</h4>
+                <!-- <p class="text-muted mb-0">
                     This example shows the multi option. Note how a click on a row will toggle its
                     selected state without effecting other rows,
                     unlike the os and single options shown in other examples.
-                </p>
+                </p> -->
             </div>
             <div class="card-body">
                 <table id="selection-datatable" class="table table-striped dt-responsive nowrap w-100">
@@ -99,7 +99,7 @@
 
 
                     <tbody>
-                        <?php $i = 0; foreach($results as $result): $i++;?>
+                        <?php $i = 0; foreach($categories as $result): $i++;?>
                         <tr>
                             <td><?=$i;?></td>
                             <td><?=$result['category_name'];?></td>
