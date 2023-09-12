@@ -1,5 +1,7 @@
 <?php
     include '../process/db_connect.php';
+    include 'process/auth-guest.php';
+
 ?>
 
 <!doctype html>

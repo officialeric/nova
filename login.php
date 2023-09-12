@@ -101,7 +101,7 @@
                                 <div class="form-group">
                                             <?php if(isset($_GET['message'])): $msg = $_GET['message']; ?>
                                                     <div>
-                                                        <p class="text-success"><?php echo $msg ?></p>
+                                                        <p class="text-success "><?php echo $msg ?></p>
                                                     </div>
                                             <?php endif ?>
                                             <?php if(isset($_GET['error'])): $error = $_GET['error']; ?>

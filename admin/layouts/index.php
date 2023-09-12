@@ -1,5 +1,7 @@
                 <?php 
+                    
                     include 'header.php';
+
                     
                     $sql = "SELECT * FROM users WHERE role_id=4";
                     $users = mysqli_query($conn, $sql);

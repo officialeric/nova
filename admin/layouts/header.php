@@ -1,5 +1,6 @@
 <?php
 include('../process/config.php');
+include '../process/auth-middleware.php';
 ?>
 
 <!DOCTYPE html>
