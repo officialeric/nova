@@ -1,5 +1,6 @@
 <?php
 include 'process/includes/config.php';
+include('process/auth/auth-guest.php');
 ?>
 
 <!doctype html>

@@ -1,8 +1,8 @@
 <?php
 
 $server = 'localhost';
-$username = 'xcole';
-$password = '#Xcole2023';
+$username = 'xnova';
+$password = '#Xnova2023';
 $db = 'blog';
 
 #CREATING A DATABASE CONNECTION
@@ -12,7 +12,3 @@ $conn = new mysqli(
     $password , 
     $db
 );
-
-if(!$conn){
-    die("Connection failed: " . mysqli_connect_error());
-}

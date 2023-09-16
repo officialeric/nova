@@ -1,5 +1,6 @@
 <?php
     include 'process/db_connect.php';
+    include 'process/auth/auth-middleware.php';
 ?>
 
 <!doctype html>

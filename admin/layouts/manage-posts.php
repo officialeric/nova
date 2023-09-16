@@ -93,7 +93,7 @@
                                                     </span>           
                                                     </button>
                                                     </a>
-                                                    
+                                                    <?php IF($post['status'] == 'pending') :?>
                                                     <a href="../process/posting.php?publish_id=<?=$post['id']?>" name='publish'>
                                                         <button class='btn btn-success ml-1'>
                                                             <span class="material-symbols-outlined">
@@ -101,7 +101,7 @@
                                                             </span>           
                                                         </button>
                                                     </a>
-
+                                                    <?php endif ?>
                                                     <a class="text-soft-danger" href="../process/delete-action.php?page=posts&user_id=<?=$_GET['user_id']?>&del_id=<?=$post['id'];?>">
                                                     <button class='btn btn-danger ml-1'>
                                                     <span class="material-symbols-outlined">

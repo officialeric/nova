@@ -14,8 +14,8 @@ include 'process/includes/paths.php';
     if(isset($_GET['error'])) {
         $error = $_GET['error'];
     }
+//  include('process/auth/auth-guest.php');
 
-   
 ?>
 
 <!DOCTYPE html>
